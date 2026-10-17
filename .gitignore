@@ -31,13 +31,29 @@ yarn-error.*
 *.pem
 
 # local env files
-.env*.local
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Next.js
+.next/
+out/
 
 # typescript
 *.tsbuildinfo
 
 example
 
+# Turborepo
+.turbo/
+
 # generated native folders
 /ios
 /android
+apps/*/android/
+apps/*/ios/

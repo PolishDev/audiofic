@@ -1,56 +1,99 @@
-# Welcome to your Expo app 👋
+# ShortStory
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Plataforma de ficção seriada narrada em áudio, organizada em séries e episódios curtos, focada inicialmente no gênero de terror, suspense e mistério no mercado brasileiro.
 
-## Get started
+---
 
-1. Install dependencies
+## 🏛️ Arquitetura do Projeto
 
-   ```bash
-   npm install
-   ```
+O projeto é estruturado como um **Monorepo** gerenciado com [Turborepo](https://turbo.build/) e [Bun](https://bun.sh/), dividindo claramente as responsabilidades entre cliente mobile e serviços de backend hospedados em infraestrutura própria (VM).
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+shortstory/
+├── apps/
+│   ├── mobile/       # Aplicativo React Native (Expo SDK 57, Expo Router)
+│   └── backend/      # API e serviços em NestJS 12 (Node.js/Bun, TypeScript, Vitest)
+├── packages/         # Pacotes compartilhados futuros (tipos, utilitários, configs)
+├── turbo.json        # Configuração do pipeline de tarefas e TUI do Turborepo
+└── package.json      # Workspace root
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Componentes Principais
 
-### Other setup steps
+1. **Mobile (`apps/mobile`)**
+   - **Framework:** Expo SDK 57 (React Native 0.86, React 19) com Expo Router (navegação baseada em arquivos).
+   - **Reprodução de Áudio:** Suporte a streaming progressivo via HTTP Range requests, background playback contínuo e persistência de progresso de escuta.
+   - **Pagamentos In-App:** Integração com **RevenueCat** via SDK oficial (`react-native-purchases`) para orquestrar compras e assinaturas na Google Play Store e Apple App Store.
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+2. **Backend (`apps/backend`)**
+   - **Framework:** **NestJS v12** (ESM, TypeScript, Vitest).
+   - **Infraestrutura:** Backend próprio hospedado em máquina virtual (VM), otimizando custos e eliminando limitações/custos variáveis de BaaS serverless.
+   - **Responsabilidades:**
+     - Autenticação e gestão de usuários/sessões.
+     - Catálogo de séries, temporadas, episódios e metadados.
+     - Armazenamento de progresso de escuta (`user_progress`).
+     - Geração de URLs pré-assinadas temporárias (Cloudflare R2) para episódios restritos/premium.
+     - Recepção e processamento idempotente de Webhooks do **RevenueCat** para atualização de assinaturas e direitos de acesso (*entitlements*).
 
-## Learn more
+3. **Armazenamento de Áudio (Cloudflare R2)**
+   - Armazenamento de objetos para arquivos de áudio comprimidos.
+   - Suporte nativo a requisições HTTP Range.
+   - Episódios gratuitos entregues via CDN/distribuição pública e episódios premium protegidos por URLs pré-assinadas temporárias emitidas pelo backend NestJS.
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 🚀 Como Executar
 
-## Join the community
+### Pré-requisitos
+- [Bun](https://bun.sh/) (v1.2+) ou Node.js (v20+)
+- Android SDK configurado (para desenvolvimento mobile Android)
 
-Join our community of developers creating universal apps.
+### Instalação
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Na raiz do repositório, instale as dependências de todos os workspaces:
+
+```bash
+bun install
+```
+
+### Desenvolvimento
+
+#### Executar todos os serviços com TUI (Terminal UI)
+O Turborepo está configurado para exibir uma interface interativa no terminal, isolando os logs de cada serviço em abas próprias:
+
+```bash
+bun run dev
+```
+> **Dica:** Utilize as setas `↑` / `↓` ou os atalhos numéricos no terminal para alternar entre os logs do `@shortstory/mobile` e do `@shortstory/backend`.
+
+#### Comandos Mobile
+* **Executar no Android:**
+  ```bash
+  bun run android
+  # ou dentro do workspace:
+  cd apps/mobile && expo run:android
+  ```
+* **Iniciar apenas o Metro Bundler:**
+  ```bash
+  bun run mobile:dev
+  ```
+
+#### Comandos Backend
+* **Executar o NestJS em modo watch:**
+  ```bash
+  bun run backend:dev
+  ```
+* **Build do NestJS:**
+  ```bash
+  bun run backend:build
+  ```
+
+#### Qualidade de Código e Testes
+* **Lint em todos os projetos:**
+  ```bash
+  bun run lint
+  ```
+* **Testes unitários e e2e:**
+  ```bash
+  bun run test
+  ```
