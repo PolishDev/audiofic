@@ -36,4 +36,18 @@ describe('Stories Utilities', () => {
       expect(freshScore).toBeGreaterThan(oldScore);
     });
   });
+
+  describe('search handling', () => {
+    it('should return empty array immediately when query is empty or only whitespace', async () => {
+      const mockDb: any = { execute: () => Promise.resolve({ rows: [] }) };
+      const { StoriesService } = await import('./stories.service.js');
+      const service = new StoriesService(mockDb);
+
+      const resEmpty = await service.search('');
+      const resSpaces = await service.search('   ');
+
+      expect(resEmpty).toEqual([]);
+      expect(resSpaces).toEqual([]);
+    });
+  });
 });

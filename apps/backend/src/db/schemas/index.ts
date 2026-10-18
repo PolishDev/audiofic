@@ -10,6 +10,10 @@ import {
   storyMetricEvent,
   storyMetricEventRelations,
 } from './story-metric-event.table.js';
+import {
+  userProgress,
+  userProgressRelations,
+} from './user-progress.table.js';
 
 export * from './utils.js';
 export * from './user.table.js';
@@ -21,6 +25,7 @@ export * from './story.table.js';
 export * from './episode.table.js';
 export * from './story-genre.table.js';
 export * from './story-metric-event.table.js';
+export * from './user-progress.table.js';
 
 export const schema = {
   user,
@@ -40,6 +45,8 @@ export const schema = {
   storyGenreRelations,
   storyMetricEvent,
   storyMetricEventRelations,
+  userProgress,
+  userProgressRelations,
 };
 
 export type AppSchema = typeof schema;

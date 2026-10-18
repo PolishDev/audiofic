@@ -2,6 +2,7 @@ import { pgTable, text, timestamp, boolean, integer } from 'drizzle-orm/pg-core'
 import { relations } from 'drizzle-orm';
 import { generateId } from './utils.js';
 import { story } from './story.table.js';
+import { userProgress } from './user-progress.table.js';
 
 export const episode = pgTable('episode', {
   id: text('id')
@@ -25,11 +26,12 @@ export const episode = pgTable('episode', {
   updatedAt: timestamp('updated_at').notNull().defaultNow(),
 });
 
-export const episodeRelations = relations(episode, ({ one }) => ({
+export const episodeRelations = relations(episode, ({ one, many }) => ({
   story: one(story, {
     fields: [episode.storyId],
     references: [story.id],
   }),
+  userProgress: many(userProgress),
 }));
 
 export type Episode = typeof episode.$inferSelect;

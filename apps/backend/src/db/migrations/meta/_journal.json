@@ -15,6 +15,20 @@
       "when": 1792100020314,
       "tag": "0001_gray_falcon",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792185720000,
+      "tag": "0002_fuzzy_search_indexes",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1792186900000,
+      "tag": "0003_add_user_progress",
+      "breakpoints": true
     }
   ]
 }

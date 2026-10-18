@@ -15,8 +15,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { Text } from '@/shared';
+import { Text, getContinueListeningItems, type LocalProgressItem } from '@/shared';
 import { apiClient } from '@/shared/api/axios-client';
+import { useAudioPlayerContext } from '@/shared/audio';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const HERO_HEIGHT = 490;
@@ -45,10 +46,12 @@ export function BooksPage() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const [stories, setStories] = useState<Story[]>([]);
+  const [continueListeningList, setContinueListeningList] = useState<LocalProgressItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [activeHeroIdx, setActiveHeroIdx] = useState(0);
   const heroScrollRef = useRef<ScrollView>(null);
+  const { playEpisode } = useAudioPlayerContext();
 
   const handleOpenStory = (targetStory: Story) => {
     router.push({
@@ -57,12 +60,39 @@ export function BooksPage() {
     });
   };
 
+  const handleResumeEpisode = (item: LocalProgressItem) => {
+    playEpisode(
+      {
+        id: item.storyId,
+        title: item.storyTitle,
+        coverUrl: item.storyCoverUrl,
+      },
+      {
+        id: item.episodeId,
+        storyId: item.storyId,
+        seasonNumber: 1,
+        episodeNumber: item.episodeNumber,
+        title: item.episodeTitle,
+        durationSeconds: item.durationSeconds,
+        audioUrl: '',
+        isPremium: false,
+      },
+      [],
+      item.positionSeconds,
+    );
+  };
+
   const fetchStories = useCallback(async () => {
     try {
-      const res = await apiClient.get('/stories');
-      if (res.data && Array.isArray(res.data.data)) {
-        setStories(res.data.data);
+      const [storiesRes, continueItems] = await Promise.all([
+        apiClient.get('/stories').catch(() => null),
+        getContinueListeningItems().catch(() => []),
+      ]);
+
+      if (storiesRes?.data && Array.isArray(storiesRes.data.data)) {
+        setStories(storiesRes.data.data);
       }
+      setContinueListeningList(continueItems || []);
     } catch (err: any) {
       console.warn('[BooksPage] Error loading stories:', err.message);
     } finally {
@@ -237,7 +267,94 @@ export function BooksPage() {
         ) : null}
 
         {/* ======================================================== */}
-        {/* 2. LISTAS HORIZONTAIS: APENAS A CAPA (POSTER 2:3)         */}
+        {/* 2. TRILHO "CONTINUAR OUVINDO" DESTACADO NO TOPO          */}
+        {/* ======================================================== */}
+        {continueListeningList.length > 0 && (
+          <View style={styles.continueSection}>
+            <View style={styles.railHeader}>
+              <View style={styles.railTitleRow}>
+                <Ionicons name="play-circle" size={17} color="#E11D48" style={{ marginRight: 6 }} />
+                <Text style={styles.railTitle}>Continuar Ouvindo</Text>
+              </View>
+              <Text style={styles.continueCountText}>
+                {continueListeningList.length} em andamento
+              </Text>
+            </View>
+
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.continueScrollContent}
+            >
+              {continueListeningList.map((item) => {
+                const total = item.durationSeconds || item.positionSeconds || 1;
+                const percent = Math.min(
+                  100,
+                  Math.max(5, Math.round((item.positionSeconds / total) * 100)),
+                );
+                const currentMin = Math.floor(item.positionSeconds / 60);
+                const totalMin = Math.floor((item.durationSeconds || 0) / 60);
+
+                return (
+                  <TouchableOpacity
+                    key={item.episodeId}
+                    activeOpacity={0.85}
+                    style={styles.continueCard}
+                    onPress={() => handleResumeEpisode(item)}
+                  >
+                    {/* Poster miniatura com overlay */}
+                    <View style={styles.continuePosterWrapper}>
+                      {item.storyCoverUrl ? (
+                        <Image
+                          source={{ uri: item.storyCoverUrl }}
+                          style={styles.continuePosterImage}
+                          contentFit="cover"
+                        />
+                      ) : (
+                        <View style={styles.continuePosterFallback}>
+                          <Ionicons name="headset" size={18} color="#71717A" />
+                        </View>
+                      )}
+                      <View style={styles.continuePlayOverlay}>
+                        <Ionicons name="play" size={14} color="#FFFFFF" />
+                      </View>
+                    </View>
+
+                    {/* Metadados e barra de progresso */}
+                    <View style={styles.continueMeta}>
+                      <Text style={styles.continueStoryTitle} numberOfLines={1}>
+                        {item.storyTitle}
+                      </Text>
+                      <Text style={styles.continueEpisodeTitle} numberOfLines={1}>
+                        EP {item.episodeNumber} - {item.episodeTitle}
+                      </Text>
+
+                      {/* Barra de Progresso */}
+                      <View style={styles.progressBarTrack}>
+                        <View
+                          style={[
+                            styles.progressBarFill,
+                            { width: `${percent}%` },
+                          ]}
+                        />
+                      </View>
+
+                      <View style={styles.progressTimeRow}>
+                        <Text style={styles.progressTimeText}>
+                          {currentMin > 0 ? `${currentMin} min` : `${item.positionSeconds}s`} de {totalMin > 0 ? `${totalMin} min` : 'fim'}
+                        </Text>
+                        <Text style={styles.continueActionText}>Retomar</Text>
+                      </View>
+                    </View>
+                  </TouchableOpacity>
+                );
+              })}
+            </ScrollView>
+          </View>
+        )}
+
+        {/* ======================================================== */}
+        {/* 3. LISTAS HORIZONTAIS: APENAS A CAPA (POSTER 2:3)         */}
         {/* ======================================================== */}
         <View style={styles.railsContainer}>
           {/* Trilho 1: Em Alta / Mais Ouvidas */}
@@ -521,6 +638,107 @@ const styles = StyleSheet.create({
   loadingText: {
     fontSize: 12,
     color: '#71717A',
+  },
+
+  // CONTINUAR OUVINDO
+  continueSection: {
+    marginTop: 18,
+    marginBottom: 6,
+    gap: 12,
+  },
+  continueCountText: {
+    fontSize: 12,
+    color: '#71717A',
+    fontWeight: '500',
+  },
+  continueScrollContent: {
+    paddingHorizontal: 20,
+    gap: 14,
+  },
+  continueCard: {
+    flexDirection: 'row',
+    width: SCREEN_WIDTH - 40,
+    backgroundColor: '#141418',
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: 'rgba(225, 29, 72, 0.22)',
+    padding: 10,
+    gap: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.35,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  continuePosterWrapper: {
+    width: 62,
+    height: 78,
+    borderRadius: 8,
+    overflow: 'hidden',
+    position: 'relative',
+    backgroundColor: '#1E1E24',
+  },
+  continuePosterImage: {
+    width: '100%',
+    height: '100%',
+  },
+  continuePosterFallback: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  continuePlayOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.35)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  continueMeta: {
+    flex: 1,
+    justifyContent: 'center',
+    gap: 3,
+  },
+  continueStoryTitle: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: '#FAFAFA',
+  },
+  continueEpisodeTitle: {
+    fontSize: 12,
+    color: '#D4D4D8',
+  },
+  progressBarTrack: {
+    width: '100%',
+    height: 4,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    borderRadius: 2,
+    marginTop: 6,
+    overflow: 'hidden',
+  },
+  progressBarFill: {
+    height: '100%',
+    backgroundColor: '#E11D48',
+    borderRadius: 2,
+  },
+  progressTimeRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 4,
+  },
+  progressTimeText: {
+    fontSize: 10,
+    color: '#71717A',
+    fontWeight: '500',
+  },
+  continueActionText: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: '#FDA4AF',
   },
 
   // RAILS SECTION

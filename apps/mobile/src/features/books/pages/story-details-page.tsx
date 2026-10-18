@@ -8,13 +8,14 @@ import {
   Dimensions,
   StyleSheet,
   Share,
+  Alert,
 } from 'react-native';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import { Text } from '@/shared';
+import { Text, useDownloadManager } from '@/shared';
 import { apiClient } from '@/shared/api/axios-client';
 import { useAudioPlayerContext } from '@/shared/audio';
 
@@ -76,6 +77,61 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
     currentEpisode: activePlayingEpisode,
     isPlaying,
   } = useAudioPlayerContext();
+
+  const {
+    isDownloaded,
+    isDownloading,
+    getProgress,
+    downloadEpisode: startDownload,
+    deleteDownload,
+    deleteAllDownloads,
+    totalStorageFormatted,
+  } = useDownloadManager();
+
+  const handleStartDownload = async (episode: EpisodeItem) => {
+    if (!story) return;
+    try {
+      await startDownload(
+        { id: story.id, title: story.title, coverUrl: story.coverUrl },
+        episode,
+      );
+    } catch {
+      Alert.alert(
+        'Erro no Download',
+        'Não foi possível baixar o áudio deste episódio. Verifique sua conexão e tente novamente.',
+      );
+    }
+  };
+
+  const handleConfirmDeleteDownload = (episode: EpisodeItem) => {
+    Alert.alert(
+      'Remover Download',
+      `Deseja excluir o arquivo baixado do "EP ${episode.episodeNumber} - ${episode.title}" para liberar espaço?`,
+      [
+        { text: 'Cancelar', style: 'cancel' },
+        {
+          text: 'Excluir',
+          style: 'destructive',
+          onPress: () => deleteDownload(episode.id),
+        },
+      ],
+    );
+  };
+
+  const handleManageStorage = () => {
+    Alert.alert(
+      'Downloads Offline',
+      `Espaço total utilizado no dispositivo: ${totalStorageFormatted}.\nVocê pode ouvir episódios baixados direto do disco sem gastar dados móveis.`,
+      [
+        { text: 'Fechar', style: 'cancel' },
+        {
+          text: 'Excluir Todos os Downloads',
+          style: 'destructive',
+          onPress: () => deleteAllDownloads(),
+        },
+      ],
+    );
+  };
 
   const fetchStoryDetails = useCallback(async () => {
     try {
@@ -351,7 +407,20 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
               <Ionicons name="list" size={18} color="#E11D48" />
               <Text style={styles.episodesSectionTitle}>Episódios</Text>
             </View>
-            <Text style={styles.seasonText}>Temporada 1</Text>
+
+            <View style={styles.episodesHeaderRight}>
+              {totalStorageFormatted !== '0 MB' && (
+                <TouchableOpacity
+                  style={styles.storageBadgeButton}
+                  activeOpacity={0.75}
+                  onPress={handleManageStorage}
+                >
+                  <Ionicons name="folder-outline" size={12} color="#FDA4AF" />
+                  <Text style={styles.storageBadgeText}>{totalStorageFormatted}</Text>
+                </TouchableOpacity>
+              )}
+              <Text style={styles.seasonText}>Temporada 1</Text>
+            </View>
           </View>
 
           {story.episodes && story.episodes.length > 0 ? (
@@ -416,7 +485,7 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
                         </Text>
                       ) : null}
 
-                      {/* Duração do EP e Badge Premium/Grátis */}
+                      {/* Duração do EP, Offline Badge e Badge Premium/Grátis */}
                       <View style={styles.episodeBottomMeta}>
                         <View style={styles.durationPill}>
                           <Ionicons name="time-outline" size={12} color="#A1A1AA" />
@@ -424,6 +493,13 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
                             {formatDuration(ep.durationSeconds)}
                           </Text>
                         </View>
+
+                        {isDownloaded(ep.id) && (
+                          <View style={styles.offlineBadge}>
+                            <Ionicons name="cloud-done" size={10} color="#10B981" />
+                            <Text style={styles.offlineBadgeText}>BAIXADO</Text>
+                          </View>
+                        )}
 
                         {ep.isPremium ? (
                           <View style={styles.premiumBadge}>
@@ -438,15 +514,42 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
                       </View>
                     </View>
 
-                    {/* Ação Lateral */}
+                    {/* Ação Lateral: Download e Play */}
                     <View style={styles.episodeActionContainer}>
+                      {isDownloading(ep.id) ? (
+                        <View style={styles.downloadProgressWrapper}>
+                          <ActivityIndicator size="small" color="#E11D48" />
+                          <Text style={styles.downloadProgressText}>
+                            {Math.round(getProgress(ep.id) * 100)}%
+                          </Text>
+                        </View>
+                      ) : isDownloaded(ep.id) ? (
+                        <TouchableOpacity
+                          activeOpacity={0.7}
+                          style={styles.downloadActionButton}
+                          onPress={() => handleConfirmDeleteDownload(ep)}
+                          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                        >
+                          <Ionicons name="checkmark-circle" size={22} color="#10B981" />
+                        </TouchableOpacity>
+                      ) : (
+                        <TouchableOpacity
+                          activeOpacity={0.7}
+                          style={styles.downloadActionButton}
+                          onPress={() => handleStartDownload(ep)}
+                          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                        >
+                          <Ionicons name="arrow-down-circle-outline" size={22} color="#71717A" />
+                        </TouchableOpacity>
+                      )}
+
                       <Ionicons
                         name={
                           isCurrentlyPlaying
                             ? 'radio'
                             : 'play-circle-outline'
                         }
-                        size={26}
+                        size={24}
                         color={isCurrentlyPlaying ? '#E11D48' : '#71717A'}
                       />
                     </View>
@@ -826,10 +929,62 @@ const styles = StyleSheet.create({
     color: '#34D399',
     letterSpacing: 0.5,
   },
-  episodeActionContainer: {
-    paddingRight: 4,
-    justifyContent: 'center',
+  offlineBadge: {
+    flexDirection: 'row',
     alignItems: 'center',
+    gap: 3,
+    backgroundColor: 'rgba(16, 185, 129, 0.15)',
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: 'rgba(16, 185, 129, 0.3)',
+  },
+  offlineBadgeText: {
+    fontSize: 9,
+    fontWeight: '700',
+    color: '#34D399',
+    letterSpacing: 0.5,
+  },
+  episodesHeaderRight: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  storageBadgeButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    backgroundColor: 'rgba(225, 29, 72, 0.12)',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: 'rgba(225, 29, 72, 0.25)',
+  },
+  storageBadgeText: {
+    fontSize: 11,
+    fontWeight: '600',
+    color: '#FDA4AF',
+  },
+  episodeActionContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    paddingRight: 4,
+  },
+  downloadActionButton: {
+    padding: 2,
+  },
+  downloadProgressWrapper: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 2,
+  },
+  downloadProgressText: {
+    fontSize: 9,
+    fontWeight: '700',
+    color: '#FDA4AF',
   },
 
   // ESTADO VAZIO

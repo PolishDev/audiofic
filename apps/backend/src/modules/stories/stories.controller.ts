@@ -42,6 +42,27 @@ export class StoriesController {
   }
 
   /**
+   * Top listened stories ("Mais Ouvidos").
+   * GET /stories/top-listened?limit=10
+   */
+  @Get('stories/top-listened')
+  async getTopListenedStories(@Query('limit') limit?: number) {
+    return this.storiesService.findTopListened(limit ? Number(limit) : 10);
+  }
+
+  /**
+   * Search stories by title and synopsis with fuzzy matching, typo tolerance, and accent insensitivity.
+   * GET /stories/search?q=frequencia&limit=20
+   */
+  @Get('stories/search')
+  async searchStories(
+    @Query('q') query?: string,
+    @Query('limit') limit?: number,
+  ) {
+    return this.storiesService.search(query || '', limit ? Number(limit) : 20);
+  }
+
+  /**
    * Story details with complete episode list.
    * GET /stories/:idOrSlug
    */

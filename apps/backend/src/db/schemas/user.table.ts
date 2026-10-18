@@ -3,6 +3,7 @@ import { relations } from 'drizzle-orm';
 import { generateId } from './utils.js';
 import { session } from './session.table.js';
 import { account } from './account.table.js';
+import { userProgress } from './user-progress.table.js';
 
 export const user = pgTable('user', {
   id: text('id')
@@ -19,6 +20,7 @@ export const user = pgTable('user', {
 export const userRelations = relations(user, ({ many }) => ({
   sessions: many(session),
   accounts: many(account),
+  progress: many(userProgress),
 }));
 
 export type User = typeof user.$inferSelect;

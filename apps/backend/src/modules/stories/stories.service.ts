@@ -48,6 +48,10 @@ export function calculateTrendingScore(
 
 @Injectable()
 export class StoriesService {
+  private searchCache = new Map<string, { timestamp: number; data: any }>();
+  private pendingSearches = new Map<string, Promise<any>>();
+  private readonly SEARCH_CACHE_TTL = 20_000; // 20 seconds cache
+
   constructor(@Inject(DRIZZLE) private readonly db: Database) {}
 
   /**
@@ -67,11 +71,16 @@ export class StoriesService {
       conditions.push(eq(story.status, 'published'));
     }
 
-    // Filter by search query
+    // Filter by search query with accent & typo tolerance
     if (params.search) {
-      const searchTerm = `%${params.search.trim()}%`;
+      const term = params.search.trim();
       conditions.push(
-        sql`(${ilike(story.title, searchTerm)} OR ${ilike(story.synopsis, searchTerm)})`,
+        sql`(
+          unaccent(${story.title}) ILIKE '%' || unaccent(${term}::text) || '%'
+          OR unaccent(${story.synopsis}) ILIKE '%' || unaccent(${term}::text) || '%'
+          OR word_similarity(unaccent(${term}::text), unaccent(${story.title})) >= 0.3
+          OR similarity(unaccent(${story.title}), unaccent(${term}::text)) >= 0.25
+        )`,
       );
     }
 
@@ -185,6 +194,158 @@ export class StoriesService {
       genres: s.genres.map((g) => g.genre),
       episodesCount: s.episodes.length,
     }));
+  }
+
+  /**
+   * Returns top 10 most listened stories ("Mais Ouvidos").
+   */
+  async findTopListened(limit = 10) {
+    const items = await this.db.query.story.findMany({
+      where: eq(story.status, 'published'),
+      orderBy: [desc(story.playsCount), desc(story.viewsCount)],
+      limit: Math.min(20, Math.max(1, limit)),
+      with: {
+        genres: {
+          with: {
+            genre: true,
+          },
+        },
+        episodes: {
+          columns: {
+            id: true,
+            episodeNumber: true,
+            durationSeconds: true,
+            isPremium: true,
+          },
+        },
+      },
+    });
+
+    return items.map((s) => ({
+      ...s,
+      genres: s.genres.map((g) => g.genre),
+      episodesCount: s.episodes.length,
+    }));
+  }
+
+  /**
+   * Search stories by title and synopsis with:
+   * - Accent insensitivity (PostgreSQL unaccent)
+   * - Typo and fuzzy tolerance (PostgreSQL pg_trgm similarity & word_similarity)
+   * - Server-side debounce / deduplication and query caching
+   */
+  async search(rawQuery: string, limit = 20) {
+    const query = (rawQuery ?? '').trim();
+    if (!query) {
+      return [];
+    }
+
+    const safeLimit = Math.min(50, Math.max(1, limit));
+    const cacheKey = `${query.toLowerCase()}_${safeLimit}`;
+
+    // 1. Check in-memory cache
+    const cached = this.searchCache.get(cacheKey);
+    const now = Date.now();
+    if (cached && now - cached.timestamp < this.SEARCH_CACHE_TTL) {
+      return cached.data;
+    }
+
+    // 2. Deduplicate in-flight concurrent requests (backend debounce)
+    if (this.pendingSearches.has(cacheKey)) {
+      return this.pendingSearches.get(cacheKey);
+    }
+
+    const searchPromise = (async () => {
+      try {
+        const result = await this.db.execute(sql`
+          SELECT
+            s.id,
+            s.title,
+            s.slug,
+            s.synopsis,
+            s.cover_url AS "coverUrl",
+            s.thumbnail_url AS "thumbnailUrl",
+            s.author,
+            s.status,
+            s.is_featured AS "isFeatured",
+            s.views_count AS "viewsCount",
+            s.plays_count AS "playsCount",
+            s.trending_score AS "trendingScore",
+            s.created_at AS "createdAt",
+            s.updated_at AS "updatedAt",
+            GREATEST(
+              CASE WHEN unaccent(s.title) ILIKE '%' || unaccent(${query}::text) || '%' THEN 1.0 ELSE 0.0 END,
+              word_similarity(unaccent(${query}::text), unaccent(s.title)),
+              similarity(unaccent(s.title), unaccent(${query}::text))
+            ) AS title_score,
+            word_similarity(unaccent(${query}::text), unaccent(s.synopsis)) AS synopsis_score,
+            COALESCE(
+              (
+                SELECT json_agg(
+                  json_build_object(
+                    'id', g.id,
+                    'name', g.name,
+                    'slug', g.slug,
+                    'color', g.color
+                  )
+                )
+                FROM ${storyGenre} sg
+                INNER JOIN ${genre} g ON g.id = sg.genre_id
+                WHERE sg.story_id = s.id
+              ),
+              '[]'::json
+            ) AS genres,
+            (
+              SELECT COUNT(*)::int
+              FROM ${episode} ep
+              WHERE ep.story_id = s.id
+            ) AS "episodesCount"
+          FROM ${story} s
+          WHERE s.status = 'published'
+            AND (
+              unaccent(s.title) ILIKE '%' || unaccent(${query}::text) || '%'
+              OR unaccent(s.synopsis) ILIKE '%' || unaccent(${query}::text) || '%'
+              OR word_similarity(unaccent(${query}::text), unaccent(s.title)) >= 0.3
+              OR similarity(unaccent(s.title), unaccent(${query}::text)) >= 0.25
+              OR word_similarity(unaccent(${query}::text), unaccent(s.synopsis)) >= 0.4
+            )
+          ORDER BY title_score DESC, synopsis_score DESC, s.plays_count DESC
+          LIMIT ${safeLimit};
+        `);
+
+        const formatted = result.rows.map((row: any) => ({
+          id: row.id,
+          title: row.title,
+          slug: row.slug,
+          synopsis: row.synopsis,
+          coverUrl: row.coverUrl,
+          thumbnailUrl: row.thumbnailUrl,
+          author: row.author,
+          status: row.status,
+          isFeatured: row.isFeatured,
+          viewsCount: row.viewsCount,
+          playsCount: row.playsCount,
+          trendingScore: row.trendingScore,
+          createdAt: row.createdAt,
+          updatedAt: row.updatedAt,
+          genres: Array.isArray(row.genres) ? row.genres : [],
+          episodesCount: Number(row.episodesCount) || 0,
+        }));
+
+        this.searchCache.set(cacheKey, { timestamp: Date.now(), data: formatted });
+        if (this.searchCache.size > 200) {
+          const oldestKey = this.searchCache.keys().next().value;
+          if (oldestKey) this.searchCache.delete(oldestKey);
+        }
+
+        return formatted;
+      } finally {
+        this.pendingSearches.delete(cacheKey);
+      }
+    })();
+
+    this.pendingSearches.set(cacheKey, searchPromise);
+    return searchPromise;
   }
 
   /**

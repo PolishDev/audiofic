@@ -4,3 +4,5 @@ export * from './api/axios-client';
 export * from './lib/auth-client';
 export * from './auth/auth-context';
 export * from './audio';
+export * from './offline';
+export * from './playback';

@@ -17,6 +17,13 @@ import {
 } from 'expo-audio';
 import { API_BASE_URL } from '@/shared/lib/auth-client';
 import { apiClient } from '@/shared/api/axios-client';
+import { getLocalAudioUri } from '../offline/download-manager';
+import {
+  savePlaybackProgress,
+  syncPendingOfflineProgress,
+  getAllLocalProgress,
+  getEpisodeSavedProgress,
+} from '../playback/playback-sync-manager';
 
 export interface PlayerEpisode {
   id: string;
@@ -55,6 +62,7 @@ interface AudioPlayerContextType {
     story: PlayerStory,
     episode: PlayerEpisode,
     episodeList?: PlayerEpisode[],
+    initialPositionSeconds?: number,
   ) => Promise<void>;
   togglePlayPause: () => void;
   seekTo: (seconds: number) => void;
@@ -149,19 +157,67 @@ export function AudioPlayerProvider({ children }: { children: ReactNode }) {
     return () => clearTimeout(timer);
   }, [player, currentEpisode, currentStory, activeAudioUri]);
 
+  const pendingSeekRef = useRef<number | null>(null);
+  const pendingPlayRef = useRef<boolean>(false);
+
+  // Monitorar carregamento e status do player para aplicar seek pendente e garantir autoplay
+  useEffect(() => {
+    if (!player) return;
+
+    // Se temos um seek pendente e o player carregou duração ou tempo válido
+    if (pendingSeekRef.current !== null && (status.isLoaded || status.duration > 0)) {
+      const targetSec = pendingSeekRef.current;
+      pendingSeekRef.current = null;
+      try {
+        player.seekTo(targetSec);
+      } catch (err) {
+        console.warn('[AudioPlayer] Erro no seekTo:', err);
+      }
+    }
+
+    // Se foi solicitado play ao trocar de episódio mas o player ainda não está tocando
+    if (pendingPlayRef.current && (status.isLoaded || status.duration > 0 || !status.playing)) {
+      try {
+        player.play();
+        if (status.playing) {
+          pendingPlayRef.current = false;
+        }
+      } catch (err) {
+        console.warn('[AudioPlayer] Erro ao disparar player.play():', err);
+      }
+    }
+  }, [player, status.isLoaded, status.duration, status.playing]);
+
   // Iniciar reprodução de um episódio específico
   const playEpisode = useCallback(
     async (
       story: PlayerStory,
       episode: PlayerEpisode,
       episodeList: PlayerEpisode[] = [],
+      initialPositionSeconds?: number,
     ) => {
       setCurrentStory(story);
       setCurrentEpisode(episode);
       setPlaylist(episodeList.length > 0 ? episodeList : [episode]);
 
-      const streamUrl = resolveAudioStreamUrl(episode.audioUrl);
+      // 1. Reprodução Inteligente: Toca local do disco se baixado, senão toca URL remota
+      const localUri = await getLocalAudioUri(episode.id);
+      const streamUrl = localUri || resolveAudioStreamUrl(episode.audioUrl);
       setActiveAudioUri(streamUrl);
+
+      // 2. Determinar ponto de início (passado explicitamente ou salvo no storage local / backend)
+      let startPos = initialPositionSeconds;
+      if (startPos === undefined) {
+        startPos = await getEpisodeSavedProgress(episode.id);
+      }
+
+      // Configurar seek pendente e autoplay
+      if (startPos && startPos > 0) {
+        pendingSeekRef.current = startPos;
+      } else {
+        pendingSeekRef.current = null;
+      }
+      pendingPlayRef.current = true;
 
       // Abrir o bottom sheet do player automaticamente de baixo para cima
       setIsModalVisible(true);
@@ -169,11 +225,24 @@ export function AudioPlayerProvider({ children }: { children: ReactNode }) {
       // Disparar telemetria no servidor
       apiClient.post(`/episodes/${episode.id}/play`).catch(() => {});
 
-      // Substituir e tocar a fonte no player
+      // Substituir a fonte e disparar play imediatamente
       if (player) {
         try {
           player.replace({ uri: streamUrl });
+          if (startPos && startPos > 0) {
+            player.seekTo(startPos).catch(() => {});
+          }
           player.play();
+
+          // Retentativa defensiva para garantir que o player nativo inicie a reprodução
+          setTimeout(() => {
+            try {
+              if (startPos && startPos > 0 && Math.abs((player.currentTime || 0) - startPos) > 3) {
+                player.seekTo(startPos);
+              }
+              player.play();
+            } catch {}
+          }, 350);
         } catch (err) {
           console.warn('[AudioPlayer] Erro ao iniciar áudio:', err);
         }
@@ -182,15 +251,29 @@ export function AudioPlayerProvider({ children }: { children: ReactNode }) {
     [player],
   );
 
-  // Play / Pause
+  // Play / Pause com salvamento de progresso imediato ao pausar
   const togglePlayPause = useCallback(() => {
     if (!player) return;
     if (status.playing) {
+      if (currentStory && currentEpisode && (status.duration || 0) > 0) {
+        savePlaybackProgress({
+          episodeId: currentEpisode.id,
+          storyId: currentStory.id,
+          storyTitle: currentStory.title,
+          storyCoverUrl: currentStory.coverUrl,
+          episodeNumber: currentEpisode.episodeNumber,
+          episodeTitle: currentEpisode.title,
+          positionSeconds: Math.floor(status.currentTime || 0),
+          durationSeconds: Math.floor(status.duration || currentEpisode.durationSeconds || 0),
+          isCompleted: (status.currentTime || 0) >= (status.duration - 5),
+          updatedAt: new Date().toISOString(),
+        });
+      }
       player.pause();
     } else {
       player.play();
     }
-  }, [player, status.playing]);
+  }, [player, status.playing, currentStory, currentEpisode, status.currentTime, status.duration]);
 
   // Avançar / retroceder para um tempo específico
   const seekTo = useCallback(
@@ -262,12 +345,65 @@ export function AudioPlayerProvider({ children }: { children: ReactNode }) {
     [],
   );
 
-  // Se o áudio finalizou, passar para o próximo se houver
+  // Salvar progresso a cada 15 segundos enquanto reproduz
+  useEffect(() => {
+    if (!status.playing || !currentStory || !currentEpisode || !(status.duration || 0)) {
+      return;
+    }
+
+    const interval = setInterval(() => {
+      const currentSec = Math.floor(status.currentTime || 0);
+      const totalSec = Math.floor(status.duration || currentEpisode.durationSeconds || 0);
+      if (currentSec > 0 && totalSec > 0) {
+        savePlaybackProgress({
+          episodeId: currentEpisode.id,
+          storyId: currentStory.id,
+          storyTitle: currentStory.title,
+          storyCoverUrl: currentStory.coverUrl,
+          episodeNumber: currentEpisode.episodeNumber,
+          episodeTitle: currentEpisode.title,
+          positionSeconds: currentSec,
+          durationSeconds: totalSec,
+          isCompleted: currentSec >= totalSec - 5,
+          updatedAt: new Date().toISOString(),
+        });
+      }
+    }, 15000);
+
+    return () => clearInterval(interval);
+  }, [status.playing, currentStory, currentEpisode, status.currentTime, status.duration]);
+
+  // Se o áudio finalizou, marcar como concluído no progresso e passar para o próximo
   useEffect(() => {
     if (status.duration > 0 && status.currentTime >= status.duration - 0.5) {
+      if (currentStory && currentEpisode) {
+        savePlaybackProgress({
+          episodeId: currentEpisode.id,
+          storyId: currentStory.id,
+          storyTitle: currentStory.title,
+          storyCoverUrl: currentStory.coverUrl,
+          episodeNumber: currentEpisode.episodeNumber,
+          episodeTitle: currentEpisode.title,
+          positionSeconds: Math.floor(status.duration),
+          durationSeconds: Math.floor(status.duration),
+          isCompleted: true,
+          updatedAt: new Date().toISOString(),
+        });
+      }
       playNextEpisode();
     }
-  }, [status.currentTime, status.duration, playNextEpisode]);
+  }, [status.currentTime, status.duration, playNextEpisode, currentStory, currentEpisode]);
+
+  // Sincronizar pendências offline ao carregar o aplicativo ou periodicamente
+  useEffect(() => {
+    syncPendingOfflineProgress();
+
+    const syncInterval = setInterval(() => {
+      syncPendingOfflineProgress();
+    }, 30000);
+
+    return () => clearInterval(syncInterval);
+  }, []);
 
   const value: AudioPlayerContextType = {
     currentStory,

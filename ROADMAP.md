@@ -141,8 +141,8 @@ Documento oficial de acompanhamento do ciclo de vida, arquitetura, etapas e func
   - [ ] Trilho "Continuar Ouvindo" destacado no topo da tela inicial
 - [ ] **Listas e Favoritos (`(app)/listas.tsx`):**
   - [ ] Tabela `user_favorites.table.ts` no backend
-  - [ ] Ação de favoritar série (salva localmente para visitantes e no banco para logados)
-  - [ ] Aba "Minha Lista" (séries salvas) e aba "Já Ouvidos" (histórico de episódios concluídos)
+  - [ ] Ação de favoritar série apenas usuarios logados
+  - [ ] Aba "Minha Lista" (séries salvas/favoritadas)
 - [ ] **Perfil do Usuário (`(app)/perfil.tsx`):**
   - [ ] Exibição das informações do usuário autenticado
   - [ ] Seletor de tema (Escuro / Claro / Sistema)
