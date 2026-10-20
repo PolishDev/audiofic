@@ -1,0 +1,825 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="840" viewBox="0 0 1600 840"><rect width="1600" height="840" fill="#f7f7f4"/><text x="60" y="78" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="40" font-weight="700" fill="#161616">AudioFic — Mascotes no Estilo Duolingo (Monocromático)</text><text x="60" y="116" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="20" fill="#6b6b6b">Aparência limpa para uso em temas claro/escuro dentro do app</text><rect x="60" y="150" width="474.667" height="630" rx="18" fill="#fff" stroke="#161616" stroke-width="2"/><g><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 512 512" x="90" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <title>AudioFic Mascot - Spooky App Icon (Monochrome Light Theme)</title>
+  <defs>
+    <clipPath id="c0-squircleLight">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#c0-squircleLight)">
+    <!-- App Icon Light Background -->
+    <rect width="512" height="512" fill="#FFFFFF" />
+    <!-- Squircle Border -->
+    <rect x="6" y="6" width="500" height="500" rx="110" stroke="#E4E4E7" stroke-width="12" fill="none" />
+
+    <!-- Headphone Over-Ear Band -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="#000000" stroke-width="36" stroke-linecap="round" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Headphone Ear-Cups -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="4" y="165" width="32" height="120" rx="16" fill="#FFFFFF" />
+    <circle cx="20" cy="225" r="10" fill="#000000" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="476" y="165" width="32" height="120" rx="16" fill="#FFFFFF" />
+    <circle cx="492" cy="225" r="10" fill="#000000" />
+
+    <!-- Ghost Face Elements in Solid Black -->
+    <!-- Giant Expressive Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Cheeks (Subtle dashed contours) -->
+    <ellipse cx="100" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+    <ellipse cx="412" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+
+    <!-- Expressive Mouth ("Ooh!" Gasp) -->
+    <ellipse cx="256" cy="368" rx="44" ry="54" fill="#000000" />
+    <ellipse cx="256" cy="390" rx="28" ry="20" fill="#FFFFFF" />
+
+    <!-- Ghost Sheet Ripple at bottom border -->
+    <path d="M 60 512 C 90 475 140 475 170 512 C 200 475 250 475 280 512 C 310 475 360 475 390 512 C 420 475 460 475 490 512" 
+          stroke="#E4E4E7" stroke-width="10" stroke-linecap="round" fill="none" />
+  </g>
+</svg>
+</g><g><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 512 512" x="90" y="516" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <title>AudioFic Mascot - Spooky App Icon (Monochrome Light Theme)</title>
+  <defs>
+    <clipPath id="s064-squircleLight">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#s064-squircleLight)">
+    <!-- App Icon Light Background -->
+    <rect width="512" height="512" fill="#FFFFFF" />
+    <!-- Squircle Border -->
+    <rect x="6" y="6" width="500" height="500" rx="110" stroke="#E4E4E7" stroke-width="12" fill="none" />
+
+    <!-- Headphone Over-Ear Band -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="#000000" stroke-width="36" stroke-linecap="round" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Headphone Ear-Cups -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="4" y="165" width="32" height="120" rx="16" fill="#FFFFFF" />
+    <circle cx="20" cy="225" r="10" fill="#000000" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="476" y="165" width="32" height="120" rx="16" fill="#FFFFFF" />
+    <circle cx="492" cy="225" r="10" fill="#000000" />
+
+    <!-- Ghost Face Elements in Solid Black -->
+    <!-- Giant Expressive Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Cheeks (Subtle dashed contours) -->
+    <ellipse cx="100" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+    <ellipse cx="412" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+
+    <!-- Expressive Mouth ("Ooh!" Gasp) -->
+    <ellipse cx="256" cy="368" rx="44" ry="54" fill="#000000" />
+    <ellipse cx="256" cy="390" rx="28" ry="20" fill="#FFFFFF" />
+
+    <!-- Ghost Sheet Ripple at bottom border -->
+    <path d="M 60 512 C 90 475 140 475 170 512 C 200 475 250 475 280 512 C 310 475 360 475 390 512 C 420 475 460 475 490 512" 
+          stroke="#E4E4E7" stroke-width="10" stroke-linecap="round" fill="none" />
+  </g>
+</svg>
+</g><text x="122" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 512 512" x="180" y="548" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <title>AudioFic Mascot - Spooky App Icon (Monochrome Light Theme)</title>
+  <defs>
+    <clipPath id="s032-squircleLight">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#s032-squircleLight)">
+    <!-- App Icon Light Background -->
+    <rect width="512" height="512" fill="#FFFFFF" />
+    <!-- Squircle Border -->
+    <rect x="6" y="6" width="500" height="500" rx="110" stroke="#E4E4E7" stroke-width="12" fill="none" />
+
+    <!-- Headphone Over-Ear Band -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="#000000" stroke-width="36" stroke-linecap="round" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Headphone Ear-Cups -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="4" y="165" width="32" height="120" rx="16" fill="#FFFFFF" />
+    <circle cx="20" cy="225" r="10" fill="#000000" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="476" y="165" width="32" height="120" rx="16" fill="#FFFFFF" />
+    <circle cx="492" cy="225" r="10" fill="#000000" />
+
+    <!-- Ghost Face Elements in Solid Black -->
+    <!-- Giant Expressive Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Cheeks (Subtle dashed contours) -->
+    <ellipse cx="100" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+    <ellipse cx="412" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+
+    <!-- Expressive Mouth ("Ooh!" Gasp) -->
+    <ellipse cx="256" cy="368" rx="44" ry="54" fill="#000000" />
+    <ellipse cx="256" cy="390" rx="28" ry="20" fill="#FFFFFF" />
+
+    <!-- Ghost Sheet Ripple at bottom border -->
+    <path d="M 60 512 C 90 475 140 475 170 512 C 200 475 250 475 280 512 C 310 475 360 475 390 512 C 420 475 460 475 490 512" 
+          stroke="#E4E4E7" stroke-width="10" stroke-linecap="round" fill="none" />
+  </g>
+</svg>
+</g><text x="196" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 512 512" x="238" y="564" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <title>AudioFic Mascot - Spooky App Icon (Monochrome Light Theme)</title>
+  <defs>
+    <clipPath id="s016-squircleLight">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#s016-squircleLight)">
+    <!-- App Icon Light Background -->
+    <rect width="512" height="512" fill="#FFFFFF" />
+    <!-- Squircle Border -->
+    <rect x="6" y="6" width="500" height="500" rx="110" stroke="#E4E4E7" stroke-width="12" fill="none" />
+
+    <!-- Headphone Over-Ear Band -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="#000000" stroke-width="36" stroke-linecap="round" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Headphone Ear-Cups -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="4" y="165" width="32" height="120" rx="16" fill="#FFFFFF" />
+    <circle cx="20" cy="225" r="10" fill="#000000" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="476" y="165" width="32" height="120" rx="16" fill="#FFFFFF" />
+    <circle cx="492" cy="225" r="10" fill="#000000" />
+
+    <!-- Ghost Face Elements in Solid Black -->
+    <!-- Giant Expressive Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Cheeks (Subtle dashed contours) -->
+    <ellipse cx="100" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+    <ellipse cx="412" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+
+    <!-- Expressive Mouth ("Ooh!" Gasp) -->
+    <ellipse cx="256" cy="368" rx="44" ry="54" fill="#000000" />
+    <ellipse cx="256" cy="390" rx="28" ry="20" fill="#FFFFFF" />
+
+    <!-- Ghost Sheet Ripple at bottom border -->
+    <path d="M 60 512 C 90 475 140 475 170 512 C 200 475 250 475 280 512 C 310 475 360 475 390 512 C 420 475 460 475 490 512" 
+          stroke="#E4E4E7" stroke-width="10" stroke-linecap="round" fill="none" />
+  </g>
+</svg>
+</g><text x="246" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="90.0" y="636" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">A · Spooky Mono</text><text x="90.0" y="664" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#161616" letter-spacing="1.5">RECOMMENDED</text><text x="90.0" y="698" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Versão monocromática para temas e ícones de</text><text x="90.0" y="724" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">alta fidelidade.</text><rect x="562.667" y="150" width="474.667" height="630" rx="18" fill="#fff" stroke="#e4e4e0" stroke-width="1"/><g><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 512 512" x="592.667" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <title>AudioFic Mascot - Vampi Face-Fill (Monochrome)</title>
+  <defs>
+    <clipPath id="c1-squircleClipVampiMono">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#c1-squircleClipVampiMono)">
+    <!-- Light Porcelain Background -->
+    <rect width="512" height="512" fill="#FFFFFF" />
+    <rect x="6" y="6" width="500" height="500" rx="110" stroke="#E4E4E7" stroke-width="12" fill="none" />
+
+    <!-- Dracula Widow's Peak Hair -->
+    <path d="M 0 0 
+             L 512 0 
+             L 512 90 
+             C 410 75 350 110 256 160 
+             C 162 110 102 75 0 90 
+             Z" 
+          fill="#000000" />
+
+    <!-- Bat Ears -->
+    <path d="M 125 75 L 45 15 C 80 25 110 50 120 85 Z" fill="#000000" />
+    <path d="M 115 65 L 60 28 C 85 38 105 55 110 70 Z" fill="#FFFFFF" />
+    <path d="M 387 75 L 467 15 C 432 25 402 50 392 85 Z" fill="#000000" />
+    <path d="M 397 65 L 452 28 C 427 38 407 55 402 70 Z" fill="#FFFFFF" />
+
+    <!-- Over-Ear Headphone Band -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="#000000" stroke-width="36" stroke-linecap="round" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Headphone Ear-Cups -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="0" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <circle cx="18" cy="225" r="10" fill="#000000" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="476" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <circle cx="494" cy="225" r="10" fill="#000000" />
+
+    <!-- Cheeks (Subtle dashed contours) -->
+    <ellipse cx="100" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+    <ellipse cx="412" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+
+    <!-- Giant Duolingo-Style Eyes -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Vampire Smile with Fangs -->
+    <path d="M 194 335 Q 256 325 318 335 C 326 405 296 425 256 425 C 216 425 186 405 194 335 Z" fill="#000000" />
+    <path d="M 220 395 C 232 380 280 380 292 395 C 280 420 232 420 220 395 Z" fill="#FFFFFF" />
+    <!-- Left Vampire Fang -->
+    <polygon points="210,335 230,335 220,366" fill="#FFFFFF" />
+    <!-- Right Vampire Fang -->
+    <polygon points="282,335 302,335 292,366" fill="#FFFFFF" />
+
+    <!-- Golden Bowtie at bottom -->
+    <path d="M 215 478 L 256 495 L 215 512 Z" fill="#000000" />
+    <path d="M 297 478 L 256 495 L 297 512 Z" fill="#000000" />
+    <circle cx="256" cy="495" r="8" fill="#FFFFFF" />
+  </g>
+</svg>
+</g><g><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 512 512" x="592.667" y="516" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <title>AudioFic Mascot - Vampi Face-Fill (Monochrome)</title>
+  <defs>
+    <clipPath id="s164-squircleClipVampiMono">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#s164-squircleClipVampiMono)">
+    <!-- Light Porcelain Background -->
+    <rect width="512" height="512" fill="#FFFFFF" />
+    <rect x="6" y="6" width="500" height="500" rx="110" stroke="#E4E4E7" stroke-width="12" fill="none" />
+
+    <!-- Dracula Widow's Peak Hair -->
+    <path d="M 0 0 
+             L 512 0 
+             L 512 90 
+             C 410 75 350 110 256 160 
+             C 162 110 102 75 0 90 
+             Z" 
+          fill="#000000" />
+
+    <!-- Bat Ears -->
+    <path d="M 125 75 L 45 15 C 80 25 110 50 120 85 Z" fill="#000000" />
+    <path d="M 115 65 L 60 28 C 85 38 105 55 110 70 Z" fill="#FFFFFF" />
+    <path d="M 387 75 L 467 15 C 432 25 402 50 392 85 Z" fill="#000000" />
+    <path d="M 397 65 L 452 28 C 427 38 407 55 402 70 Z" fill="#FFFFFF" />
+
+    <!-- Over-Ear Headphone Band -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="#000000" stroke-width="36" stroke-linecap="round" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Headphone Ear-Cups -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="0" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <circle cx="18" cy="225" r="10" fill="#000000" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="476" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <circle cx="494" cy="225" r="10" fill="#000000" />
+
+    <!-- Cheeks (Subtle dashed contours) -->
+    <ellipse cx="100" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+    <ellipse cx="412" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+
+    <!-- Giant Duolingo-Style Eyes -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Vampire Smile with Fangs -->
+    <path d="M 194 335 Q 256 325 318 335 C 326 405 296 425 256 425 C 216 425 186 405 194 335 Z" fill="#000000" />
+    <path d="M 220 395 C 232 380 280 380 292 395 C 280 420 232 420 220 395 Z" fill="#FFFFFF" />
+    <!-- Left Vampire Fang -->
+    <polygon points="210,335 230,335 220,366" fill="#FFFFFF" />
+    <!-- Right Vampire Fang -->
+    <polygon points="282,335 302,335 292,366" fill="#FFFFFF" />
+
+    <!-- Golden Bowtie at bottom -->
+    <path d="M 215 478 L 256 495 L 215 512 Z" fill="#000000" />
+    <path d="M 297 478 L 256 495 L 297 512 Z" fill="#000000" />
+    <circle cx="256" cy="495" r="8" fill="#FFFFFF" />
+  </g>
+</svg>
+</g><text x="624.667" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 512 512" x="682.667" y="548" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <title>AudioFic Mascot - Vampi Face-Fill (Monochrome)</title>
+  <defs>
+    <clipPath id="s132-squircleClipVampiMono">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#s132-squircleClipVampiMono)">
+    <!-- Light Porcelain Background -->
+    <rect width="512" height="512" fill="#FFFFFF" />
+    <rect x="6" y="6" width="500" height="500" rx="110" stroke="#E4E4E7" stroke-width="12" fill="none" />
+
+    <!-- Dracula Widow's Peak Hair -->
+    <path d="M 0 0 
+             L 512 0 
+             L 512 90 
+             C 410 75 350 110 256 160 
+             C 162 110 102 75 0 90 
+             Z" 
+          fill="#000000" />
+
+    <!-- Bat Ears -->
+    <path d="M 125 75 L 45 15 C 80 25 110 50 120 85 Z" fill="#000000" />
+    <path d="M 115 65 L 60 28 C 85 38 105 55 110 70 Z" fill="#FFFFFF" />
+    <path d="M 387 75 L 467 15 C 432 25 402 50 392 85 Z" fill="#000000" />
+    <path d="M 397 65 L 452 28 C 427 38 407 55 402 70 Z" fill="#FFFFFF" />
+
+    <!-- Over-Ear Headphone Band -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="#000000" stroke-width="36" stroke-linecap="round" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Headphone Ear-Cups -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="0" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <circle cx="18" cy="225" r="10" fill="#000000" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="476" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <circle cx="494" cy="225" r="10" fill="#000000" />
+
+    <!-- Cheeks (Subtle dashed contours) -->
+    <ellipse cx="100" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+    <ellipse cx="412" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+
+    <!-- Giant Duolingo-Style Eyes -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Vampire Smile with Fangs -->
+    <path d="M 194 335 Q 256 325 318 335 C 326 405 296 425 256 425 C 216 425 186 405 194 335 Z" fill="#000000" />
+    <path d="M 220 395 C 232 380 280 380 292 395 C 280 420 232 420 220 395 Z" fill="#FFFFFF" />
+    <!-- Left Vampire Fang -->
+    <polygon points="210,335 230,335 220,366" fill="#FFFFFF" />
+    <!-- Right Vampire Fang -->
+    <polygon points="282,335 302,335 292,366" fill="#FFFFFF" />
+
+    <!-- Golden Bowtie at bottom -->
+    <path d="M 215 478 L 256 495 L 215 512 Z" fill="#000000" />
+    <path d="M 297 478 L 256 495 L 297 512 Z" fill="#000000" />
+    <circle cx="256" cy="495" r="8" fill="#FFFFFF" />
+  </g>
+</svg>
+</g><text x="698.667" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 512 512" x="740.667" y="564" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <title>AudioFic Mascot - Vampi Face-Fill (Monochrome)</title>
+  <defs>
+    <clipPath id="s116-squircleClipVampiMono">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#s116-squircleClipVampiMono)">
+    <!-- Light Porcelain Background -->
+    <rect width="512" height="512" fill="#FFFFFF" />
+    <rect x="6" y="6" width="500" height="500" rx="110" stroke="#E4E4E7" stroke-width="12" fill="none" />
+
+    <!-- Dracula Widow's Peak Hair -->
+    <path d="M 0 0 
+             L 512 0 
+             L 512 90 
+             C 410 75 350 110 256 160 
+             C 162 110 102 75 0 90 
+             Z" 
+          fill="#000000" />
+
+    <!-- Bat Ears -->
+    <path d="M 125 75 L 45 15 C 80 25 110 50 120 85 Z" fill="#000000" />
+    <path d="M 115 65 L 60 28 C 85 38 105 55 110 70 Z" fill="#FFFFFF" />
+    <path d="M 387 75 L 467 15 C 432 25 402 50 392 85 Z" fill="#000000" />
+    <path d="M 397 65 L 452 28 C 427 38 407 55 402 70 Z" fill="#FFFFFF" />
+
+    <!-- Over-Ear Headphone Band -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="#000000" stroke-width="36" stroke-linecap="round" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Headphone Ear-Cups -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="0" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <circle cx="18" cy="225" r="10" fill="#000000" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="476" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <circle cx="494" cy="225" r="10" fill="#000000" />
+
+    <!-- Cheeks (Subtle dashed contours) -->
+    <ellipse cx="100" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+    <ellipse cx="412" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+
+    <!-- Giant Duolingo-Style Eyes -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Vampire Smile with Fangs -->
+    <path d="M 194 335 Q 256 325 318 335 C 326 405 296 425 256 425 C 216 425 186 405 194 335 Z" fill="#000000" />
+    <path d="M 220 395 C 232 380 280 380 292 395 C 280 420 232 420 220 395 Z" fill="#FFFFFF" />
+    <!-- Left Vampire Fang -->
+    <polygon points="210,335 230,335 220,366" fill="#FFFFFF" />
+    <!-- Right Vampire Fang -->
+    <polygon points="282,335 302,335 292,366" fill="#FFFFFF" />
+
+    <!-- Golden Bowtie at bottom -->
+    <path d="M 215 478 L 256 495 L 215 512 Z" fill="#000000" />
+    <path d="M 297 478 L 256 495 L 297 512 Z" fill="#000000" />
+    <circle cx="256" cy="495" r="8" fill="#FFFFFF" />
+  </g>
+</svg>
+</g><text x="748.667" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="592.6666666666667" y="636" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">B · Vampi Mono</text><text x="592.6666666666667" y="670" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Silhueta com franja, orelhas de morcego e</text><text x="592.6666666666667" y="696" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">presinhas em P&amp;B.</text><rect x="1065.33" y="150" width="474.667" height="630" rx="18" fill="#fff" stroke="#e4e4e0" stroke-width="1"/><g><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 512 512" x="1095.33" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <title>AudioFic Mascot - Frankie Face-Fill (Monochrome)</title>
+  <defs>
+    <clipPath id="c2-squircleClipFrankieMono">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#c2-squircleClipFrankieMono)">
+    <!-- Light Background -->
+    <rect width="512" height="512" fill="#FFFFFF" />
+    <rect x="6" y="6" width="500" height="500" rx="110" stroke="#E4E4E7" stroke-width="12" fill="none" />
+
+    <!-- Flat-Top Hair with Geometric Jagged Bangs -->
+    <path d="M 0 0 
+             L 512 0 
+             L 512 85 
+             L 456 68 
+             L 404 116 
+             L 348 64 
+             L 296 112 
+             L 256 62 
+             L 216 112 
+             L 164 64 
+             L 108 116 
+             L 56 68 
+             L 0 85 
+             Z" 
+          fill="#000000" />
+
+    <!-- Over-Ear Headphone Band -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="#000000" stroke-width="36" stroke-linecap="round" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Soundwave Suture / Cicatriz de Onda Sonora na Testa -->
+    <g stroke="#000000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 160 142 L 195 142 L 210 122 L 228 162 L 244 114 L 264 170 L 280 130 L 296 150 L 312 142 L 352 142"/>
+      <line x1="180" y1="130" x2="180" y2="154"/>
+      <line x1="220" y1="130" x2="220" y2="154"/>
+      <line x1="272" y1="130" x2="272" y2="154"/>
+      <line x1="324" y1="130" x2="324" y2="154"/>
+    </g>
+
+    <!-- Headphone Ear-Cups with Jack Bolts -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="0" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <rect x="10" y="210" width="18" height="30" rx="6" fill="#000000" />
+    <path d="M 16 280 C 16 350 48 375 70 365" stroke="#000000" stroke-width="16" stroke-linecap="round" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="476" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <rect x="484" y="210" width="18" height="30" rx="6" fill="#000000" />
+    <path d="M 496 280 C 496 350 464 375 442 365" stroke="#000000" stroke-width="16" stroke-linecap="round" />
+
+    <!-- Cheeks (Subtle dashed contours) -->
+    <ellipse cx="100" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+    <ellipse cx="412" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+
+    <!-- Giant Duolingo-Style Eyes -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Quirky Monster Grin with Teeth -->
+    <path d="M 194 340 Q 256 332 318 340 C 326 405 296 425 256 425 C 216 425 186 405 194 340 Z" fill="#000000" />
+    <path d="M 226 398 C 236 385 276 385 286 398 C 276 420 236 420 226 398 Z" fill="#FFFFFF" />
+    <rect x="214" y="340" width="22" height="22" rx="5" fill="#FFFFFF" />
+    <rect x="276" y="380" width="20" height="20" rx="5" fill="#FFFFFF" />
+  </g>
+</svg>
+</g><g><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 512 512" x="1095.33" y="516" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <title>AudioFic Mascot - Frankie Face-Fill (Monochrome)</title>
+  <defs>
+    <clipPath id="s264-squircleClipFrankieMono">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#s264-squircleClipFrankieMono)">
+    <!-- Light Background -->
+    <rect width="512" height="512" fill="#FFFFFF" />
+    <rect x="6" y="6" width="500" height="500" rx="110" stroke="#E4E4E7" stroke-width="12" fill="none" />
+
+    <!-- Flat-Top Hair with Geometric Jagged Bangs -->
+    <path d="M 0 0 
+             L 512 0 
+             L 512 85 
+             L 456 68 
+             L 404 116 
+             L 348 64 
+             L 296 112 
+             L 256 62 
+             L 216 112 
+             L 164 64 
+             L 108 116 
+             L 56 68 
+             L 0 85 
+             Z" 
+          fill="#000000" />
+
+    <!-- Over-Ear Headphone Band -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="#000000" stroke-width="36" stroke-linecap="round" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Soundwave Suture / Cicatriz de Onda Sonora na Testa -->
+    <g stroke="#000000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 160 142 L 195 142 L 210 122 L 228 162 L 244 114 L 264 170 L 280 130 L 296 150 L 312 142 L 352 142"/>
+      <line x1="180" y1="130" x2="180" y2="154"/>
+      <line x1="220" y1="130" x2="220" y2="154"/>
+      <line x1="272" y1="130" x2="272" y2="154"/>
+      <line x1="324" y1="130" x2="324" y2="154"/>
+    </g>
+
+    <!-- Headphone Ear-Cups with Jack Bolts -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="0" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <rect x="10" y="210" width="18" height="30" rx="6" fill="#000000" />
+    <path d="M 16 280 C 16 350 48 375 70 365" stroke="#000000" stroke-width="16" stroke-linecap="round" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="476" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <rect x="484" y="210" width="18" height="30" rx="6" fill="#000000" />
+    <path d="M 496 280 C 496 350 464 375 442 365" stroke="#000000" stroke-width="16" stroke-linecap="round" />
+
+    <!-- Cheeks (Subtle dashed contours) -->
+    <ellipse cx="100" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+    <ellipse cx="412" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+
+    <!-- Giant Duolingo-Style Eyes -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Quirky Monster Grin with Teeth -->
+    <path d="M 194 340 Q 256 332 318 340 C 326 405 296 425 256 425 C 216 425 186 405 194 340 Z" fill="#000000" />
+    <path d="M 226 398 C 236 385 276 385 286 398 C 276 420 236 420 226 398 Z" fill="#FFFFFF" />
+    <rect x="214" y="340" width="22" height="22" rx="5" fill="#FFFFFF" />
+    <rect x="276" y="380" width="20" height="20" rx="5" fill="#FFFFFF" />
+  </g>
+</svg>
+</g><text x="1127.33" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 512 512" x="1185.33" y="548" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <title>AudioFic Mascot - Frankie Face-Fill (Monochrome)</title>
+  <defs>
+    <clipPath id="s232-squircleClipFrankieMono">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#s232-squircleClipFrankieMono)">
+    <!-- Light Background -->
+    <rect width="512" height="512" fill="#FFFFFF" />
+    <rect x="6" y="6" width="500" height="500" rx="110" stroke="#E4E4E7" stroke-width="12" fill="none" />
+
+    <!-- Flat-Top Hair with Geometric Jagged Bangs -->
+    <path d="M 0 0 
+             L 512 0 
+             L 512 85 
+             L 456 68 
+             L 404 116 
+             L 348 64 
+             L 296 112 
+             L 256 62 
+             L 216 112 
+             L 164 64 
+             L 108 116 
+             L 56 68 
+             L 0 85 
+             Z" 
+          fill="#000000" />
+
+    <!-- Over-Ear Headphone Band -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="#000000" stroke-width="36" stroke-linecap="round" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Soundwave Suture / Cicatriz de Onda Sonora na Testa -->
+    <g stroke="#000000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 160 142 L 195 142 L 210 122 L 228 162 L 244 114 L 264 170 L 280 130 L 296 150 L 312 142 L 352 142"/>
+      <line x1="180" y1="130" x2="180" y2="154"/>
+      <line x1="220" y1="130" x2="220" y2="154"/>
+      <line x1="272" y1="130" x2="272" y2="154"/>
+      <line x1="324" y1="130" x2="324" y2="154"/>
+    </g>
+
+    <!-- Headphone Ear-Cups with Jack Bolts -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="0" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <rect x="10" y="210" width="18" height="30" rx="6" fill="#000000" />
+    <path d="M 16 280 C 16 350 48 375 70 365" stroke="#000000" stroke-width="16" stroke-linecap="round" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="476" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <rect x="484" y="210" width="18" height="30" rx="6" fill="#000000" />
+    <path d="M 496 280 C 496 350 464 375 442 365" stroke="#000000" stroke-width="16" stroke-linecap="round" />
+
+    <!-- Cheeks (Subtle dashed contours) -->
+    <ellipse cx="100" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+    <ellipse cx="412" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+
+    <!-- Giant Duolingo-Style Eyes -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Quirky Monster Grin with Teeth -->
+    <path d="M 194 340 Q 256 332 318 340 C 326 405 296 425 256 425 C 216 425 186 405 194 340 Z" fill="#000000" />
+    <path d="M 226 398 C 236 385 276 385 286 398 C 276 420 236 420 226 398 Z" fill="#FFFFFF" />
+    <rect x="214" y="340" width="22" height="22" rx="5" fill="#FFFFFF" />
+    <rect x="276" y="380" width="20" height="20" rx="5" fill="#FFFFFF" />
+  </g>
+</svg>
+</g><text x="1201.33" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 512 512" x="1243.33" y="564" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <title>AudioFic Mascot - Frankie Face-Fill (Monochrome)</title>
+  <defs>
+    <clipPath id="s216-squircleClipFrankieMono">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#s216-squircleClipFrankieMono)">
+    <!-- Light Background -->
+    <rect width="512" height="512" fill="#FFFFFF" />
+    <rect x="6" y="6" width="500" height="500" rx="110" stroke="#E4E4E7" stroke-width="12" fill="none" />
+
+    <!-- Flat-Top Hair with Geometric Jagged Bangs -->
+    <path d="M 0 0 
+             L 512 0 
+             L 512 85 
+             L 456 68 
+             L 404 116 
+             L 348 64 
+             L 296 112 
+             L 256 62 
+             L 216 112 
+             L 164 64 
+             L 108 116 
+             L 56 68 
+             L 0 85 
+             Z" 
+          fill="#000000" />
+
+    <!-- Over-Ear Headphone Band -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="#000000" stroke-width="36" stroke-linecap="round" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Soundwave Suture / Cicatriz de Onda Sonora na Testa -->
+    <g stroke="#000000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 160 142 L 195 142 L 210 122 L 228 162 L 244 114 L 264 170 L 280 130 L 296 150 L 312 142 L 352 142"/>
+      <line x1="180" y1="130" x2="180" y2="154"/>
+      <line x1="220" y1="130" x2="220" y2="154"/>
+      <line x1="272" y1="130" x2="272" y2="154"/>
+      <line x1="324" y1="130" x2="324" y2="154"/>
+    </g>
+
+    <!-- Headphone Ear-Cups with Jack Bolts -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="0" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <rect x="10" y="210" width="18" height="30" rx="6" fill="#000000" />
+    <path d="M 16 280 C 16 350 48 375 70 365" stroke="#000000" stroke-width="16" stroke-linecap="round" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="476" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <rect x="484" y="210" width="18" height="30" rx="6" fill="#000000" />
+    <path d="M 496 280 C 496 350 464 375 442 365" stroke="#000000" stroke-width="16" stroke-linecap="round" />
+
+    <!-- Cheeks (Subtle dashed contours) -->
+    <ellipse cx="100" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+    <ellipse cx="412" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+
+    <!-- Giant Duolingo-Style Eyes -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Quirky Monster Grin with Teeth -->
+    <path d="M 194 340 Q 256 332 318 340 C 326 405 296 425 256 425 C 216 425 186 405 194 340 Z" fill="#000000" />
+    <path d="M 226 398 C 236 385 276 385 286 398 C 276 420 236 420 226 398 Z" fill="#FFFFFF" />
+    <rect x="214" y="340" width="22" height="22" rx="5" fill="#FFFFFF" />
+    <rect x="276" y="380" width="20" height="20" rx="5" fill="#FFFFFF" />
+  </g>
+</svg>
+</g><text x="1251.33" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="1095.3333333333335" y="636" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">C · Frankie Mono</text><text x="1095.3333333333335" y="670" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Silhueta com cicatriz de onda de áudio e</text><text x="1095.3333333333335" y="696" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">plugs em P&amp;B.</text></svg>

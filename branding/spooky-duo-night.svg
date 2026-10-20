@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- App Icon Squircle Clip -->
+    <clipPath id="squircleClipNight">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+
+    <!-- Deep Night Violet Gradient Background -->
+    <linearGradient id="nightBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B0764" />
+      <stop offset="60%" stop-color="#1E1035" />
+      <stop offset="100%" stop-color="#0F081D" />
+    </linearGradient>
+
+    <!-- Spooky Soft Spectral Glow -->
+    <linearGradient id="ghostBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+
+    <!-- Neon Cyan Headphone Gradient -->
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+
+    <linearGradient id="neonPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" />
+      <stop offset="100%" stop-color="#BE123C" />
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#squircleClipNight)">
+    <!-- 1. Rich Midnight Violet App Icon Background -->
+    <rect width="512" height="512" fill="url(#nightBg)" />
+
+    <!-- Subtle background soundwaves radiating into the night -->
+    <path d="M 256 120 C 350 120 440 180 470 260" stroke="#581C87" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.4" />
+    <path d="M 256 120 C 162 120 72 180 42 260" stroke="#581C87" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.4" />
+
+    <!-- 2. Spooky Ghost Head (Dominating 85% of the frame, close-up) -->
+    <!-- Ghost Body Outer Shape -->
+    <path d="M 96 220 
+             C 96 110 160 86 256 86 
+             C 352 86 416 110 416 220 
+             C 416 330 436 440 430 480 
+             C 426 500 398 510 380 490 
+             C 360 470 336 470 320 490 
+             C 300 512 272 512 256 490 
+             C 240 512 212 512 192 490 
+             C 176 470 152 470 132 490 
+             C 114 510 86 500 82 480 
+             C 76 440 96 330 96 220 Z" 
+          fill="url(#ghostBodyGrad)" />
+
+    <!-- 3. Over-Ear Headphone Band -->
+    <path d="M 88 230 C 88 100 150 44 256 44 C 362 44 424 100 424 230" 
+          stroke="url(#neonPink)" stroke-width="32" stroke-linecap="round" fill="none" />
+    <!-- Headband padding highlight -->
+    <path d="M 190 54 C 220 50 292 50 322 54" 
+          stroke="#FDA4AF" stroke-width="10" stroke-linecap="round" fill="none" />
+
+    <!-- 4. Headphone Ear-Cups (Neon Pink & Cyan Cushions) -->
+    <!-- Left Cup -->
+    <rect x="52" y="190" width="56" height="130" rx="28" fill="url(#neonPink)" />
+    <rect x="64" y="205" width="32" height="100" rx="16" fill="#1E1035" />
+    <circle cx="80" cy="255" r="9" fill="url(#neonCyan)" />
+
+    <!-- Right Cup -->
+    <rect x="404" y="190" width="56" height="130" rx="28" fill="url(#neonPink)" />
+    <rect x="416" y="205" width="32" height="100" rx="16" fill="#1E1035" />
+    <circle cx="432" cy="255" r="9" fill="url(#neonCyan)" />
+
+    <!-- 5. Cute Floating Ghost Hands (holding the headphones like in the original Spooky!) -->
+    <path d="M 126 270 C 96 270 82 245 82 230" stroke="#E2E8F0" stroke-width="14" stroke-linecap="round" fill="none" />
+    <path d="M 386 270 C 416 270 430 245 430 230" stroke="#E2E8F0" stroke-width="14" stroke-linecap="round" fill="none" />
+
+    <!-- 6. Cute Rosy Blush Cheeks -->
+    <ellipse cx="145" cy="315" rx="26" ry="16" fill="#FB7185" opacity="0.6" />
+    <ellipse cx="367" cy="315" rx="26" ry="16" fill="#FB7185" opacity="0.6" />
+
+    <!-- 7. Giant Duolingo Expressive Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="196" cy="245" rx="46" ry="64" fill="#0F081D" />
+    <circle cx="180" cy="222" r="20" fill="#FFFFFF" />
+    <circle cx="214" cy="262" r="9" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="316" cy="245" rx="46" ry="64" fill="#0F081D" />
+    <circle cx="300" cy="222" r="20" fill="#FFFFFF" />
+    <circle cx="334" cy="262" r="9" fill="#FFFFFF" />
+
+    <!-- 8. Expressive Shocked/Enthralled "Ooh!" Mouth -->
+    <ellipse cx="256" cy="345" rx="36" ry="46" fill="#0F081D" />
+    <!-- Tongue / Inner glow -->
+    <ellipse cx="256" cy="365" rx="24" ry="18" fill="#F43F5E" />
+  </g>
+</svg>

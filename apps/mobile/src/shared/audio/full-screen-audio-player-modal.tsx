@@ -15,6 +15,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { Text } from '@/shared';
 import { useAudioPlayerContext } from './audio-player-context';
+import { useFavorites } from '../favorites/favorites-context';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 // Proporção 1:1 para a capa
@@ -61,6 +62,9 @@ export function FullScreenAudioPlayerModal() {
     closePlayerModal,
     playEpisode,
   } = useAudioPlayerContext();
+
+  const { isFavorite, toggleFavorite } = useFavorites();
+  const isFav = currentStory ? isFavorite(currentStory.id) : false;
 
   const [isSeeking, setIsSeeking] = useState(false);
   const [seekTime, setSeekTime] = useState(0);
@@ -210,7 +214,7 @@ export function FullScreenAudioPlayerModal() {
     try {
       await Share.share({
         title: `${currentStory.title} - EP ${currentEpisode.episodeNumber}`,
-        message: `Ouvindo agora: "${currentEpisode.title}" na série "${currentStory.title}" pelo ShortStory!`,
+        message: `Ouvindo agora: "${currentEpisode.title}" na série "${currentStory.title}" pelo AudioFic!`,
       });
     } catch {
       // Ignorar cancelamento
@@ -307,16 +311,31 @@ export function FullScreenAudioPlayerModal() {
                 EP {currentEpisode.episodeNumber} - {currentEpisode.title}
               </Text>
               <Text style={styles.storyAuthor} numberOfLines={1}>
-                {currentStory.title} • {currentStory.author || 'ShortStory Originals'}
+                {currentStory.title} • {currentStory.author || 'AudioFic Originals'}
               </Text>
             </View>
 
             <TouchableOpacity
               activeOpacity={0.8}
-              style={styles.favoriteButton}
+              style={[
+                styles.favoriteButton,
+                isFav && { backgroundColor: 'rgba(225, 29, 72, 0.18)', borderColor: 'rgba(225, 29, 72, 0.4)' },
+              ]}
               hitSlop={8}
+              onPress={() => {
+                if (currentStory) {
+                  toggleFavorite({
+                    id: currentStory.id,
+                    title: currentStory.title,
+                  });
+                }
+              }}
             >
-              <Ionicons name="heart-outline" size={22} color="#FFFFFF" />
+              <Ionicons
+                name={isFav ? 'heart' : 'heart-outline'}
+                size={22}
+                color={isFav ? '#E11D48' : '#FFFFFF'}
+              />
             </TouchableOpacity>
           </View>
 

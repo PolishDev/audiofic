@@ -16,7 +16,8 @@ export interface DownloadedEpisodeMetadata {
   downloadedAt: number;
 }
 
-const STORAGE_KEY = '@shortstory_downloaded_episodes';
+const STORAGE_KEY = '@audiofic_downloaded_episodes';
+const LEGACY_STORAGE_KEY = '@shortstory_downloaded_episodes';
 
 /**
  * Retorna o diretório base para episódios baixados.
@@ -44,7 +45,9 @@ export async function getDownloadedEpisodes(): Promise<
   Record<string, DownloadedEpisodeMetadata>
 > {
   try {
-    const raw = await AsyncStorage.getItem(STORAGE_KEY);
+    const raw =
+      (await AsyncStorage.getItem(STORAGE_KEY)) ||
+      (await AsyncStorage.getItem(LEGACY_STORAGE_KEY));
     if (!raw) return {};
     return JSON.parse(raw);
   } catch (err) {

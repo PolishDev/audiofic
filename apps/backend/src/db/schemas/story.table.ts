@@ -4,6 +4,7 @@ import { generateId } from './utils.js';
 import { episode } from './episode.table.js';
 import { storyGenre } from './story-genre.table.js';
 import { storyMetricEvent } from './story-metric-event.table.js';
+import { userFavorites } from './user-favorites.table.js';
 
 export const story = pgTable('story', {
   id: text('id')
@@ -14,7 +15,7 @@ export const story = pgTable('story', {
   synopsis: text('synopsis').notNull(),
   coverUrl: text('cover_url').notNull(),
   thumbnailUrl: text('thumbnail_url'),
-  author: text('author').notNull().default('ShortStory'),
+  author: text('author').notNull().default('AudioFic'),
   status: text('status', { enum: ['draft', 'published', 'archived'] })
     .notNull()
     .default('published'),
@@ -31,6 +32,7 @@ export const storyRelations = relations(story, ({ many }) => ({
   episodes: many(episode),
   genres: many(storyGenre),
   metrics: many(storyMetricEvent),
+  favorites: many(userFavorites),
 }));
 
 export type Story = typeof story.$inferSelect;

@@ -49,7 +49,7 @@ export function SearchResultItem({ story, onPress }: SearchResultItemProps) {
             <View style={styles.genreTag}>
               <Text style={styles.genreText}>{primaryGenre.name}</Text>
             </View>
-            {story.author && story.author !== 'ShortStory' && (
+            {story.author && story.author !== 'AudioFic' && story.author !== 'ShortStory' && (
               <Text style={styles.authorText}>por {story.author}</Text>
             )}
           </View>

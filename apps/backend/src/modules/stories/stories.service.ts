@@ -22,6 +22,9 @@ import {
 import {
   storyMetricEvent,
 } from '../../db/schemas/story-metric-event.table.js';
+import {
+  userFavorites,
+} from '../../db/schemas/user-favorites.table.js';
 import { slugify } from '../../common/utils/slugify.js';
 import type {
   CreateStoryDto,
@@ -383,7 +386,7 @@ export class StoriesService {
   /**
    * Get single story by ID or unique slug, including full episode list.
    */
-  async findByIdOrSlug(idOrSlug: string) {
+  async findByIdOrSlug(idOrSlug: string, userId?: string) {
     const found = await this.db.query.story.findFirst({
       where: sql`(${eq(story.id, idOrSlug)} OR ${eq(story.slug, idOrSlug)})`,
       with: {
@@ -402,9 +405,21 @@ export class StoriesService {
       throw new NotFoundException('História não encontrada');
     }
 
+    let isFavorite = false;
+    if (userId) {
+      const fav = await this.db.query.userFavorites.findFirst({
+        where: and(
+          eq(userFavorites.userId, userId),
+          eq(userFavorites.storyId, found.id),
+        ),
+      });
+      isFavorite = !!fav;
+    }
+
     return {
       ...found,
       genres: found.genres.map((g) => g.genre),
+      isFavorite,
     };
   }
 
@@ -525,7 +540,7 @@ export class StoriesService {
         synopsis: dto.synopsis,
         coverUrl: dto.coverUrl,
         thumbnailUrl: dto.thumbnailUrl,
-        author: dto.author || 'ShortStory',
+        author: dto.author || 'AudioFic',
         status: dto.status || 'published',
         isFeatured: dto.isFeatured ?? false,
       })
@@ -686,7 +701,7 @@ export class StoriesService {
         synopsis: dto.synopsis,
         coverUrl: dto.coverUrl,
         thumbnailUrl: dto.thumbnailUrl,
-        author: dto.author || 'ShortStory AI',
+        author: dto.author || 'AudioFic AI',
         status: dto.status || 'published',
         isFeatured: dto.isFeatured ?? false,
       })

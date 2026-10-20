@@ -252,7 +252,7 @@ export function SearchPage() {
                 <Text style={styles.topBadgeTitle}>Top 10 Mais Ouvidos</Text>
               </View>
               <Text style={styles.topSubtitle}>
-                As histórias e séries mais reproduzidas no ShortStory
+                As histórias e séries mais reproduzidas no AudioFic
               </Text>
             </View>
           }

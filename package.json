@@ -1,5 +1,5 @@
 {
-  "name": "shortstory",
+  "name": "audiofic",
   "private": true,
   "workspaces": [
     "apps/*"
@@ -9,14 +9,14 @@
     "build": "turbo run build",
     "lint": "turbo run lint",
     "test": "turbo run test",
-    "android": "turbo run android --filter=@shortstory/mobile",
-    "ios": "turbo run ios --filter=@shortstory/mobile",
-    "mobile:dev": "turbo run dev --filter=@shortstory/mobile",
+    "android": "turbo run android --filter=@audiofic/mobile",
+    "ios": "turbo run ios --filter=@audiofic/mobile",
+    "mobile:dev": "turbo run dev --filter=@audiofic/mobile",
     "mobile:android": "cd apps/mobile && expo run:android",
-    "backend:dev": "turbo run dev --filter=@shortstory/backend",
-    "backend:build": "turbo run build --filter=@shortstory/backend",
-    "studio:dev": "turbo run dev --filter=@shortstory/studio",
-    "studio:build": "turbo run build --filter=@shortstory/studio"
+    "backend:dev": "turbo run dev --filter=@audiofic/backend",
+    "backend:build": "turbo run build --filter=@audiofic/backend",
+    "studio:dev": "turbo run dev --filter=@audiofic/studio",
+    "studio:build": "turbo run build --filter=@audiofic/studio"
   },
   "devDependencies": {
     "turbo": "^2.11.8"

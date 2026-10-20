@@ -34,7 +34,7 @@ ESTRUTURA JSON ESPERADA:
   "synopsis": "Sinopse instigante de 2 a 3 frases preparando o mistério.",
   "genreSlugs": ["${genre}"],
   "coverIdea": "Descrição visual sombria para a arte da capa",
-  "author": "ShortStory Studio",
+  "author": "AudioFic Studio",
   "episodes": [
     {
       "episodeNumber": 1,

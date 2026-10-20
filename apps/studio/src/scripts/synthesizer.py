@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ShortStory Studio - Multi-Track Audio Synthesizer & Mixing Pipeline
+AudioFic Studio - Multi-Track Audio Synthesizer & Mixing Pipeline
 Supports:
 1. Pure vocal synthesis (Kokoro-82M Local, Edge Multi-Voice, ElevenLabs) with 100% elimination
    of bracketed stage directions, sound descriptions (rain, tape k7, etc.), pauses, and speaker names.
@@ -19,7 +19,11 @@ import urllib.request
 import urllib.error
 import uuid
 
-AUDIO_BASE_DIR = '/mnt/stuff/shortstory-audio'
+AUDIO_BASE_DIR = (
+    '/mnt/stuff/audiofic-audio'
+    if os.path.exists('/mnt/stuff/audiofic-audio')
+    else '/mnt/stuff/shortstory-audio'
+)
 EPISODES_DIR = os.path.join(AUDIO_BASE_DIR, 'episodes')
 AMB_DIR = os.path.join(AUDIO_BASE_DIR, 'ambience')
 SFX_DIR = os.path.join(AUDIO_BASE_DIR, 'sfx')

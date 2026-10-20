@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
+  <title>AudioFic Mascot - Frankie Face-Fill (Monochrome)</title>
+  <defs>
+    <clipPath id="squircleClipFrankieMono">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#squircleClipFrankieMono)">
+    <!-- Light Background -->
+    <rect width="512" height="512" fill="#FFFFFF" />
+    <rect x="6" y="6" width="500" height="500" rx="110" stroke="#E4E4E7" stroke-width="12" fill="none" />
+
+    <!-- Flat-Top Hair with Geometric Jagged Bangs -->
+    <path d="M 0 0 
+             L 512 0 
+             L 512 85 
+             L 456 68 
+             L 404 116 
+             L 348 64 
+             L 296 112 
+             L 256 62 
+             L 216 112 
+             L 164 64 
+             L 108 116 
+             L 56 68 
+             L 0 85 
+             Z" 
+          fill="#000000" />
+
+    <!-- Over-Ear Headphone Band -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="#000000" stroke-width="36" stroke-linecap="round" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Soundwave Suture / Cicatriz de Onda Sonora na Testa -->
+    <g stroke="#000000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 160 142 L 195 142 L 210 122 L 228 162 L 244 114 L 264 170 L 280 130 L 296 150 L 312 142 L 352 142"/>
+      <line x1="180" y1="130" x2="180" y2="154"/>
+      <line x1="220" y1="130" x2="220" y2="154"/>
+      <line x1="272" y1="130" x2="272" y2="154"/>
+      <line x1="324" y1="130" x2="324" y2="154"/>
+    </g>
+
+    <!-- Headphone Ear-Cups with Jack Bolts -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="0" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <rect x="10" y="210" width="18" height="30" rx="6" fill="#000000" />
+    <path d="M 16 280 C 16 350 48 375 70 365" stroke="#000000" stroke-width="16" stroke-linecap="round" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#000000" />
+    <rect x="476" y="165" width="36" height="120" rx="18" fill="#FFFFFF" />
+    <rect x="484" y="210" width="18" height="30" rx="6" fill="#000000" />
+    <path d="M 496 280 C 496 350 464 375 442 365" stroke="#000000" stroke-width="16" stroke-linecap="round" />
+
+    <!-- Cheeks (Subtle dashed contours) -->
+    <ellipse cx="100" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+    <ellipse cx="412" cy="330" rx="30" ry="18" stroke="#D4D4D8" stroke-width="6" stroke-dasharray="8 6" fill="none" />
+
+    <!-- Giant Duolingo-Style Eyes -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#000000" />
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Quirky Monster Grin with Teeth -->
+    <path d="M 194 340 Q 256 332 318 340 C 326 405 296 425 256 425 C 216 425 186 405 194 340 Z" fill="#000000" />
+    <path d="M 226 398 C 236 385 276 385 286 398 C 276 420 236 420 226 398 Z" fill="#FFFFFF" />
+    <rect x="214" y="340" width="22" height="22" rx="5" fill="#FFFFFF" />
+    <rect x="276" y="380" width="20" height="20" rx="5" fill="#FFFFFF" />
+  </g>
+</svg>

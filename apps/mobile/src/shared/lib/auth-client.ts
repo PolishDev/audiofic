@@ -48,8 +48,8 @@ export const authClient = createAuthClient({
   baseURL: API_BASE_URL,
   plugins: [
     expoClient({
-      scheme: 'shortstory',
-      storagePrefix: 'shortstory',
+      scheme: 'audiofic',
+      storagePrefix: 'audiofic',
       storage: SecureStore,
     }),
   ],

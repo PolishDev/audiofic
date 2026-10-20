@@ -1,0 +1,1129 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="840" viewBox="0 0 1600 840"><rect width="1600" height="840" fill="#f7f7f4"/><text x="60" y="78" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="40" font-weight="700" fill="#161616">AudioFic — Ícones de App (Estilo Duolingo Close-Up)</text><text x="60" y="116" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="20" fill="#6b6b6b">Comparações de alto impacto visual e clique na tela inicial / App Store</text><rect x="60" y="150" width="474.667" height="630" rx="18" fill="#fff" stroke="#161616" stroke-width="2"/><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" x="90" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- App Icon Squircle Clip -->
+    <clipPath id="c0-squircleClip">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+
+    <!-- Subtle radial glow for mysterious depth -->
+    <radialGradient id="c0-ghostGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="85%" stop-color="#F0F9FF" />
+      <stop offset="100%" stop-color="#E0F2FE" />
+    </radialGradient>
+
+    <!-- Headphone Cushion Gradient -->
+    <linearGradient id="c0-headphoneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+
+    <linearGradient id="c0-accentPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB7185" />
+      <stop offset="100%" stop-color="#E11D48" />
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#c0-squircleClip)">
+    <!-- 1. Background: Ghost spectral white skin filling the entire squircle -->
+    <rect width="512" height="512" fill="url(#c0-ghostGlow)" />
+
+    <!-- Ghost top curve / head volume shadow at the top -->
+    <path d="M 0 0 L 512 0 L 512 90 C 400 60 112 60 0 90 Z" fill="#E2E8F0" opacity="0.4" />
+
+    <!-- 2. Over-Ear Headphone Band (Arching across the top border like Duolingo accessories) -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="url(#c0-headphoneGrad)" stroke-width="36" stroke-linecap="round" fill="none" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#C084FC" stroke-width="12" stroke-linecap="round" fill="none" />
+
+    <!-- 3. Headphone Ear-Cups (Mounted on the left & right edges of the squircle) -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#7C3AED" />
+    <rect x="0" y="165" width="36" height="120" rx="18" fill="#581C87" />
+    <circle cx="18" cy="225" r="10" fill="url(#c0-accentPink)" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#7C3AED" />
+    <rect x="476" y="165" width="36" height="120" rx="18" fill="#581C87" />
+    <circle cx="494" cy="225" r="10" fill="url(#c0-accentPink)" />
+
+    <!-- 4. Rosy Cheeks (Cute blush spots like Duo) -->
+    <ellipse cx="100" cy="330" rx="32" ry="20" fill="#FDA4AF" opacity="0.75" />
+    <ellipse cx="412" cy="330" rx="32" ry="20" fill="#FDA4AF" opacity="0.75" />
+
+    <!-- 5. Giant Duolingo-Style Eyes (Centered, dominating the frame, irresistible tap-appeal) -->
+    <!-- Left Eye -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#1E1B4B" />
+    <!-- Big Catchlight Highlight -->
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <!-- Small Secondary Highlight -->
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#1E1B4B" />
+    <!-- Big Catchlight Highlight -->
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <!-- Small Secondary Highlight -->
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- 6. Expressive Mouth (Duolingo Shocked / Story Cliffhanger Gasp) -->
+    <!-- Mouth Outer Shadow/Rim -->
+    <ellipse cx="256" cy="368" rx="44" ry="54" fill="#1E1B4B" />
+    <!-- Tongue / Inner Glow (Surprised plot-twist expression) -->
+    <ellipse cx="256" cy="392" rx="28" ry="22" fill="#F43F5E" />
+
+    <!-- 7. Bottom Ghost Waves (Ghost sheet ripples peeking subtly at bottom border) -->
+    <path d="M 60 512 C 90 475 140 475 170 512 C 200 475 250 475 280 512 C 310 475 360 475 390 512 C 420 475 460 475 490 512" 
+          stroke="#CBD5E1" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.6" />
+  </g>
+</svg>
+</g><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" x="90" y="516" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- App Icon Squircle Clip -->
+    <clipPath id="s064-squircleClip">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+
+    <!-- Subtle radial glow for mysterious depth -->
+    <radialGradient id="s064-ghostGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="85%" stop-color="#F0F9FF" />
+      <stop offset="100%" stop-color="#E0F2FE" />
+    </radialGradient>
+
+    <!-- Headphone Cushion Gradient -->
+    <linearGradient id="s064-headphoneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+
+    <linearGradient id="s064-accentPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB7185" />
+      <stop offset="100%" stop-color="#E11D48" />
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#s064-squircleClip)">
+    <!-- 1. Background: Ghost spectral white skin filling the entire squircle -->
+    <rect width="512" height="512" fill="url(#s064-ghostGlow)" />
+
+    <!-- Ghost top curve / head volume shadow at the top -->
+    <path d="M 0 0 L 512 0 L 512 90 C 400 60 112 60 0 90 Z" fill="#E2E8F0" opacity="0.4" />
+
+    <!-- 2. Over-Ear Headphone Band (Arching across the top border like Duolingo accessories) -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="url(#s064-headphoneGrad)" stroke-width="36" stroke-linecap="round" fill="none" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#C084FC" stroke-width="12" stroke-linecap="round" fill="none" />
+
+    <!-- 3. Headphone Ear-Cups (Mounted on the left & right edges of the squircle) -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#7C3AED" />
+    <rect x="0" y="165" width="36" height="120" rx="18" fill="#581C87" />
+    <circle cx="18" cy="225" r="10" fill="url(#s064-accentPink)" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#7C3AED" />
+    <rect x="476" y="165" width="36" height="120" rx="18" fill="#581C87" />
+    <circle cx="494" cy="225" r="10" fill="url(#s064-accentPink)" />
+
+    <!-- 4. Rosy Cheeks (Cute blush spots like Duo) -->
+    <ellipse cx="100" cy="330" rx="32" ry="20" fill="#FDA4AF" opacity="0.75" />
+    <ellipse cx="412" cy="330" rx="32" ry="20" fill="#FDA4AF" opacity="0.75" />
+
+    <!-- 5. Giant Duolingo-Style Eyes (Centered, dominating the frame, irresistible tap-appeal) -->
+    <!-- Left Eye -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#1E1B4B" />
+    <!-- Big Catchlight Highlight -->
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <!-- Small Secondary Highlight -->
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#1E1B4B" />
+    <!-- Big Catchlight Highlight -->
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <!-- Small Secondary Highlight -->
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- 6. Expressive Mouth (Duolingo Shocked / Story Cliffhanger Gasp) -->
+    <!-- Mouth Outer Shadow/Rim -->
+    <ellipse cx="256" cy="368" rx="44" ry="54" fill="#1E1B4B" />
+    <!-- Tongue / Inner Glow (Surprised plot-twist expression) -->
+    <ellipse cx="256" cy="392" rx="28" ry="22" fill="#F43F5E" />
+
+    <!-- 7. Bottom Ghost Waves (Ghost sheet ripples peeking subtly at bottom border) -->
+    <path d="M 60 512 C 90 475 140 475 170 512 C 200 475 250 475 280 512 C 310 475 360 475 390 512 C 420 475 460 475 490 512" 
+          stroke="#CBD5E1" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.6" />
+  </g>
+</svg>
+</g><text x="122" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" x="180" y="548" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- App Icon Squircle Clip -->
+    <clipPath id="s032-squircleClip">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+
+    <!-- Subtle radial glow for mysterious depth -->
+    <radialGradient id="s032-ghostGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="85%" stop-color="#F0F9FF" />
+      <stop offset="100%" stop-color="#E0F2FE" />
+    </radialGradient>
+
+    <!-- Headphone Cushion Gradient -->
+    <linearGradient id="s032-headphoneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+
+    <linearGradient id="s032-accentPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB7185" />
+      <stop offset="100%" stop-color="#E11D48" />
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#s032-squircleClip)">
+    <!-- 1. Background: Ghost spectral white skin filling the entire squircle -->
+    <rect width="512" height="512" fill="url(#s032-ghostGlow)" />
+
+    <!-- Ghost top curve / head volume shadow at the top -->
+    <path d="M 0 0 L 512 0 L 512 90 C 400 60 112 60 0 90 Z" fill="#E2E8F0" opacity="0.4" />
+
+    <!-- 2. Over-Ear Headphone Band (Arching across the top border like Duolingo accessories) -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="url(#s032-headphoneGrad)" stroke-width="36" stroke-linecap="round" fill="none" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#C084FC" stroke-width="12" stroke-linecap="round" fill="none" />
+
+    <!-- 3. Headphone Ear-Cups (Mounted on the left & right edges of the squircle) -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#7C3AED" />
+    <rect x="0" y="165" width="36" height="120" rx="18" fill="#581C87" />
+    <circle cx="18" cy="225" r="10" fill="url(#s032-accentPink)" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#7C3AED" />
+    <rect x="476" y="165" width="36" height="120" rx="18" fill="#581C87" />
+    <circle cx="494" cy="225" r="10" fill="url(#s032-accentPink)" />
+
+    <!-- 4. Rosy Cheeks (Cute blush spots like Duo) -->
+    <ellipse cx="100" cy="330" rx="32" ry="20" fill="#FDA4AF" opacity="0.75" />
+    <ellipse cx="412" cy="330" rx="32" ry="20" fill="#FDA4AF" opacity="0.75" />
+
+    <!-- 5. Giant Duolingo-Style Eyes (Centered, dominating the frame, irresistible tap-appeal) -->
+    <!-- Left Eye -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#1E1B4B" />
+    <!-- Big Catchlight Highlight -->
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <!-- Small Secondary Highlight -->
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#1E1B4B" />
+    <!-- Big Catchlight Highlight -->
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <!-- Small Secondary Highlight -->
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- 6. Expressive Mouth (Duolingo Shocked / Story Cliffhanger Gasp) -->
+    <!-- Mouth Outer Shadow/Rim -->
+    <ellipse cx="256" cy="368" rx="44" ry="54" fill="#1E1B4B" />
+    <!-- Tongue / Inner Glow (Surprised plot-twist expression) -->
+    <ellipse cx="256" cy="392" rx="28" ry="22" fill="#F43F5E" />
+
+    <!-- 7. Bottom Ghost Waves (Ghost sheet ripples peeking subtly at bottom border) -->
+    <path d="M 60 512 C 90 475 140 475 170 512 C 200 475 250 475 280 512 C 310 475 360 475 390 512 C 420 475 460 475 490 512" 
+          stroke="#CBD5E1" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.6" />
+  </g>
+</svg>
+</g><text x="196" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" x="238" y="564" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- App Icon Squircle Clip -->
+    <clipPath id="s016-squircleClip">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+
+    <!-- Subtle radial glow for mysterious depth -->
+    <radialGradient id="s016-ghostGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="85%" stop-color="#F0F9FF" />
+      <stop offset="100%" stop-color="#E0F2FE" />
+    </radialGradient>
+
+    <!-- Headphone Cushion Gradient -->
+    <linearGradient id="s016-headphoneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+
+    <linearGradient id="s016-accentPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB7185" />
+      <stop offset="100%" stop-color="#E11D48" />
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#s016-squircleClip)">
+    <!-- 1. Background: Ghost spectral white skin filling the entire squircle -->
+    <rect width="512" height="512" fill="url(#s016-ghostGlow)" />
+
+    <!-- Ghost top curve / head volume shadow at the top -->
+    <path d="M 0 0 L 512 0 L 512 90 C 400 60 112 60 0 90 Z" fill="#E2E8F0" opacity="0.4" />
+
+    <!-- 2. Over-Ear Headphone Band (Arching across the top border like Duolingo accessories) -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="url(#s016-headphoneGrad)" stroke-width="36" stroke-linecap="round" fill="none" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#C084FC" stroke-width="12" stroke-linecap="round" fill="none" />
+
+    <!-- 3. Headphone Ear-Cups (Mounted on the left & right edges of the squircle) -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#7C3AED" />
+    <rect x="0" y="165" width="36" height="120" rx="18" fill="#581C87" />
+    <circle cx="18" cy="225" r="10" fill="url(#s016-accentPink)" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#7C3AED" />
+    <rect x="476" y="165" width="36" height="120" rx="18" fill="#581C87" />
+    <circle cx="494" cy="225" r="10" fill="url(#s016-accentPink)" />
+
+    <!-- 4. Rosy Cheeks (Cute blush spots like Duo) -->
+    <ellipse cx="100" cy="330" rx="32" ry="20" fill="#FDA4AF" opacity="0.75" />
+    <ellipse cx="412" cy="330" rx="32" ry="20" fill="#FDA4AF" opacity="0.75" />
+
+    <!-- 5. Giant Duolingo-Style Eyes (Centered, dominating the frame, irresistible tap-appeal) -->
+    <!-- Left Eye -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#1E1B4B" />
+    <!-- Big Catchlight Highlight -->
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <!-- Small Secondary Highlight -->
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#1E1B4B" />
+    <!-- Big Catchlight Highlight -->
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <!-- Small Secondary Highlight -->
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- 6. Expressive Mouth (Duolingo Shocked / Story Cliffhanger Gasp) -->
+    <!-- Mouth Outer Shadow/Rim -->
+    <ellipse cx="256" cy="368" rx="44" ry="54" fill="#1E1B4B" />
+    <!-- Tongue / Inner Glow (Surprised plot-twist expression) -->
+    <ellipse cx="256" cy="392" rx="28" ry="22" fill="#F43F5E" />
+
+    <!-- 7. Bottom Ghost Waves (Ghost sheet ripples peeking subtly at bottom border) -->
+    <path d="M 60 512 C 90 475 140 475 170 512 C 200 475 250 475 280 512 C 310 475 360 475 390 512 C 420 475 460 475 490 512" 
+          stroke="#CBD5E1" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.6" />
+  </g>
+</svg>
+</g><text x="246" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="90.0" y="636" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">A · Spooky Face-Fill</text><text x="90.0" y="664" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#161616" letter-spacing="1.5">RECOMMENDED</text><text x="90.0" y="698" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Estilo Duolingo puro: a face do fantasma é</text><text x="90.0" y="724" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">o próprio ícone com fones neon.</text><rect x="562.667" y="150" width="474.667" height="630" rx="18" fill="#fff" stroke="#e4e4e0" stroke-width="1"/><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" x="592.667" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- App Icon Squircle Clip -->
+    <clipPath id="c1-squircleClipNight">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+
+    <!-- Deep Night Violet Gradient Background -->
+    <linearGradient id="c1-nightBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B0764" />
+      <stop offset="60%" stop-color="#1E1035" />
+      <stop offset="100%" stop-color="#0F081D" />
+    </linearGradient>
+
+    <!-- Spooky Soft Spectral Glow -->
+    <linearGradient id="c1-ghostBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+
+    <!-- Neon Cyan Headphone Gradient -->
+    <linearGradient id="c1-neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+
+    <linearGradient id="c1-neonPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" />
+      <stop offset="100%" stop-color="#BE123C" />
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#c1-squircleClipNight)">
+    <!-- 1. Rich Midnight Violet App Icon Background -->
+    <rect width="512" height="512" fill="url(#c1-nightBg)" />
+
+    <!-- Subtle background soundwaves radiating into the night -->
+    <path d="M 256 120 C 350 120 440 180 470 260" stroke="#581C87" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.4" />
+    <path d="M 256 120 C 162 120 72 180 42 260" stroke="#581C87" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.4" />
+
+    <!-- 2. Spooky Ghost Head (Dominating 85% of the frame, close-up) -->
+    <!-- Ghost Body Outer Shape -->
+    <path d="M 96 220 
+             C 96 110 160 86 256 86 
+             C 352 86 416 110 416 220 
+             C 416 330 436 440 430 480 
+             C 426 500 398 510 380 490 
+             C 360 470 336 470 320 490 
+             C 300 512 272 512 256 490 
+             C 240 512 212 512 192 490 
+             C 176 470 152 470 132 490 
+             C 114 510 86 500 82 480 
+             C 76 440 96 330 96 220 Z" 
+          fill="url(#c1-ghostBodyGrad)" />
+
+    <!-- 3. Over-Ear Headphone Band -->
+    <path d="M 88 230 C 88 100 150 44 256 44 C 362 44 424 100 424 230" 
+          stroke="url(#c1-neonPink)" stroke-width="32" stroke-linecap="round" fill="none" />
+    <!-- Headband padding highlight -->
+    <path d="M 190 54 C 220 50 292 50 322 54" 
+          stroke="#FDA4AF" stroke-width="10" stroke-linecap="round" fill="none" />
+
+    <!-- 4. Headphone Ear-Cups (Neon Pink & Cyan Cushions) -->
+    <!-- Left Cup -->
+    <rect x="52" y="190" width="56" height="130" rx="28" fill="url(#c1-neonPink)" />
+    <rect x="64" y="205" width="32" height="100" rx="16" fill="#1E1035" />
+    <circle cx="80" cy="255" r="9" fill="url(#c1-neonCyan)" />
+
+    <!-- Right Cup -->
+    <rect x="404" y="190" width="56" height="130" rx="28" fill="url(#c1-neonPink)" />
+    <rect x="416" y="205" width="32" height="100" rx="16" fill="#1E1035" />
+    <circle cx="432" cy="255" r="9" fill="url(#c1-neonCyan)" />
+
+    <!-- 5. Cute Floating Ghost Hands (holding the headphones like in the original Spooky!) -->
+    <path d="M 126 270 C 96 270 82 245 82 230" stroke="#E2E8F0" stroke-width="14" stroke-linecap="round" fill="none" />
+    <path d="M 386 270 C 416 270 430 245 430 230" stroke="#E2E8F0" stroke-width="14" stroke-linecap="round" fill="none" />
+
+    <!-- 6. Cute Rosy Blush Cheeks -->
+    <ellipse cx="145" cy="315" rx="26" ry="16" fill="#FB7185" opacity="0.6" />
+    <ellipse cx="367" cy="315" rx="26" ry="16" fill="#FB7185" opacity="0.6" />
+
+    <!-- 7. Giant Duolingo Expressive Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="196" cy="245" rx="46" ry="64" fill="#0F081D" />
+    <circle cx="180" cy="222" r="20" fill="#FFFFFF" />
+    <circle cx="214" cy="262" r="9" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="316" cy="245" rx="46" ry="64" fill="#0F081D" />
+    <circle cx="300" cy="222" r="20" fill="#FFFFFF" />
+    <circle cx="334" cy="262" r="9" fill="#FFFFFF" />
+
+    <!-- 8. Expressive Shocked/Enthralled "Ooh!" Mouth -->
+    <ellipse cx="256" cy="345" rx="36" ry="46" fill="#0F081D" />
+    <!-- Tongue / Inner glow -->
+    <ellipse cx="256" cy="365" rx="24" ry="18" fill="#F43F5E" />
+  </g>
+</svg>
+</g><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" x="592.667" y="516" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- App Icon Squircle Clip -->
+    <clipPath id="s164-squircleClipNight">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+
+    <!-- Deep Night Violet Gradient Background -->
+    <linearGradient id="s164-nightBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B0764" />
+      <stop offset="60%" stop-color="#1E1035" />
+      <stop offset="100%" stop-color="#0F081D" />
+    </linearGradient>
+
+    <!-- Spooky Soft Spectral Glow -->
+    <linearGradient id="s164-ghostBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+
+    <!-- Neon Cyan Headphone Gradient -->
+    <linearGradient id="s164-neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+
+    <linearGradient id="s164-neonPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" />
+      <stop offset="100%" stop-color="#BE123C" />
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#s164-squircleClipNight)">
+    <!-- 1. Rich Midnight Violet App Icon Background -->
+    <rect width="512" height="512" fill="url(#s164-nightBg)" />
+
+    <!-- Subtle background soundwaves radiating into the night -->
+    <path d="M 256 120 C 350 120 440 180 470 260" stroke="#581C87" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.4" />
+    <path d="M 256 120 C 162 120 72 180 42 260" stroke="#581C87" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.4" />
+
+    <!-- 2. Spooky Ghost Head (Dominating 85% of the frame, close-up) -->
+    <!-- Ghost Body Outer Shape -->
+    <path d="M 96 220 
+             C 96 110 160 86 256 86 
+             C 352 86 416 110 416 220 
+             C 416 330 436 440 430 480 
+             C 426 500 398 510 380 490 
+             C 360 470 336 470 320 490 
+             C 300 512 272 512 256 490 
+             C 240 512 212 512 192 490 
+             C 176 470 152 470 132 490 
+             C 114 510 86 500 82 480 
+             C 76 440 96 330 96 220 Z" 
+          fill="url(#s164-ghostBodyGrad)" />
+
+    <!-- 3. Over-Ear Headphone Band -->
+    <path d="M 88 230 C 88 100 150 44 256 44 C 362 44 424 100 424 230" 
+          stroke="url(#s164-neonPink)" stroke-width="32" stroke-linecap="round" fill="none" />
+    <!-- Headband padding highlight -->
+    <path d="M 190 54 C 220 50 292 50 322 54" 
+          stroke="#FDA4AF" stroke-width="10" stroke-linecap="round" fill="none" />
+
+    <!-- 4. Headphone Ear-Cups (Neon Pink & Cyan Cushions) -->
+    <!-- Left Cup -->
+    <rect x="52" y="190" width="56" height="130" rx="28" fill="url(#s164-neonPink)" />
+    <rect x="64" y="205" width="32" height="100" rx="16" fill="#1E1035" />
+    <circle cx="80" cy="255" r="9" fill="url(#s164-neonCyan)" />
+
+    <!-- Right Cup -->
+    <rect x="404" y="190" width="56" height="130" rx="28" fill="url(#s164-neonPink)" />
+    <rect x="416" y="205" width="32" height="100" rx="16" fill="#1E1035" />
+    <circle cx="432" cy="255" r="9" fill="url(#s164-neonCyan)" />
+
+    <!-- 5. Cute Floating Ghost Hands (holding the headphones like in the original Spooky!) -->
+    <path d="M 126 270 C 96 270 82 245 82 230" stroke="#E2E8F0" stroke-width="14" stroke-linecap="round" fill="none" />
+    <path d="M 386 270 C 416 270 430 245 430 230" stroke="#E2E8F0" stroke-width="14" stroke-linecap="round" fill="none" />
+
+    <!-- 6. Cute Rosy Blush Cheeks -->
+    <ellipse cx="145" cy="315" rx="26" ry="16" fill="#FB7185" opacity="0.6" />
+    <ellipse cx="367" cy="315" rx="26" ry="16" fill="#FB7185" opacity="0.6" />
+
+    <!-- 7. Giant Duolingo Expressive Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="196" cy="245" rx="46" ry="64" fill="#0F081D" />
+    <circle cx="180" cy="222" r="20" fill="#FFFFFF" />
+    <circle cx="214" cy="262" r="9" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="316" cy="245" rx="46" ry="64" fill="#0F081D" />
+    <circle cx="300" cy="222" r="20" fill="#FFFFFF" />
+    <circle cx="334" cy="262" r="9" fill="#FFFFFF" />
+
+    <!-- 8. Expressive Shocked/Enthralled "Ooh!" Mouth -->
+    <ellipse cx="256" cy="345" rx="36" ry="46" fill="#0F081D" />
+    <!-- Tongue / Inner glow -->
+    <ellipse cx="256" cy="365" rx="24" ry="18" fill="#F43F5E" />
+  </g>
+</svg>
+</g><text x="624.667" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" x="682.667" y="548" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- App Icon Squircle Clip -->
+    <clipPath id="s132-squircleClipNight">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+
+    <!-- Deep Night Violet Gradient Background -->
+    <linearGradient id="s132-nightBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B0764" />
+      <stop offset="60%" stop-color="#1E1035" />
+      <stop offset="100%" stop-color="#0F081D" />
+    </linearGradient>
+
+    <!-- Spooky Soft Spectral Glow -->
+    <linearGradient id="s132-ghostBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+
+    <!-- Neon Cyan Headphone Gradient -->
+    <linearGradient id="s132-neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+
+    <linearGradient id="s132-neonPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" />
+      <stop offset="100%" stop-color="#BE123C" />
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#s132-squircleClipNight)">
+    <!-- 1. Rich Midnight Violet App Icon Background -->
+    <rect width="512" height="512" fill="url(#s132-nightBg)" />
+
+    <!-- Subtle background soundwaves radiating into the night -->
+    <path d="M 256 120 C 350 120 440 180 470 260" stroke="#581C87" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.4" />
+    <path d="M 256 120 C 162 120 72 180 42 260" stroke="#581C87" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.4" />
+
+    <!-- 2. Spooky Ghost Head (Dominating 85% of the frame, close-up) -->
+    <!-- Ghost Body Outer Shape -->
+    <path d="M 96 220 
+             C 96 110 160 86 256 86 
+             C 352 86 416 110 416 220 
+             C 416 330 436 440 430 480 
+             C 426 500 398 510 380 490 
+             C 360 470 336 470 320 490 
+             C 300 512 272 512 256 490 
+             C 240 512 212 512 192 490 
+             C 176 470 152 470 132 490 
+             C 114 510 86 500 82 480 
+             C 76 440 96 330 96 220 Z" 
+          fill="url(#s132-ghostBodyGrad)" />
+
+    <!-- 3. Over-Ear Headphone Band -->
+    <path d="M 88 230 C 88 100 150 44 256 44 C 362 44 424 100 424 230" 
+          stroke="url(#s132-neonPink)" stroke-width="32" stroke-linecap="round" fill="none" />
+    <!-- Headband padding highlight -->
+    <path d="M 190 54 C 220 50 292 50 322 54" 
+          stroke="#FDA4AF" stroke-width="10" stroke-linecap="round" fill="none" />
+
+    <!-- 4. Headphone Ear-Cups (Neon Pink & Cyan Cushions) -->
+    <!-- Left Cup -->
+    <rect x="52" y="190" width="56" height="130" rx="28" fill="url(#s132-neonPink)" />
+    <rect x="64" y="205" width="32" height="100" rx="16" fill="#1E1035" />
+    <circle cx="80" cy="255" r="9" fill="url(#s132-neonCyan)" />
+
+    <!-- Right Cup -->
+    <rect x="404" y="190" width="56" height="130" rx="28" fill="url(#s132-neonPink)" />
+    <rect x="416" y="205" width="32" height="100" rx="16" fill="#1E1035" />
+    <circle cx="432" cy="255" r="9" fill="url(#s132-neonCyan)" />
+
+    <!-- 5. Cute Floating Ghost Hands (holding the headphones like in the original Spooky!) -->
+    <path d="M 126 270 C 96 270 82 245 82 230" stroke="#E2E8F0" stroke-width="14" stroke-linecap="round" fill="none" />
+    <path d="M 386 270 C 416 270 430 245 430 230" stroke="#E2E8F0" stroke-width="14" stroke-linecap="round" fill="none" />
+
+    <!-- 6. Cute Rosy Blush Cheeks -->
+    <ellipse cx="145" cy="315" rx="26" ry="16" fill="#FB7185" opacity="0.6" />
+    <ellipse cx="367" cy="315" rx="26" ry="16" fill="#FB7185" opacity="0.6" />
+
+    <!-- 7. Giant Duolingo Expressive Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="196" cy="245" rx="46" ry="64" fill="#0F081D" />
+    <circle cx="180" cy="222" r="20" fill="#FFFFFF" />
+    <circle cx="214" cy="262" r="9" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="316" cy="245" rx="46" ry="64" fill="#0F081D" />
+    <circle cx="300" cy="222" r="20" fill="#FFFFFF" />
+    <circle cx="334" cy="262" r="9" fill="#FFFFFF" />
+
+    <!-- 8. Expressive Shocked/Enthralled "Ooh!" Mouth -->
+    <ellipse cx="256" cy="345" rx="36" ry="46" fill="#0F081D" />
+    <!-- Tongue / Inner glow -->
+    <ellipse cx="256" cy="365" rx="24" ry="18" fill="#F43F5E" />
+  </g>
+</svg>
+</g><text x="698.667" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" x="740.667" y="564" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- App Icon Squircle Clip -->
+    <clipPath id="s116-squircleClipNight">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+
+    <!-- Deep Night Violet Gradient Background -->
+    <linearGradient id="s116-nightBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B0764" />
+      <stop offset="60%" stop-color="#1E1035" />
+      <stop offset="100%" stop-color="#0F081D" />
+    </linearGradient>
+
+    <!-- Spooky Soft Spectral Glow -->
+    <linearGradient id="s116-ghostBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+
+    <!-- Neon Cyan Headphone Gradient -->
+    <linearGradient id="s116-neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+
+    <linearGradient id="s116-neonPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" />
+      <stop offset="100%" stop-color="#BE123C" />
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#s116-squircleClipNight)">
+    <!-- 1. Rich Midnight Violet App Icon Background -->
+    <rect width="512" height="512" fill="url(#s116-nightBg)" />
+
+    <!-- Subtle background soundwaves radiating into the night -->
+    <path d="M 256 120 C 350 120 440 180 470 260" stroke="#581C87" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.4" />
+    <path d="M 256 120 C 162 120 72 180 42 260" stroke="#581C87" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.4" />
+
+    <!-- 2. Spooky Ghost Head (Dominating 85% of the frame, close-up) -->
+    <!-- Ghost Body Outer Shape -->
+    <path d="M 96 220 
+             C 96 110 160 86 256 86 
+             C 352 86 416 110 416 220 
+             C 416 330 436 440 430 480 
+             C 426 500 398 510 380 490 
+             C 360 470 336 470 320 490 
+             C 300 512 272 512 256 490 
+             C 240 512 212 512 192 490 
+             C 176 470 152 470 132 490 
+             C 114 510 86 500 82 480 
+             C 76 440 96 330 96 220 Z" 
+          fill="url(#s116-ghostBodyGrad)" />
+
+    <!-- 3. Over-Ear Headphone Band -->
+    <path d="M 88 230 C 88 100 150 44 256 44 C 362 44 424 100 424 230" 
+          stroke="url(#s116-neonPink)" stroke-width="32" stroke-linecap="round" fill="none" />
+    <!-- Headband padding highlight -->
+    <path d="M 190 54 C 220 50 292 50 322 54" 
+          stroke="#FDA4AF" stroke-width="10" stroke-linecap="round" fill="none" />
+
+    <!-- 4. Headphone Ear-Cups (Neon Pink & Cyan Cushions) -->
+    <!-- Left Cup -->
+    <rect x="52" y="190" width="56" height="130" rx="28" fill="url(#s116-neonPink)" />
+    <rect x="64" y="205" width="32" height="100" rx="16" fill="#1E1035" />
+    <circle cx="80" cy="255" r="9" fill="url(#s116-neonCyan)" />
+
+    <!-- Right Cup -->
+    <rect x="404" y="190" width="56" height="130" rx="28" fill="url(#s116-neonPink)" />
+    <rect x="416" y="205" width="32" height="100" rx="16" fill="#1E1035" />
+    <circle cx="432" cy="255" r="9" fill="url(#s116-neonCyan)" />
+
+    <!-- 5. Cute Floating Ghost Hands (holding the headphones like in the original Spooky!) -->
+    <path d="M 126 270 C 96 270 82 245 82 230" stroke="#E2E8F0" stroke-width="14" stroke-linecap="round" fill="none" />
+    <path d="M 386 270 C 416 270 430 245 430 230" stroke="#E2E8F0" stroke-width="14" stroke-linecap="round" fill="none" />
+
+    <!-- 6. Cute Rosy Blush Cheeks -->
+    <ellipse cx="145" cy="315" rx="26" ry="16" fill="#FB7185" opacity="0.6" />
+    <ellipse cx="367" cy="315" rx="26" ry="16" fill="#FB7185" opacity="0.6" />
+
+    <!-- 7. Giant Duolingo Expressive Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="196" cy="245" rx="46" ry="64" fill="#0F081D" />
+    <circle cx="180" cy="222" r="20" fill="#FFFFFF" />
+    <circle cx="214" cy="262" r="9" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="316" cy="245" rx="46" ry="64" fill="#0F081D" />
+    <circle cx="300" cy="222" r="20" fill="#FFFFFF" />
+    <circle cx="334" cy="262" r="9" fill="#FFFFFF" />
+
+    <!-- 8. Expressive Shocked/Enthralled "Ooh!" Mouth -->
+    <ellipse cx="256" cy="345" rx="36" ry="46" fill="#0F081D" />
+    <!-- Tongue / Inner glow -->
+    <ellipse cx="256" cy="365" rx="24" ry="18" fill="#F43F5E" />
+  </g>
+</svg>
+</g><text x="748.667" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="592.6666666666667" y="636" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">B · Spooky Night Pop</text><text x="592.6666666666667" y="670" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Fundo violeta meia-noite vibrante: Spooky</text><text x="592.6666666666667" y="696" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">de fone segurando o suspense.</text><rect x="1065.33" y="150" width="474.667" height="630" rx="18" fill="#fff" stroke="#e4e4e0" stroke-width="1"/><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" x="1095.33" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- App Icon Squircle Clip -->
+    <clipPath id="c2-squircleClipVampi">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+
+    <!-- Crimson App Icon Gradient Background -->
+    <linearGradient id="c2-vampiCrimsonBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" />
+      <stop offset="60%" stop-color="#E11D48" />
+      <stop offset="100%" stop-color="#9F1239" />
+    </linearGradient>
+
+    <!-- Porcelain Moonlit Face Gradient -->
+    <linearGradient id="c2-vampiFaceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="80%" stop-color="#FAF5FF" />
+      <stop offset="100%" stop-color="#F3E8FF" />
+    </linearGradient>
+
+    <linearGradient id="c2-headphoneViolet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4C1D95" />
+      <stop offset="100%" stop-color="#1E1035" />
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#c2-squircleClipVampi)">
+    <!-- 1. Rich Crimson App Icon Background -->
+    <rect width="512" height="512" fill="url(#c2-vampiCrimsonBg)" />
+
+    <!-- 2. Bat Ears (Sprouting from head top) -->
+    <!-- Left Ear -->
+    <path d="M 120 120 L 70 30 C 110 50 145 80 156 100 Z" fill="#1E1035" />
+    <path d="M 115 105 L 88 48 C 110 65 128 85 134 98 Z" fill="#F43F5E" />
+    <!-- Right Ear -->
+    <path d="M 392 120 L 442 30 C 402 50 367 80 356 100 Z" fill="#1E1035" />
+    <path d="M 397 105 L 424 48 C 402 65 384 85 378 98 Z" fill="#F43F5E" />
+
+    <!-- 3. Head Contour & Face Fill (Zoomed Close-Up, Plump & Friendly) -->
+    <path d="M 110 210 
+             C 110 110 170 82 256 82 
+             C 342 82 402 110 402 210 
+             C 402 340 342 450 256 450 
+             C 170 450 110 340 110 210 Z" 
+          fill="url(#c2-vampiFaceGrad)" />
+
+    <!-- 4. Dracula Widow's Peak Hairline (Midnight Violet Hair) -->
+    <path d="M 110 180 
+             C 140 140 190 120 256 180 
+             C 322 120 372 140 402 180 
+             C 392 120 342 82 256 82 
+             C 170 82 120 120 110 180 Z" 
+          fill="#1E1035" />
+
+    <!-- 5. Headphone Over-Ear Band (Arching over top) -->
+    <path d="M 94 220 C 94 90 156 38 256 38 C 356 38 418 90 418 220" 
+          stroke="url(#c2-headphoneViolet)" stroke-width="32" stroke-linecap="round" fill="none" />
+    <path d="M 190 48 C 220 44 292 44 322 48" 
+          stroke="#A78BFA" stroke-width="10" stroke-linecap="round" fill="none" />
+
+    <!-- 6. Headphone Ear-Cups -->
+    <!-- Left Cup -->
+    <rect x="56" y="180" width="56" height="130" rx="28" fill="#1E1035" />
+    <rect x="68" y="195" width="32" height="100" rx="16" fill="#4C1D95" />
+    <circle cx="84" cy="245" r="9" fill="#F59E0B" />
+
+    <!-- Right Cup -->
+    <rect x="400" y="180" width="56" height="130" rx="28" fill="#1E1035" />
+    <rect x="412" y="195" width="32" height="100" rx="16" fill="#4C1D95" />
+    <circle cx="428" cy="245" r="9" fill="#F59E0B" />
+
+    <!-- 7. Cute Rosy Cheeks -->
+    <ellipse cx="155" cy="305" rx="26" ry="16" fill="#FDA4AF" opacity="0.8" />
+    <ellipse cx="357" cy="305" rx="26" ry="16" fill="#FDA4AF" opacity="0.8" />
+
+    <!-- 8. Giant Expressive Duolingo Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="196" cy="240" rx="46" ry="64" fill="#1E1035" />
+    <circle cx="180" cy="216" r="20" fill="#FFFFFF" />
+    <circle cx="214" cy="256" r="9" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="316" cy="240" rx="46" ry="64" fill="#1E1035" />
+    <circle cx="300" cy="216" r="20" fill="#FFFFFF" />
+    <circle cx="334" cy="256" r="9" fill="#FFFFFF" />
+
+    <!-- 9. Cheerful Toothy Vampire Smile with Cute Fangs -->
+    <!-- Mouth Cavity -->
+    <path d="M 200 325 Q 256 318 312 325 C 318 385 292 400 256 400 C 220 400 194 385 200 325 Z" fill="#881337" />
+    <!-- Tongue -->
+    <path d="M 224 372 C 236 358 276 358 288 372 C 276 395 236 395 224 372 Z" fill="#FB7185" />
+    <!-- Left Vampire Fang -->
+    <path d="M 214 324 L 232 324 L 223 350 Z" fill="#FFFFFF" />
+    <!-- Right Vampire Fang -->
+    <path d="M 280 324 L 298 324 L 289 350 Z" fill="#FFFFFF" />
+
+    <!-- 10. Golden Play Button Bowtie at bottom -->
+    <path d="M 210 445 L 256 465 L 210 485 Z" fill="#F59E0B" />
+    <path d="M 302 445 L 256 465 L 302 485 Z" fill="#F59E0B" />
+    <circle cx="256" cy="465" r="9" fill="#FDE68A" />
+  </g>
+</svg>
+</g><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" x="1095.33" y="516" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- App Icon Squircle Clip -->
+    <clipPath id="s264-squircleClipVampi">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+
+    <!-- Crimson App Icon Gradient Background -->
+    <linearGradient id="s264-vampiCrimsonBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" />
+      <stop offset="60%" stop-color="#E11D48" />
+      <stop offset="100%" stop-color="#9F1239" />
+    </linearGradient>
+
+    <!-- Porcelain Moonlit Face Gradient -->
+    <linearGradient id="s264-vampiFaceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="80%" stop-color="#FAF5FF" />
+      <stop offset="100%" stop-color="#F3E8FF" />
+    </linearGradient>
+
+    <linearGradient id="s264-headphoneViolet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4C1D95" />
+      <stop offset="100%" stop-color="#1E1035" />
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#s264-squircleClipVampi)">
+    <!-- 1. Rich Crimson App Icon Background -->
+    <rect width="512" height="512" fill="url(#s264-vampiCrimsonBg)" />
+
+    <!-- 2. Bat Ears (Sprouting from head top) -->
+    <!-- Left Ear -->
+    <path d="M 120 120 L 70 30 C 110 50 145 80 156 100 Z" fill="#1E1035" />
+    <path d="M 115 105 L 88 48 C 110 65 128 85 134 98 Z" fill="#F43F5E" />
+    <!-- Right Ear -->
+    <path d="M 392 120 L 442 30 C 402 50 367 80 356 100 Z" fill="#1E1035" />
+    <path d="M 397 105 L 424 48 C 402 65 384 85 378 98 Z" fill="#F43F5E" />
+
+    <!-- 3. Head Contour & Face Fill (Zoomed Close-Up, Plump & Friendly) -->
+    <path d="M 110 210 
+             C 110 110 170 82 256 82 
+             C 342 82 402 110 402 210 
+             C 402 340 342 450 256 450 
+             C 170 450 110 340 110 210 Z" 
+          fill="url(#s264-vampiFaceGrad)" />
+
+    <!-- 4. Dracula Widow's Peak Hairline (Midnight Violet Hair) -->
+    <path d="M 110 180 
+             C 140 140 190 120 256 180 
+             C 322 120 372 140 402 180 
+             C 392 120 342 82 256 82 
+             C 170 82 120 120 110 180 Z" 
+          fill="#1E1035" />
+
+    <!-- 5. Headphone Over-Ear Band (Arching over top) -->
+    <path d="M 94 220 C 94 90 156 38 256 38 C 356 38 418 90 418 220" 
+          stroke="url(#s264-headphoneViolet)" stroke-width="32" stroke-linecap="round" fill="none" />
+    <path d="M 190 48 C 220 44 292 44 322 48" 
+          stroke="#A78BFA" stroke-width="10" stroke-linecap="round" fill="none" />
+
+    <!-- 6. Headphone Ear-Cups -->
+    <!-- Left Cup -->
+    <rect x="56" y="180" width="56" height="130" rx="28" fill="#1E1035" />
+    <rect x="68" y="195" width="32" height="100" rx="16" fill="#4C1D95" />
+    <circle cx="84" cy="245" r="9" fill="#F59E0B" />
+
+    <!-- Right Cup -->
+    <rect x="400" y="180" width="56" height="130" rx="28" fill="#1E1035" />
+    <rect x="412" y="195" width="32" height="100" rx="16" fill="#4C1D95" />
+    <circle cx="428" cy="245" r="9" fill="#F59E0B" />
+
+    <!-- 7. Cute Rosy Cheeks -->
+    <ellipse cx="155" cy="305" rx="26" ry="16" fill="#FDA4AF" opacity="0.8" />
+    <ellipse cx="357" cy="305" rx="26" ry="16" fill="#FDA4AF" opacity="0.8" />
+
+    <!-- 8. Giant Expressive Duolingo Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="196" cy="240" rx="46" ry="64" fill="#1E1035" />
+    <circle cx="180" cy="216" r="20" fill="#FFFFFF" />
+    <circle cx="214" cy="256" r="9" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="316" cy="240" rx="46" ry="64" fill="#1E1035" />
+    <circle cx="300" cy="216" r="20" fill="#FFFFFF" />
+    <circle cx="334" cy="256" r="9" fill="#FFFFFF" />
+
+    <!-- 9. Cheerful Toothy Vampire Smile with Cute Fangs -->
+    <!-- Mouth Cavity -->
+    <path d="M 200 325 Q 256 318 312 325 C 318 385 292 400 256 400 C 220 400 194 385 200 325 Z" fill="#881337" />
+    <!-- Tongue -->
+    <path d="M 224 372 C 236 358 276 358 288 372 C 276 395 236 395 224 372 Z" fill="#FB7185" />
+    <!-- Left Vampire Fang -->
+    <path d="M 214 324 L 232 324 L 223 350 Z" fill="#FFFFFF" />
+    <!-- Right Vampire Fang -->
+    <path d="M 280 324 L 298 324 L 289 350 Z" fill="#FFFFFF" />
+
+    <!-- 10. Golden Play Button Bowtie at bottom -->
+    <path d="M 210 445 L 256 465 L 210 485 Z" fill="#F59E0B" />
+    <path d="M 302 445 L 256 465 L 302 485 Z" fill="#F59E0B" />
+    <circle cx="256" cy="465" r="9" fill="#FDE68A" />
+  </g>
+</svg>
+</g><text x="1127.33" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" x="1185.33" y="548" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- App Icon Squircle Clip -->
+    <clipPath id="s232-squircleClipVampi">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+
+    <!-- Crimson App Icon Gradient Background -->
+    <linearGradient id="s232-vampiCrimsonBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" />
+      <stop offset="60%" stop-color="#E11D48" />
+      <stop offset="100%" stop-color="#9F1239" />
+    </linearGradient>
+
+    <!-- Porcelain Moonlit Face Gradient -->
+    <linearGradient id="s232-vampiFaceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="80%" stop-color="#FAF5FF" />
+      <stop offset="100%" stop-color="#F3E8FF" />
+    </linearGradient>
+
+    <linearGradient id="s232-headphoneViolet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4C1D95" />
+      <stop offset="100%" stop-color="#1E1035" />
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#s232-squircleClipVampi)">
+    <!-- 1. Rich Crimson App Icon Background -->
+    <rect width="512" height="512" fill="url(#s232-vampiCrimsonBg)" />
+
+    <!-- 2. Bat Ears (Sprouting from head top) -->
+    <!-- Left Ear -->
+    <path d="M 120 120 L 70 30 C 110 50 145 80 156 100 Z" fill="#1E1035" />
+    <path d="M 115 105 L 88 48 C 110 65 128 85 134 98 Z" fill="#F43F5E" />
+    <!-- Right Ear -->
+    <path d="M 392 120 L 442 30 C 402 50 367 80 356 100 Z" fill="#1E1035" />
+    <path d="M 397 105 L 424 48 C 402 65 384 85 378 98 Z" fill="#F43F5E" />
+
+    <!-- 3. Head Contour & Face Fill (Zoomed Close-Up, Plump & Friendly) -->
+    <path d="M 110 210 
+             C 110 110 170 82 256 82 
+             C 342 82 402 110 402 210 
+             C 402 340 342 450 256 450 
+             C 170 450 110 340 110 210 Z" 
+          fill="url(#s232-vampiFaceGrad)" />
+
+    <!-- 4. Dracula Widow's Peak Hairline (Midnight Violet Hair) -->
+    <path d="M 110 180 
+             C 140 140 190 120 256 180 
+             C 322 120 372 140 402 180 
+             C 392 120 342 82 256 82 
+             C 170 82 120 120 110 180 Z" 
+          fill="#1E1035" />
+
+    <!-- 5. Headphone Over-Ear Band (Arching over top) -->
+    <path d="M 94 220 C 94 90 156 38 256 38 C 356 38 418 90 418 220" 
+          stroke="url(#s232-headphoneViolet)" stroke-width="32" stroke-linecap="round" fill="none" />
+    <path d="M 190 48 C 220 44 292 44 322 48" 
+          stroke="#A78BFA" stroke-width="10" stroke-linecap="round" fill="none" />
+
+    <!-- 6. Headphone Ear-Cups -->
+    <!-- Left Cup -->
+    <rect x="56" y="180" width="56" height="130" rx="28" fill="#1E1035" />
+    <rect x="68" y="195" width="32" height="100" rx="16" fill="#4C1D95" />
+    <circle cx="84" cy="245" r="9" fill="#F59E0B" />
+
+    <!-- Right Cup -->
+    <rect x="400" y="180" width="56" height="130" rx="28" fill="#1E1035" />
+    <rect x="412" y="195" width="32" height="100" rx="16" fill="#4C1D95" />
+    <circle cx="428" cy="245" r="9" fill="#F59E0B" />
+
+    <!-- 7. Cute Rosy Cheeks -->
+    <ellipse cx="155" cy="305" rx="26" ry="16" fill="#FDA4AF" opacity="0.8" />
+    <ellipse cx="357" cy="305" rx="26" ry="16" fill="#FDA4AF" opacity="0.8" />
+
+    <!-- 8. Giant Expressive Duolingo Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="196" cy="240" rx="46" ry="64" fill="#1E1035" />
+    <circle cx="180" cy="216" r="20" fill="#FFFFFF" />
+    <circle cx="214" cy="256" r="9" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="316" cy="240" rx="46" ry="64" fill="#1E1035" />
+    <circle cx="300" cy="216" r="20" fill="#FFFFFF" />
+    <circle cx="334" cy="256" r="9" fill="#FFFFFF" />
+
+    <!-- 9. Cheerful Toothy Vampire Smile with Cute Fangs -->
+    <!-- Mouth Cavity -->
+    <path d="M 200 325 Q 256 318 312 325 C 318 385 292 400 256 400 C 220 400 194 385 200 325 Z" fill="#881337" />
+    <!-- Tongue -->
+    <path d="M 224 372 C 236 358 276 358 288 372 C 276 395 236 395 224 372 Z" fill="#FB7185" />
+    <!-- Left Vampire Fang -->
+    <path d="M 214 324 L 232 324 L 223 350 Z" fill="#FFFFFF" />
+    <!-- Right Vampire Fang -->
+    <path d="M 280 324 L 298 324 L 289 350 Z" fill="#FFFFFF" />
+
+    <!-- 10. Golden Play Button Bowtie at bottom -->
+    <path d="M 210 445 L 256 465 L 210 485 Z" fill="#F59E0B" />
+    <path d="M 302 445 L 256 465 L 302 485 Z" fill="#F59E0B" />
+    <circle cx="256" cy="465" r="9" fill="#FDE68A" />
+  </g>
+</svg>
+</g><text x="1201.33" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" x="1243.33" y="564" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- App Icon Squircle Clip -->
+    <clipPath id="s216-squircleClipVampi">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+
+    <!-- Crimson App Icon Gradient Background -->
+    <linearGradient id="s216-vampiCrimsonBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" />
+      <stop offset="60%" stop-color="#E11D48" />
+      <stop offset="100%" stop-color="#9F1239" />
+    </linearGradient>
+
+    <!-- Porcelain Moonlit Face Gradient -->
+    <linearGradient id="s216-vampiFaceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="80%" stop-color="#FAF5FF" />
+      <stop offset="100%" stop-color="#F3E8FF" />
+    </linearGradient>
+
+    <linearGradient id="s216-headphoneViolet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4C1D95" />
+      <stop offset="100%" stop-color="#1E1035" />
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#s216-squircleClipVampi)">
+    <!-- 1. Rich Crimson App Icon Background -->
+    <rect width="512" height="512" fill="url(#s216-vampiCrimsonBg)" />
+
+    <!-- 2. Bat Ears (Sprouting from head top) -->
+    <!-- Left Ear -->
+    <path d="M 120 120 L 70 30 C 110 50 145 80 156 100 Z" fill="#1E1035" />
+    <path d="M 115 105 L 88 48 C 110 65 128 85 134 98 Z" fill="#F43F5E" />
+    <!-- Right Ear -->
+    <path d="M 392 120 L 442 30 C 402 50 367 80 356 100 Z" fill="#1E1035" />
+    <path d="M 397 105 L 424 48 C 402 65 384 85 378 98 Z" fill="#F43F5E" />
+
+    <!-- 3. Head Contour & Face Fill (Zoomed Close-Up, Plump & Friendly) -->
+    <path d="M 110 210 
+             C 110 110 170 82 256 82 
+             C 342 82 402 110 402 210 
+             C 402 340 342 450 256 450 
+             C 170 450 110 340 110 210 Z" 
+          fill="url(#s216-vampiFaceGrad)" />
+
+    <!-- 4. Dracula Widow's Peak Hairline (Midnight Violet Hair) -->
+    <path d="M 110 180 
+             C 140 140 190 120 256 180 
+             C 322 120 372 140 402 180 
+             C 392 120 342 82 256 82 
+             C 170 82 120 120 110 180 Z" 
+          fill="#1E1035" />
+
+    <!-- 5. Headphone Over-Ear Band (Arching over top) -->
+    <path d="M 94 220 C 94 90 156 38 256 38 C 356 38 418 90 418 220" 
+          stroke="url(#s216-headphoneViolet)" stroke-width="32" stroke-linecap="round" fill="none" />
+    <path d="M 190 48 C 220 44 292 44 322 48" 
+          stroke="#A78BFA" stroke-width="10" stroke-linecap="round" fill="none" />
+
+    <!-- 6. Headphone Ear-Cups -->
+    <!-- Left Cup -->
+    <rect x="56" y="180" width="56" height="130" rx="28" fill="#1E1035" />
+    <rect x="68" y="195" width="32" height="100" rx="16" fill="#4C1D95" />
+    <circle cx="84" cy="245" r="9" fill="#F59E0B" />
+
+    <!-- Right Cup -->
+    <rect x="400" y="180" width="56" height="130" rx="28" fill="#1E1035" />
+    <rect x="412" y="195" width="32" height="100" rx="16" fill="#4C1D95" />
+    <circle cx="428" cy="245" r="9" fill="#F59E0B" />
+
+    <!-- 7. Cute Rosy Cheeks -->
+    <ellipse cx="155" cy="305" rx="26" ry="16" fill="#FDA4AF" opacity="0.8" />
+    <ellipse cx="357" cy="305" rx="26" ry="16" fill="#FDA4AF" opacity="0.8" />
+
+    <!-- 8. Giant Expressive Duolingo Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="196" cy="240" rx="46" ry="64" fill="#1E1035" />
+    <circle cx="180" cy="216" r="20" fill="#FFFFFF" />
+    <circle cx="214" cy="256" r="9" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="316" cy="240" rx="46" ry="64" fill="#1E1035" />
+    <circle cx="300" cy="216" r="20" fill="#FFFFFF" />
+    <circle cx="334" cy="256" r="9" fill="#FFFFFF" />
+
+    <!-- 9. Cheerful Toothy Vampire Smile with Cute Fangs -->
+    <!-- Mouth Cavity -->
+    <path d="M 200 325 Q 256 318 312 325 C 318 385 292 400 256 400 C 220 400 194 385 200 325 Z" fill="#881337" />
+    <!-- Tongue -->
+    <path d="M 224 372 C 236 358 276 358 288 372 C 276 395 236 395 224 372 Z" fill="#FB7185" />
+    <!-- Left Vampire Fang -->
+    <path d="M 214 324 L 232 324 L 223 350 Z" fill="#FFFFFF" />
+    <!-- Right Vampire Fang -->
+    <path d="M 280 324 L 298 324 L 289 350 Z" fill="#FFFFFF" />
+
+    <!-- 10. Golden Play Button Bowtie at bottom -->
+    <path d="M 210 445 L 256 465 L 210 485 Z" fill="#F59E0B" />
+    <path d="M 302 445 L 256 465 L 302 485 Z" fill="#F59E0B" />
+    <circle cx="256" cy="465" r="9" fill="#FDE68A" />
+  </g>
+</svg>
+</g><text x="1251.33" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="1095.3333333333335" y="636" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">C · Vampi Crimson</text><text x="1095.3333333333335" y="670" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Estilo Duolingo com Vampi: fundo carmesim e</text><text x="1095.3333333333335" y="696" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">presinhas caninas fofas.</text></svg>

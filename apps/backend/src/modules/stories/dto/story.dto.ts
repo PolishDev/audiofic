@@ -6,7 +6,7 @@ export const createStorySchema = z.object({
   synopsis: z.string().min(1, 'Sinopse é obrigatória'),
   coverUrl: z.string().min(1, 'URL da capa é obrigatória'),
   thumbnailUrl: z.string().optional(),
-  author: z.string().optional().default('ShortStory'),
+  author: z.string().optional().default('AudioFic'),
   status: z.enum(['draft', 'published', 'archived']).optional().default('published'),
   isFeatured: z.boolean().optional().default(false),
   genreIds: z.array(z.string()).optional().default([]),

@@ -1,3 +1,10 @@
+export interface UserSubscription {
+  status: 'free' | 'premium';
+  planName: string;
+  isPremium: boolean;
+  expiresAt?: string | null;
+}
+
 export interface User {
   id: string;
   name: string;
@@ -6,6 +13,7 @@ export interface User {
   image?: string | null;
   createdAt: string | Date;
   updatedAt: string | Date;
+  subscription?: UserSubscription;
 }
 
 export interface Session {

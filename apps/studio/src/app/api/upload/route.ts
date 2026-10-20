@@ -4,9 +4,13 @@ import path from 'path';
 import { execFile } from 'child_process';
 import { promisify } from 'util';
 
+import { existsSync } from 'fs';
+
 const execFileAsync = promisify(execFile);
 
-const AUDIO_BASE_DIR = '/mnt/stuff/shortstory-audio';
+const AUDIO_BASE_DIR = existsSync('/mnt/stuff/audiofic-audio')
+  ? '/mnt/stuff/audiofic-audio'
+  : '/mnt/stuff/shortstory-audio';
 const EPISODES_DIR = path.join(AUDIO_BASE_DIR, 'episodes');
 const UPLOADS_DIR = path.join(AUDIO_BASE_DIR, 'uploads');
 

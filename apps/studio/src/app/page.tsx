@@ -1515,7 +1515,7 @@ export default function StudioPage() {
         coverUrl:
           bible.coverUrl ||
           'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80',
-        author: 'ShortStory Studio',
+        author: 'AudioFic Studio',
         genreSlugs: [bible.genre],
         isFeatured: true,
         episodes: episodesPayload,
@@ -1661,7 +1661,7 @@ export default function StudioPage() {
         {/* Top Breadcrumb & Step Navigation */}
         <header className="h-12 border-b border-zinc-800/80 px-6 flex items-center justify-between bg-[#111114]/50 backdrop-blur-md shrink-0">
           <div className="flex items-center gap-2 text-xs text-zinc-400">
-            <span className="text-zinc-500 hover:text-zinc-400">shortstory</span>
+            <span className="text-zinc-500 hover:text-zinc-400">audiofic</span>
             <span className="text-zinc-600">/</span>
             <span className="text-zinc-400 font-medium">Studio</span>
             <span className="text-zinc-600">/</span>
@@ -3101,7 +3101,7 @@ export default function StudioPage() {
                     <div>
                       <h3 className="text-lg font-bold text-white flex items-center gap-2">
                         <Send className="w-5 h-5 text-emerald-400" />
-                        <span>Publicar Série no App ShortStory</span>
+                        <span>Publicar Série no App AudioFic</span>
                       </h3>
                       <p className="text-xs text-zinc-400 pt-1">
                         A história será inserida no banco de dados e ficará visível imediatamente para os ouvintes no aplicativo mobile.
@@ -3260,7 +3260,7 @@ export default function StudioPage() {
                         ) : (
                           <>
                             <Send className="w-4 h-4" />
-                            Publicar Série no App ShortStory
+                            Publicar Série no App AudioFic
                           </>
                         )}
                       </Button>

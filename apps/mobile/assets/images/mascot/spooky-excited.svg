@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Soft hover shadow beneath the jumping mascot -->
+    <radialGradient id="jumpShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0F172A" stop-opacity="0.16" />
+      <stop offset="60%" stop-color="#0F172A" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Ghost body 3D volume gradient -->
+    <linearGradient id="ghostBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="65%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#E1F0FD" />
+    </linearGradient>
+
+    <!-- Headphone Cushion Gradient -->
+    <linearGradient id="headphoneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9333EA" />
+      <stop offset="50%" stop-color="#7C3AED" />
+      <stop offset="100%" stop-color="#6D28D9" />
+    </linearGradient>
+
+    <!-- Accent Pink -->
+    <linearGradient id="accentPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB7185" />
+      <stop offset="100%" stop-color="#E11D48" />
+    </linearGradient>
+
+    <!-- Ghost Subtle Outline Shadow (For crisp visibility on pure white backgrounds) -->
+    <filter id="softGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#64748B" flood-opacity="0.14" />
+    </filter>
+  </defs>
+
+  <!-- 1. Floating Jump Floor Shadow (Higher jump = smaller, softer shadow) -->
+  <ellipse cx="256" cy="478" rx="84" ry="13" fill="url(#jumpShadow)" />
+
+  <!-- 2. Sparkles & Energy Elements (Celebration / Audio Excitement) -->
+  <!-- Golden Sparkle Left -->
+  <path d="M 52 130 Q 64 130 64 118 Q 64 130 76 130 Q 64 130 64 142 Q 64 130 52 130 Z" fill="#FBBF24" />
+  <!-- Pink Sparkle Right -->
+  <path d="M 444 100 Q 456 100 456 88 Q 456 100 468 100 Q 456 100 456 112 Q 456 100 444 100 Z" fill="#F43F5E" />
+  <!-- Small Star Top Right -->
+  <circle cx="436" cy="150" r="4.5" fill="#A855F7" />
+  <!-- Small Star Top Left -->
+  <circle cx="86" cy="170" r="4" fill="#38BDF8" />
+
+  <!-- Audio Wave Vibes Left -->
+  <path d="M 72 220 C 60 236 60 258 72 274" stroke="#C084FC" stroke-width="4.5" stroke-linecap="round" fill="none" />
+  <path d="M 54 210 C 36 235 36 268 54 292" stroke="#E9D5FF" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.8" />
+
+  <!-- Audio Wave Vibes Right -->
+  <path d="M 440 220 C 452 236 452 258 440 274" stroke="#C084FC" stroke-width="4.5" stroke-linecap="round" fill="none" />
+  <path d="M 458 210 C 476 235 476 268 458 292" stroke="#E9D5FF" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.8" />
+
+  <!-- Tilted Dynamic Mascot Group (Jumping with Joy, like Duo excited pose) -->
+  <g transform="translate(256, 235) rotate(-6) translate(-256, -235)">
+    <!-- 3. Over-Ear Headphone Arch (Behind Head) -->
+    <path d="M 148 185 C 148 92 196 62 256 62 C 316 62 364 92 364 185" 
+          stroke="url(#headphoneGrad)" stroke-width="28" stroke-linecap="round" fill="none" />
+    <path d="M 205 70 C 225 66 287 66 307 70" 
+          stroke="#C084FC" stroke-width="8" stroke-linecap="round" fill="none" />
+
+    <!-- 4. Ghost Main Body Silhouette with soft drop shadow -->
+    <g filter="url(#softGlow)">
+      <!-- Base Body: Floating higher with energetic swoop -->
+      <path d="M 146 195 
+               C 146 95 196 78 256 78 
+               C 316 78 366 95 366 195 
+               C 366 265 384 320 384 365
+               C 384 394 365 414 345 398
+               C 330 386 316 386 302 404
+               C 288 418 268 418 256 406
+               C 244 418 224 418 210 404
+               C 196 386 182 386 167 398
+               C 147 414 128 394 128 365
+               C 128 320 146 265 146 195 Z" 
+            fill="url(#ghostBodyGrad)" 
+            stroke="#E2E8F0" stroke-width="1.5" />
+
+      <!-- Ghost Lower Tail Folds / Ambient Shading -->
+      <path d="M 128 365
+               C 128 380 144 406 167 398
+               C 182 386 196 386 210 404
+               C 224 418 244 418 256 406
+               C 268 418 288 418 302 404
+               C 316 386 330 386 345 398
+               C 368 406 384 380 384 365
+               C 384 382 364 418 345 406
+               C 328 395 316 398 302 412
+               C 286 428 266 428 256 414
+               C 246 428 226 428 210 412
+               C 196 398 184 395 167 406
+               C 148 418 128 382 128 365 Z" 
+            fill="#CBD5E1" opacity="0.45" />
+
+      <!-- Cute Chubby Ghost Belly Shading (Duolingo style soft volume) -->
+      <ellipse cx="256" cy="345" rx="84" ry="46" fill="#E2F1FD" opacity="0.75" />
+
+      <!-- 5. Arms Spread Out & Upward in Celebration (Single unified clean path with rounded ends) -->
+      <!-- Left Arm (Spreading outward and up like Duo wing) -->
+      <path d="M 148 262 
+               C 120 252 82 238 68 206 
+               C 56 182 82 168 102 186 
+               C 126 206 148 238 156 268 Z" 
+            fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" />
+      <path d="M 68 206 C 56 182 82 168 102 186 C 88 190 76 198 68 206 Z" fill="#E2F1FD" />
+
+      <!-- Right Arm (Spreading outward and up like Duo wing) -->
+      <path d="M 364 262 
+               C 392 252 430 238 444 206 
+               C 456 182 430 168 410 186 
+               C 386 206 364 238 356 268 Z" 
+            fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" />
+      <path d="M 444 206 C 456 182 430 168 410 186 C 424 190 436 198 444 206 Z" fill="#E2F1FD" />
+    </g>
+
+    <!-- 6. Headphone Ear-Cups (Over the ears) -->
+    <!-- Left Ear-Cup -->
+    <g transform="translate(118, 170)">
+      <rect x="0" y="0" width="36" height="82" rx="18" fill="#7C3AED" />
+      <rect x="6" y="8" width="24" height="66" rx="12" fill="#581C87" />
+      <circle cx="18" cy="41" r="8" fill="url(#accentPink)" />
+    </g>
+
+    <!-- Right Ear-Cup -->
+    <g transform="translate(358, 170)">
+      <rect x="0" y="0" width="36" height="82" rx="18" fill="#7C3AED" />
+      <rect x="6" y="8" width="24" height="66" rx="12" fill="#581C87" />
+      <circle cx="18" cy="41" r="8" fill="url(#accentPink)" />
+    </g>
+
+    <!-- 7. Cute Blush Cheeks -->
+    <ellipse cx="180" cy="256" rx="24" ry="15" fill="#FDA4AF" opacity="0.85" />
+    <ellipse cx="332" cy="256" rx="24" ry="15" fill="#FDA4AF" opacity="0.85" />
+
+    <!-- 8. Trademark Duolingo-Style Large Joyful Eyes -->
+    <!-- Left Eye -->
+    <g>
+      <ellipse cx="206" cy="204" rx="36" ry="48" fill="#1E1B4B" />
+      <!-- Big Catchlight Highlight -->
+      <circle cx="194" cy="186" r="15" fill="#FFFFFF" />
+      <!-- Small Secondary Highlight -->
+      <circle cx="218" cy="220" r="7" fill="#FFFFFF" />
+    </g>
+
+    <!-- Right Eye -->
+    <g>
+      <ellipse cx="306" cy="204" rx="36" ry="48" fill="#1E1B4B" />
+      <!-- Big Catchlight Highlight -->
+      <circle cx="294" cy="186" r="15" fill="#FFFFFF" />
+      <!-- Small Secondary Highlight -->
+      <circle cx="318" cy="220" r="7" fill="#FFFFFF" />
+    </g>
+
+    <!-- 9. Ecstatic Open Gasp / Laugh Mouth (Duolingo Style) -->
+    <!-- Mouth Outer Rim -->
+    <path d="M 232 245 C 232 288 280 288 280 245 Z" fill="#1E1B4B" />
+    <!-- Big Joyful Tongue -->
+    <path d="M 240 262 C 248 282 264 282 272 262 Z" fill="#F43F5E" />
+  </g>
+</svg>

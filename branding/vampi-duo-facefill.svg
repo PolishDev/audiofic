@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- App Icon Squircle Clip -->
+    <clipPath id="squircleClipVampiFace">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+
+    <!-- Porcelain Moonlit Skin Gradient -->
+    <radialGradient id="vampiSkin" cx="50%" cy="55%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="80%" stop-color="#FAF5FF" />
+      <stop offset="100%" stop-color="#F3E8FF" />
+    </radialGradient>
+
+    <!-- Headphone Crimson Gradient -->
+    <linearGradient id="vampiHeadphone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" />
+      <stop offset="100%" stop-color="#BE123C" />
+    </linearGradient>
+
+    <!-- Ear Accent Gradient -->
+    <linearGradient id="earPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDA4AF" />
+      <stop offset="100%" stop-color="#F43F5E" />
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#squircleClipVampiFace)">
+    <!-- 1. Background: Vampire Porcelain Skin filling the entire squircle -->
+    <rect width="512" height="512" fill="url(#vampiSkin)" />
+
+    <!-- 2. Dracula Widow's Peak Hair (Black/Midnight Plum bangs) -->
+    <path d="M 0 0 
+             L 512 0 
+             L 512 90 
+             C 410 75 350 110 256 160 
+             C 162 110 102 75 0 90 
+             Z" 
+          fill="#1E1035" />
+
+    <!-- 3. Bat Ears (Proudly protruding from the top hair and headphone) -->
+    <!-- Left Ear -->
+    <path d="M 125 75 L 45 15 C 80 25 110 50 120 85 Z" fill="#1E1035" />
+    <path d="M 115 65 L 60 28 C 85 38 105 55 110 70 Z" fill="url(#earPink)" />
+    <!-- Right Ear -->
+    <path d="M 387 75 L 467 15 C 432 25 402 50 392 85 Z" fill="#1E1035" />
+    <path d="M 397 65 L 452 28 C 427 38 407 55 402 70 Z" fill="url(#earPink)" />
+
+    <!-- 4. Over-Ear Headphone Band (Arching across the top border) -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="url(#vampiHeadphone)" stroke-width="36" stroke-linecap="round" fill="none" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#FDA4AF" stroke-width="12" stroke-linecap="round" fill="none" />
+
+    <!-- 5. Headphone Ear-Cups (Mounted on the left & right edges) -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#E11D48" />
+    <rect x="0" y="165" width="36" height="120" rx="18" fill="#1E1035" />
+    <circle cx="18" cy="225" r="10" fill="#F59E0B" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#E11D48" />
+    <rect x="476" y="165" width="36" height="120" rx="18" fill="#1E1035" />
+    <circle cx="494" cy="225" r="10" fill="#F59E0B" />
+
+    <!-- 6. Cute Rosy Blush Cheeks -->
+    <ellipse cx="100" cy="330" rx="32" ry="20" fill="#FDA4AF" opacity="0.8" />
+    <ellipse cx="412" cy="330" rx="32" ry="20" fill="#FDA4AF" opacity="0.8" />
+
+    <!-- 7. Giant Duolingo-Style Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#1E1035" />
+    <!-- Catchlights -->
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#1E1035" />
+    <!-- Catchlights -->
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- 8. Cute Vampire Smile with Fangs -->
+    <!-- Mouth Cavity -->
+    <path d="M 194 335 Q 256 325 318 335 C 326 405 296 425 256 425 C 216 425 186 405 194 335 Z" fill="#881337" />
+    <!-- Tongue -->
+    <path d="M 220 395 C 232 380 280 380 292 395 C 280 420 232 420 220 395 Z" fill="#FB7185" />
+    <!-- Left Vampire Fang -->
+    <polygon points="210,335 230,335 220,366" fill="#FFFFFF" />
+    <!-- Right Vampire Fang -->
+    <polygon points="282,335 302,335 292,366" fill="#FFFFFF" />
+
+    <!-- 9. Golden Play Button Bowtie (Peeking at the bottom edge) -->
+    <path d="M 215 478 L 256 495 L 215 512 Z" fill="#F59E0B" />
+    <path d="M 297 478 L 256 495 L 297 512 Z" fill="#F59E0B" />
+    <circle cx="256" cy="495" r="8" fill="#FDE68A" />
+  </g>
+</svg>

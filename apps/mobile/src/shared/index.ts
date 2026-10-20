@@ -6,3 +6,5 @@ export * from './auth/auth-context';
 export * from './audio';
 export * from './offline';
 export * from './playback';
+export * from './theme';
+export * from './favorites';

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
+  <title>AudioFic Mascot - Spooky App Icon (Night Monochrome)</title>
+  <defs>
+    <clipPath id="squircleNightMono">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#squircleNightMono)">
+    <!-- Pitch Black Background -->
+    <rect width="512" height="512" fill="#000000" />
+    <!-- Subtle Border -->
+    <rect x="6" y="6" width="500" height="500" rx="110" stroke="#27272A" stroke-width="12" fill="none" />
+
+    <!-- Spooky Ghost Body (Crisp Solid White) -->
+    <path d="M 96 220 
+             C 96 110 160 86 256 86 
+             C 352 86 416 110 416 220 
+             C 416 330 436 440 430 480 
+             C 426 500 398 510 380 490 
+             C 360 470 336 470 320 490 
+             C 300 512 272 512 256 490 
+             C 240 512 212 512 192 490 
+             C 176 470 152 470 132 490 
+             C 114 510 86 500 82 480 
+             C 76 440 96 330 96 220 Z" 
+          fill="#FFFFFF" />
+
+    <!-- Over-Ear Headphone Band -->
+    <path d="M 88 230 C 88 100 150 44 256 44 C 362 44 424 100 424 230" 
+          stroke="#FFFFFF" stroke-width="32" stroke-linecap="round" fill="none" />
+    <path d="M 190 54 C 220 50 292 50 322 54" 
+          stroke="#000000" stroke-width="10" stroke-linecap="round" fill="none" />
+
+    <!-- Headphone Ear-Cups -->
+    <!-- Left Cup -->
+    <rect x="52" y="190" width="56" height="130" rx="28" fill="#FFFFFF" />
+    <rect x="64" y="205" width="32" height="100" rx="16" fill="#000000" />
+    <circle cx="80" cy="255" r="9" fill="#FFFFFF" />
+
+    <!-- Right Cup -->
+    <rect x="404" y="190" width="56" height="130" rx="28" fill="#FFFFFF" />
+    <rect x="416" y="205" width="32" height="100" rx="16" fill="#000000" />
+    <circle cx="432" cy="255" r="9" fill="#FFFFFF" />
+
+    <!-- Cute Floating Ghost Hands -->
+    <path d="M 126 270 C 96 270 82 245 82 230" stroke="#000000" stroke-width="14" stroke-linecap="round" fill="none" />
+    <path d="M 386 270 C 416 270 430 245 430 230" stroke="#000000" stroke-width="14" stroke-linecap="round" fill="none" />
+
+    <!-- Expressive Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="196" cy="245" rx="46" ry="64" fill="#000000" />
+    <circle cx="180" cy="222" r="20" fill="#FFFFFF" />
+    <circle cx="214" cy="262" r="9" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="316" cy="245" rx="46" ry="64" fill="#000000" />
+    <circle cx="300" cy="222" r="20" fill="#FFFFFF" />
+    <circle cx="334" cy="262" r="9" fill="#FFFFFF" />
+
+    <!-- Cheeks (Subtle dashed contours) -->
+    <ellipse cx="145" cy="315" rx="24" ry="14" stroke="#E4E4E7" stroke-width="4" stroke-dasharray="6 4" fill="none" />
+    <ellipse cx="367" cy="315" rx="24" ry="14" stroke="#E4E4E7" stroke-width="4" stroke-dasharray="6 4" fill="none" />
+
+    <!-- Expressive "Ooh!" Mouth -->
+    <ellipse cx="256" cy="345" rx="36" ry="46" fill="#000000" />
+    <ellipse cx="256" cy="365" rx="24" ry="18" fill="#FFFFFF" />
+  </g>
+</svg>

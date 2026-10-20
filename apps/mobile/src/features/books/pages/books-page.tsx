@@ -145,8 +145,8 @@ export function BooksPage() {
       >
         <View style={styles.brandRow}>
           <View style={styles.brandLogo}>
-            <Ionicons name="book" size={18} color="#E11D48" />
-            <Text style={styles.brandText}>SHORTSTORY</Text>
+            <Ionicons name="headset" size={18} color="#E11D48" />
+            <Text style={styles.brandText}>AUDIOFIC</Text>
           </View>
         </View>
       </LinearGradient>

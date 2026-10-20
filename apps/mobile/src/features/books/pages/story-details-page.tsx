@@ -15,7 +15,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import { Text, useDownloadManager } from '@/shared';
+import { Text, useDownloadManager, useFavorites } from '@/shared';
 import { apiClient } from '@/shared/api/axios-client';
 import { useAudioPlayerContext } from '@/shared/audio';
 
@@ -70,7 +70,9 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [isSavedInList, setIsSavedInList] = useState(false);
+
+  const { isFavorite, toggleFavorite } = useFavorites();
+  const isSavedInList = story ? isFavorite(story.id) : false;
 
   const {
     playEpisode,
@@ -168,7 +170,7 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
     try {
       await Share.share({
         title: story.title,
-        message: `Ouça "${story.title}" no ShortStory: ${story.synopsis}`,
+        message: `Ouça "${story.title}" no AudioFic: ${story.synopsis}`,
       });
     } catch {
       // Ignorar cancelamento
@@ -176,7 +178,8 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
   };
 
   const handleToggleMyList = () => {
-    setIsSavedInList((prev) => !prev);
+    if (!story) return;
+    toggleFavorite({ id: story.id, title: story.title });
   };
 
   const handlePlayEpisode = (episode: EpisodeItem) => {

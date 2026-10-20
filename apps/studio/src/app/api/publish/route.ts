@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:3000';
 const ADMIN_API_KEY =
-  process.env.ADMIN_API_KEY || 'shortstory-dev-admin-key';
+  process.env.ADMIN_API_KEY || 'audiofic-dev-admin-key';
 
 export async function POST(req: Request) {
   try {

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" fill="none">
+  <title>AudioFic Mascot - Vampi (Monochrome)</title>
+
+  <!-- Dracula High Collar (Sharp, dramatic yet cute framing) -->
+  <path d="M 52 144 L 38 116 C 34 186 72 226 128 226 C 184 226 222 186 218 116 L 204 144 C 188 190 158 206 128 206 C 98 206 68 190 52 144 Z" 
+        fill="#000000"/>
+  <!-- Bowtie with audio play glyph -->
+  <path d="M 112 216 L 128 224 L 112 232 Z" fill="#000000"/>
+  <path d="M 144 216 L 128 224 L 144 232 Z" fill="#000000"/>
+  <circle cx="128" cy="224" r="3" fill="#FFFFFF"/>
+
+  <!-- Head Base Contour (Plump, friendly round face) -->
+  <path d="M 68 134 C 68 84 94 66 128 66 C 162 66 188 84 188 134 C 188 182 162 202 128 202 C 94 202 68 182 68 134 Z" 
+        fill="#000000"/>
+
+  <!-- Face Inner Light Mask -->
+  <path d="M 76 136 C 76 102 96 86 128 86 C 160 86 180 102 180 136 C 180 176 160 196 128 196 C 96 196 76 176 76 136 Z" 
+        fill="#FFFFFF"/>
+
+  <!-- Vampire Widow's Peak Hairline (Dracula style) -->
+  <path d="M 76 116 C 90 98 112 88 128 114 C 144 88 166 98 180 116 C 174 94 154 82 128 82 C 102 82 82 94 76 116 Z" 
+        fill="#000000"/>
+
+  <!-- Bat Ears (Mounted seamlessly on the top arch) -->
+  <!-- Left Ear -->
+  <path d="M 66 68 L 48 18 C 72 30 88 44 94 50 Z" fill="#000000"/>
+  <path d="M 66 60 L 56 28 C 70 38 80 46 84 50 Z" fill="#FFFFFF"/>
+  <!-- Right Ear -->
+  <path d="M 190 68 L 208 18 C 184 30 168 44 162 50 Z" fill="#000000"/>
+  <path d="M 190 60 L 200 28 C 186 38 176 46 172 50 Z" fill="#FFFFFF"/>
+
+  <!-- Headphone Over-Ear Band (Unbroken solid arch) -->
+  <path d="M 60 120 C 60 62 90 32 128 32 C 166 32 196 62 196 120" 
+        stroke="#000000" stroke-width="14" stroke-linecap="round"/>
+  <!-- Headband inner cushion bar -->
+  <path d="M 96 38 C 106 34 116 33 128 33 C 140 33 150 34 160 38" 
+        stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Left Headphone Ear-Cup (Chunky modern headphone) -->
+  <rect x="34" y="104" width="28" height="60" rx="14" fill="#000000"/>
+  <rect x="40" y="112" width="14" height="44" rx="7" fill="#FFFFFF"/>
+  <rect x="44" y="120" width="6" height="28" rx="3" fill="#000000"/>
+
+  <!-- Right Headphone Ear-Cup -->
+  <rect x="194" y="104" width="28" height="60" rx="14" fill="#000000"/>
+  <rect x="202" y="112" width="14" height="44" rx="7" fill="#FFFFFF"/>
+  <rect x="206" y="120" width="6" height="28" rx="3" fill="#000000"/>
+
+  <!-- Eyes (Big, playful anime eyes) -->
+  <!-- Left Eye -->
+  <ellipse cx="106" cy="142" rx="11" ry="15" fill="#000000"/>
+  <circle cx="103" cy="137" r="4.5" fill="#FFFFFF"/>
+  <circle cx="110" cy="146" r="2" fill="#FFFFFF"/>
+
+  <!-- Right Eye -->
+  <ellipse cx="150" cy="142" rx="11" ry="15" fill="#000000"/>
+  <circle cx="147" cy="137" r="4.5" fill="#FFFFFF"/>
+  <circle cx="154" cy="146" r="2" fill="#FFFFFF"/>
+
+  <!-- Cheerful Smile with Cute Fangs -->
+  <path d="M 110 164 Q 128 161 146 164 C 148 186 138 190 128 190 C 118 190 108 186 110 164 Z" fill="#000000"/>
+  <!-- Tongue -->
+  <path d="M 118 180 C 122 176 134 176 138 180 C 134 188 122 188 118 180 Z" fill="#FFFFFF"/>
+  <!-- Left Fang -->
+  <path d="M 115 164 L 121 164 L 118 173 Z" fill="#FFFFFF"/>
+  <!-- Right Fang -->
+  <path d="M 135 164 L 141 164 L 138 173 Z" fill="#FFFFFF"/>
+</svg>

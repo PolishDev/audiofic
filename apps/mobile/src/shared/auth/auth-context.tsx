@@ -8,9 +8,11 @@ import React, {
 } from 'react';
 import * as SecureStore from 'expo-secure-store';
 import { authClient } from '../lib/auth-client';
+import { authService } from '../../features/auth/services/auth.service';
 import type { LoginFormData, RegisterFormData, User } from '../../features/auth/types';
 
-const GUEST_STORAGE_KEY = 'shortstory_guest_mode';
+const GUEST_STORAGE_KEY = 'audiofic_guest_mode';
+const SESSION_TOKEN_KEY = 'audiofic_session_token';
 
 interface AuthContextType {
   user: User | null;
@@ -21,6 +23,7 @@ interface AuthContextType {
   login: (data: LoginFormData) => Promise<void>;
   register: (data: RegisterFormData) => Promise<void>;
   logout: () => Promise<void>;
+  deleteAccount: () => Promise<void>;
   continueAsGuest: () => Promise<void>;
   refreshSession: () => Promise<void>;
 }
@@ -39,7 +42,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const timeoutPromise = new Promise<never>((_, reject) =>
         setTimeout(
           () => reject(new Error('Tempo esgotado ao verificar sessão')),
-          3500,
+          8000,
         ),
       );
 
@@ -53,6 +56,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setSession(response.data.session);
         setIsGuest(false);
         await SecureStore.setItemAsync(GUEST_STORAGE_KEY, 'false');
+
+        // Extract and cache raw session token if present
+        if (response.data.session?.token) {
+          await SecureStore.setItemAsync(
+            SESSION_TOKEN_KEY,
+            response.data.session.token,
+          ).catch(() => {});
+        }
       } else {
         setUser(null);
         setSession(null);
@@ -61,13 +72,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
     } catch (err: any) {
       console.warn(
-        '[AuthContext] Verificação de sessão inicial falhou ou expirou:',
+        '[AuthContext] Verificação de sessão falhou ou expirou:',
         err?.message || err,
       );
-      setUser(null);
-      setSession(null);
       const guestPref = await SecureStore.getItemAsync(GUEST_STORAGE_KEY);
-      setIsGuest(guestPref === 'true');
+      if (guestPref === 'true') {
+        setUser(null);
+        setSession(null);
+        setIsGuest(true);
+      }
     } finally {
       setIsLoading(false);
     }
@@ -98,10 +111,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           () =>
             reject(
               new Error(
-                'Tempo esgotado ao conectar ao servidor. Verifique a conexão ou se a porta 3000 está liberada.',
+                'Tempo esgotado ao conectar ao servidor. Verifique a conexão com o backend.',
               ),
             ),
-          10000,
+          12000,
         ),
       );
 
@@ -111,7 +124,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         throw new Error(res.error.message || 'Falha ao autenticar');
       }
 
-      await continueAsGuest(); // reset guest
+      setIsGuest(false);
       await SecureStore.setItemAsync(GUEST_STORAGE_KEY, 'false');
       await refreshSession();
     } finally {
@@ -134,10 +147,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           () =>
             reject(
               new Error(
-                'Tempo esgotado ao conectar ao servidor. Verifique a conexão ou se a porta 3000 está liberada.',
+                'Tempo esgotado ao conectar ao servidor. Verifique a conexão com o backend.',
               ),
             ),
-          10000,
+          12000,
         ),
       );
 
@@ -147,6 +160,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         throw new Error(res.error.message || 'Falha ao cadastrar');
       }
 
+      setIsGuest(false);
       await SecureStore.setItemAsync(GUEST_STORAGE_KEY, 'false');
       await refreshSession();
     } finally {
@@ -158,6 +172,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsLoading(true);
     try {
       await authClient.signOut();
+      await SecureStore.deleteItemAsync(SESSION_TOKEN_KEY).catch(() => {});
+      await SecureStore.deleteItemAsync('shortstory_session_token').catch(() => {});
+      setUser(null);
+      setSession(null);
+      setIsGuest(true);
+      await SecureStore.setItemAsync(GUEST_STORAGE_KEY, 'true');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const deleteAccount = async () => {
+    setIsLoading(true);
+    try {
+      await authService.deleteAccount();
+      await SecureStore.deleteItemAsync(SESSION_TOKEN_KEY).catch(() => {});
+      await SecureStore.deleteItemAsync('shortstory_session_token').catch(() => {});
       setUser(null);
       setSession(null);
       setIsGuest(true);
@@ -178,6 +209,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         login,
         register,
         logout,
+        deleteAccount,
         continueAsGuest,
         refreshSession,
       }}>

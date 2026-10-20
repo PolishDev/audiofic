@@ -14,6 +14,10 @@ import {
   userProgress,
   userProgressRelations,
 } from './user-progress.table.js';
+import {
+  userFavorites,
+  userFavoritesRelations,
+} from './user-favorites.table.js';
 
 export * from './utils.js';
 export * from './user.table.js';
@@ -26,6 +30,7 @@ export * from './episode.table.js';
 export * from './story-genre.table.js';
 export * from './story-metric-event.table.js';
 export * from './user-progress.table.js';
+export * from './user-favorites.table.js';
 
 export const schema = {
   user,
@@ -47,6 +52,8 @@ export const schema = {
   storyMetricEventRelations,
   userProgress,
   userProgressRelations,
+  userFavorites,
+  userFavoritesRelations,
 };
 
 export type AppSchema = typeof schema;

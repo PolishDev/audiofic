@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- App Icon Squircle Clip -->
+    <clipPath id="squircleClipFrankieFace">
+      <rect x="0" y="0" width="512" height="512" rx="115" ry="115" />
+    </clipPath>
+
+    <!-- Monster Mint Green Skin Gradient -->
+    <radialGradient id="frankieSkin" cx="50%" cy="55%" r="55%">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="70%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </radialGradient>
+
+    <!-- Audio Jack Gold Gradient -->
+    <linearGradient id="jackGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="100%" stop-color="#EAB308" />
+    </linearGradient>
+
+    <linearGradient id="headphonePurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED" />
+      <stop offset="100%" stop-color="#4C1D95" />
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#squircleClipFrankieFace)">
+    <!-- 1. Background: Monster Mint Green Skin filling the entire squircle -->
+    <rect width="512" height="512" fill="url(#frankieSkin)" />
+
+    <!-- 2. Flat-Top Hair with Geometric Jagged Bangs (Midnight Slate Navy) -->
+    <path d="M 0 0 
+             L 512 0 
+             L 512 85 
+             L 456 68 
+             L 404 116 
+             L 348 64 
+             L 296 112 
+             L 256 62 
+             L 216 112 
+             L 164 64 
+             L 108 116 
+             L 56 68 
+             L 0 85 
+             Z" 
+          fill="#0F172A" />
+
+    <!-- 3. Over-Ear Headphone Band (Arching across top) -->
+    <path d="M 32 180 C 32 60 120 28 256 28 C 392 28 480 60 480 180" 
+          stroke="url(#headphonePurple)" stroke-width="36" stroke-linecap="round" fill="none" />
+    <path d="M 160 38 C 200 32 312 32 352 38" 
+          stroke="#C084FC" stroke-width="12" stroke-linecap="round" fill="none" />
+
+    <!-- 4. Soundwave Suture / Cicatriz de Onda Sonora na Testa -->
+    <g stroke="#0F172A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Audio Frequency Pulse Wave -->
+      <path d="M 160 142 L 195 142 L 210 122 L 228 162 L 244 114 L 264 170 L 280 130 L 296 150 L 312 142 L 352 142"/>
+      <!-- Cross Stitch Lines -->
+      <line x1="180" y1="130" x2="180" y2="154"/>
+      <line x1="220" y1="130" x2="220" y2="154"/>
+      <line x1="272" y1="130" x2="272" y2="154"/>
+      <line x1="324" y1="130" x2="324" y2="154"/>
+    </g>
+
+    <!-- 5. Headphone Ear-Cups styled with 3.5mm Jack/Bolts -->
+    <!-- Left Cup -->
+    <rect x="-10" y="150" width="62" height="150" rx="31" fill="#4C1D95" />
+    <rect x="0" y="165" width="36" height="120" rx="18" fill="#0F172A" />
+    <!-- Audio plug bolt ring -->
+    <rect x="10" y="210" width="18" height="30" rx="6" fill="url(#jackGold)" />
+    <!-- Cord loop hanging at bottom-left -->
+    <path d="M 16 280 C 16 350 48 375 70 365" stroke="#0F172A" stroke-width="16" stroke-linecap="round" fill="none" />
+
+    <!-- Right Cup -->
+    <rect x="460" y="150" width="62" height="150" rx="31" fill="#4C1D95" />
+    <rect x="476" y="165" width="36" height="120" rx="18" fill="#0F172A" />
+    <!-- Audio plug bolt ring -->
+    <rect x="484" y="210" width="18" height="30" rx="6" fill="url(#jackGold)" />
+    <!-- Cord loop hanging at bottom-right -->
+    <path d="M 496 280 C 496 350 464 375 442 365" stroke="#0F172A" stroke-width="16" stroke-linecap="round" fill="none" />
+
+    <!-- 6. Soft Emerald Cheeks -->
+    <ellipse cx="100" cy="330" rx="32" ry="20" fill="#047857" opacity="0.4" />
+    <ellipse cx="412" cy="330" rx="32" ry="20" fill="#047857" opacity="0.4" />
+
+    <!-- 7. Giant Duolingo-Style Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="170" cy="245" rx="56" ry="76" fill="#0F172A" />
+    <!-- Catchlights -->
+    <circle cx="152" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="192" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <ellipse cx="342" cy="245" rx="56" ry="76" fill="#0F172A" />
+    <!-- Catchlights -->
+    <circle cx="324" cy="218" r="24" fill="#FFFFFF" />
+    <circle cx="364" cy="265" r="11" fill="#FFFFFF" />
+
+    <!-- 8. Quirky Monster Grin with Teeth -->
+    <!-- Mouth Cavity -->
+    <path d="M 194 340 Q 256 332 318 340 C 326 405 296 425 256 425 C 216 425 186 405 194 340 Z" fill="#0F172A" />
+    <!-- Tongue -->
+    <path d="M 226 398 C 236 385 276 385 286 398 C 276 420 236 420 226 398 Z" fill="#F472B6" />
+    <!-- Monster square tooth sticking down -->
+    <rect x="214" y="340" width="22" height="22" rx="5" fill="#FFFFFF" />
+    <!-- Monster square tooth sticking up -->
+    <rect x="276" y="380" width="20" height="20" rx="5" fill="#FFFFFF" />
+  </g>
+</svg>

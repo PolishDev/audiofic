@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" width="1600" height="1100">
+  <defs>
+    <!-- Background styling -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0B14" />
+      <stop offset="50%" stop-color="#111122" />
+      <stop offset="100%" stop-color="#07070D" />
+    </linearGradient>
+
+    <!-- Card Background Light -->
+    <linearGradient id="cardGradLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F8FAFC" />
+    </linearGradient>
+
+    <!-- Card Background Dark -->
+    <linearGradient id="cardGradDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A2E" />
+      <stop offset="100%" stop-color="#121220" />
+    </linearGradient>
+
+    <!-- Brand Header Gradient -->
+    <linearGradient id="brandTitleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C084FC" />
+      <stop offset="50%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+
+    <!-- Squircle for Card Clip -->
+    <clipPath id="cardClip">
+      <rect width="450" height="420" rx="28" ry="28" />
+    </clipPath>
+  </defs>
+
+  <!-- 1. Background -->
+  <rect width="1600" height="1100" fill="url(#bgGrad)" />
+
+  <!-- Subtle ambient decorative glow -->
+  <circle cx="200" cy="150" r="300" fill="#7C3AED" opacity="0.12" filter="blur(80px)" />
+  <circle cx="1400" cy="900" r="300" fill="#EC4899" opacity="0.08" filter="blur(80px)" />
+
+  <!-- 2. Header / Title Block -->
+  <g transform="translate(80, 70)">
+    <!-- Brand Tag -->
+    <rect x="0" y="0" width="130" height="32" rx="16" fill="#7C3AED" opacity="0.3" />
+    <rect x="0" y="0" width="130" height="32" rx="16" stroke="#A855F7" stroke-width="1.5" fill="none" opacity="0.6" />
+    <text x="65" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="12" font-weight="700" fill="#C084FC" text-anchor="middle" letter-spacing="2">AUDIOFIC</text>
+
+    <!-- Main Title -->
+    <text x="0" y="78" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="40" font-weight="800" fill="#FFFFFF" letter-spacing="-0.5">
+      Mascote Oficial: <tspan fill="url(#brandTitleGrad)">Spooky</tspan>
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="16" font-weight="400" fill="#94A3B8">
+      Personagem corpo inteiro no estilo Duolingo • Guia de Poses, Expressões e Versões Temáticas
+    </text>
+  </g>
+
+  <!-- ROW 1: As 3 Poses Principais (Full Color) -->
+
+  <!-- CARD 1: Pose 1 - Idle / Neutro -->
+  <g transform="translate(80, 220)">
+    <!-- Card Frame -->
+    <rect width="450" height="420" rx="28" fill="url(#cardGradLight)" stroke="#334155" stroke-width="1" />
+    <rect width="450" height="340" rx="28" fill="#F8FAFC" />
+    
+    <!-- Embedded SVG image: spooky-mascot-idle -->
+    <image href="spooky-mascot-idle.svg" x="25" y="-15" width="400" height="400" />
+
+    <!-- Label Footer -->
+    <rect x="0" y="340" width="450" height="80" rx="0" fill="#FFFFFF" />
+    <text x="32" y="372" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="18" font-weight="700" fill="#0F172A">Pose 1: Neutro / Saudação</text>
+    <text x="32" y="396" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="13" font-weight="400" fill="#64748B">Flutuando calmo com fones • Ícone, Perfil e Boas-Vindas</text>
+    
+    <!-- Tag badge -->
+    <rect x="330" y="360" width="90" height="26" rx="13" fill="#E0F2FE" />
+    <text x="375" y="377" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="11" font-weight="700" fill="#0284C7" text-anchor="middle">PADRÃO</text>
+  </g>
+
+  <!-- CARD 2: Pose 2 - Excited / Celebração -->
+  <g transform="translate(575, 220)">
+    <!-- Card Frame -->
+    <rect width="450" height="420" rx="28" fill="url(#cardGradLight)" stroke="#334155" stroke-width="1" />
+    <rect width="450" height="340" rx="28" fill="#F8FAFC" />
+
+    <!-- Embedded SVG image: spooky-mascot-excited -->
+    <image href="spooky-mascot-excited.svg" x="25" y="-15" width="400" height="400" />
+
+    <!-- Label Footer -->
+    <rect x="0" y="340" width="450" height="80" rx="0" fill="#FFFFFF" />
+    <text x="32" y="372" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="18" font-weight="700" fill="#0F172A">Pose 2: Empolgado / Pulo</text>
+    <text x="32" y="396" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="13" font-weight="400" fill="#64748B">Braços abertos, brilhos e ondas • Splash Screen e Conquistas</text>
+
+    <!-- Tag badge -->
+    <rect x="330" y="360" width="90" height="26" rx="13" fill="#FDF2F8" />
+    <text x="375" y="377" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="11" font-weight="700" fill="#DB2777" text-anchor="middle">DINÂMICO</text>
+  </g>
+
+  <!-- CARD 3: Pose 3 - Imersão / Ouvindo Histórias -->
+  <g transform="translate(1070, 220)">
+    <!-- Card Frame -->
+    <rect width="450" height="420" rx="28" fill="url(#cardGradLight)" stroke="#334155" stroke-width="1" />
+    <rect width="450" height="340" rx="28" fill="#F8FAFC" />
+
+    <!-- Embedded SVG image: spooky-mascot-listening -->
+    <image href="spooky-mascot-listening.svg" x="25" y="-15" width="400" height="400" />
+
+    <!-- Label Footer -->
+    <rect x="0" y="340" width="450" height="80" rx="0" fill="#FFFFFF" />
+    <text x="32" y="372" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="18" font-weight="700" fill="#0F172A">Pose 3: Ouvindo / Imersão</text>
+    <text x="32" y="396" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="13" font-weight="400" fill="#64748B">Olhos fechados segurando o fone • Player e Telas de Áudio</text>
+
+    <!-- Tag badge -->
+    <rect x="330" y="360" width="90" height="26" rx="13" fill="#F3E8FF" />
+    <text x="375" y="377" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="11" font-weight="700" fill="#9333EA" text-anchor="middle">IMERSÃO</text>
+  </g>
+
+  <!-- ROW 2: Versões Temáticas & Ícone de App -->
+
+  <!-- CARD 4: Modo Escuro (Monocromático no Dark Theme) -->
+  <g transform="translate(80, 680)">
+    <!-- Card Frame Dark -->
+    <rect width="450" height="360" rx="28" fill="#05050A" stroke="#2A2A40" stroke-width="1.5" />
+    <rect width="450" height="280" rx="28" fill="#0F0F1A" />
+
+    <!-- Embedded SVG image: spooky-mascot-mono-dark -->
+    <image href="spooky-mascot-mono-dark.svg" x="65" y="-10" width="320" height="320" />
+
+    <!-- Label Footer Dark -->
+    <text x="32" y="318" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="17" font-weight="700" fill="#FFFFFF">Modo Escuro (Dark OLED)</text>
+    <text x="32" y="340" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="13" font-weight="400" fill="#94A3B8">Contraste perfeito em telas pretas e cabeçalhos escuros</text>
+  </g>
+
+  <!-- CARD 5: Modo Claro (Monocromático no Light Theme) -->
+  <g transform="translate(575, 680)">
+    <!-- Card Frame Light -->
+    <rect width="450" height="360" rx="28" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" />
+    <rect width="450" height="280" rx="28" fill="#F8FAFC" />
+
+    <!-- Embedded SVG image: spooky-mascot-mono-light -->
+    <image href="spooky-mascot-mono-light.svg" x="65" y="-10" width="320" height="320" />
+
+    <!-- Label Footer Light -->
+    <text x="32" y="318" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="17" font-weight="700" fill="#0F172A">Modo Claro (Line/Mono)</text>
+    <text x="32" y="340" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="13" font-weight="400" fill="#64748B">Contorno marcante para papéis, documentos e fundo branco</text>
+  </g>
+
+  <!-- CARD 6: Ícone Oficial do App (Opção A - Face Fill) -->
+  <g transform="translate(1070, 680)">
+    <!-- Card Frame App Icon -->
+    <rect width="450" height="360" rx="28" fill="url(#cardGradDark)" stroke="#7C3AED" stroke-width="1.5" />
+    
+    <!-- Phone Squircle Display -->
+    <g transform="translate(145, 30)">
+      <!-- Drop shadow for icon squircle -->
+      <rect x="0" y="8" width="160" height="160" rx="36" fill="#000000" opacity="0.4" />
+      <image href="spooky-duo-style.svg" x="0" y="0" width="160" height="160" />
+    </g>
+
+    <!-- Mini Sub-icons (Dock Preview) -->
+    <g transform="translate(95, 210)">
+      <!-- Mini icon 1: Face Fill Color -->
+      <image href="spooky-duo-style.svg" x="0" y="0" width="60" height="60" />
+      <!-- Mini icon 2: Dark Squircle -->
+      <image href="spooky-duo-night.svg" x="100" y="0" width="60" height="60" />
+      <!-- Mini icon 3: Mono Squircle -->
+      <image href="spooky-night-mono.svg" x="200" y="0" width="60" height="60" />
+    </g>
+
+    <!-- Label Footer -->
+    <text x="32" y="318" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="17" font-weight="700" fill="#FFFFFF">Ícone Oficial de Aplicativo</text>
+    <text x="32" y="340" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="13" font-weight="400" fill="#C084FC">Spooky Face-Fill (Opção A Aprovada) + Variações</text>
+  </g>
+</svg>

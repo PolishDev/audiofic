@@ -7,6 +7,7 @@ import { UserModule } from './modules/user/index.js';
 import { GenresModule } from './modules/genres/index.js';
 import { StoriesModule } from './modules/stories/index.js';
 import { PlaybackModule } from './modules/playback/index.js';
+import { FavoritesModule } from './modules/favorites/index.js';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { PlaybackModule } from './modules/playback/index.js';
     GenresModule,
     StoriesModule,
     PlaybackModule,
+    FavoritesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

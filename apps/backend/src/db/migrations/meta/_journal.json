@@ -29,6 +29,13 @@
       "when": 1792186900000,
       "tag": "0003_add_user_progress",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1792436776060,
+      "tag": "0004_gorgeous_major_mapleleaf",
+      "breakpoints": true
     }
   ]
 }

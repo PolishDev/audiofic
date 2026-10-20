@@ -16,8 +16,10 @@ export interface LocalProgressItem {
   synced: boolean;
 }
 
-const PROGRESS_STORAGE_KEY = '@shortstory_playback_progress';
-const LAST_PLAYED_KEY = '@shortstory_last_played';
+const PROGRESS_STORAGE_KEY = '@audiofic_playback_progress';
+const LEGACY_PROGRESS_STORAGE_KEY = '@shortstory_playback_progress';
+const LAST_PLAYED_KEY = '@audiofic_last_played';
+const LEGACY_LAST_PLAYED_KEY = '@shortstory_last_played';
 
 /**
  * Checa se o dispositivo possui conexão com a internet.
@@ -38,7 +40,9 @@ export async function getAllLocalProgress(): Promise<
   Record<string, LocalProgressItem>
 > {
   try {
-    const raw = await AsyncStorage.getItem(PROGRESS_STORAGE_KEY);
+    const raw =
+      (await AsyncStorage.getItem(PROGRESS_STORAGE_KEY)) ||
+      (await AsyncStorage.getItem(LEGACY_PROGRESS_STORAGE_KEY));
     return raw ? JSON.parse(raw) : {};
   } catch (err) {
     console.warn('[PlaybackSync] Erro ao carregar progresso local:', err);
@@ -165,7 +169,9 @@ export async function getResumeEpisode(): Promise<LocalProgressItem | null> {
   let localLast: LocalProgressItem | null = null;
 
   try {
-    const raw = await AsyncStorage.getItem(LAST_PLAYED_KEY);
+    const raw =
+      (await AsyncStorage.getItem(LAST_PLAYED_KEY)) ||
+      (await AsyncStorage.getItem(LEGACY_LAST_PLAYED_KEY));
     if (raw) {
       localLast = JSON.parse(raw);
     }

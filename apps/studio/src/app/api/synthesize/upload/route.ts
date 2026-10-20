@@ -2,7 +2,10 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-const UPLOAD_DIR = '/mnt/stuff/shortstory-audio/uploads';
+const AUDIO_BASE_DIR = fs.existsSync('/mnt/stuff/audiofic-audio')
+  ? '/mnt/stuff/audiofic-audio'
+  : '/mnt/stuff/shortstory-audio';
+const UPLOAD_DIR = path.join(AUDIO_BASE_DIR, 'uploads');
 
 export async function POST(req: Request) {
   try {

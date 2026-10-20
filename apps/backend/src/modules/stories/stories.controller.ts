@@ -6,9 +6,13 @@ import {
   Query,
   HttpCode,
   HttpStatus,
+  UseGuards,
 } from '@nestjs/common';
 import { StoriesService } from './stories.service.js';
 import type { StoryQueryParams } from './dto/story.dto.js';
+import { OptionalAuthGuard } from '../auth/auth.guard.js';
+import { CurrentUser } from '../auth/current-user.decorator.js';
+import type { User } from '../../db/schemas/user.table.js';
 
 @Controller()
 export class StoriesController {
@@ -63,12 +67,16 @@ export class StoriesController {
   }
 
   /**
-   * Story details with complete episode list.
+   * Story details with complete episode list and optional favorite status for authenticated users.
    * GET /stories/:idOrSlug
    */
   @Get('stories/:idOrSlug')
-  async getStoryByIdOrSlug(@Param('idOrSlug') idOrSlug: string) {
-    return this.storiesService.findByIdOrSlug(idOrSlug);
+  @UseGuards(OptionalAuthGuard)
+  async getStoryByIdOrSlug(
+    @Param('idOrSlug') idOrSlug: string,
+    @CurrentUser() currentUser?: User,
+  ) {
+    return this.storiesService.findByIdOrSlug(idOrSlug, currentUser?.id);
   }
 
   /**

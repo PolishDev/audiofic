@@ -1,6 +1,6 @@
-# 🗺️ Roadmap & Milestones — ShortStory
+# 🗺️ Roadmap & Milestones — AudioFic
 
-Documento oficial de acompanhamento do ciclo de vida, arquitetura, etapas e funcionalidades da plataforma **ShortStory**.
+Documento oficial de acompanhamento do ciclo de vida, arquitetura, etapas e funcionalidades da plataforma **AudioFic**.
 
 > **Diretriz Editorial e de Negócio:** Plataforma de ficção seriada em áudio focada em terror, suspense e mistério no mercado brasileiro. Operação enxuta, modelo "Deslogado First" com camada Premium, backend próprio em VM (NestJS + PostgreSQL + Drizzle ORM com chaves ULID), app mobile Expo com NativeWind/Gluestack UI, player avançado com suporte a reprodução em segundo plano e escuta offline, armazenamento de áudio no Cloudflare R2 e monetização gerenciada via RevenueCat.
 
@@ -139,15 +139,15 @@ Documento oficial de acompanhamento do ciclo de vida, arquitetura, etapas e func
   - [ ] Endpoint `POST /playback/progress` chamado a cada intervalo (ex: a cada 15 segundos) e ao pausar
   - [ ] Endpoint `GET /playback/resume` para recuperar o último episódio ouvido
   - [ ] Trilho "Continuar Ouvindo" destacado no topo da tela inicial
-- [ ] **Listas e Favoritos (`(app)/listas.tsx`):**
-  - [ ] Tabela `user_favorites.table.ts` no backend
-  - [ ] Ação de favoritar série apenas usuarios logados
-  - [ ] Aba "Minha Lista" (séries salvas/favoritadas)
-- [ ] **Perfil do Usuário (`(app)/perfil.tsx`):**
-  - [ ] Exibição das informações do usuário autenticado
-  - [ ] Seletor de tema (Escuro / Claro / Sistema)
-  - [ ] Visualização do status da assinatura atual
-  - [ ] Botão de Logout e fluxo obrigatório de **Exclusão de Conta** (requisito App Store & Google Play)
+- [x] **Listas e Favoritos (`(app)/listas.tsx`):**
+  - [x] Tabela `user_favorites.table.ts` no backend
+  - [x] Ação de favoritar série apenas usuarios logados
+  - [x] Aba "Minha Lista" (séries salvas/favoritadas)
+- [x] **Perfil do Usuário (`(app)/perfil.tsx`):**
+  - [x] Exibição das informações do usuário autenticado
+  - [x] Seletor de tema (Escuro / Claro / Sistema)
+  - [x] Visualização do status da assinatura atual
+  - [x] Botão de Logout e fluxo obrigatório de **Exclusão de Conta** (requisito App Store & Google Play)
 
 ---
 
@@ -157,7 +157,7 @@ Documento oficial de acompanhamento do ciclo de vida, arquitetura, etapas e func
 - [ ] **Configuração do RevenueCat:**
   - [ ] Criação de projeto no painel do RevenueCat e associação com Google Play Console e Apple App Store Connect
   - [ ] Configuração de produtos de assinatura (ex: Plano Mensal e Anual)
-  - [ ] Definição do Entitlement: `shortstory_premium`
+  - [ ] Definição do Entitlement: `audiofic_premium`
 - [ ] **Integração no Aplicativo Mobile:**
   - [ ] Configuração do SDK `react-native-purchases`
   - [ ] Identificação do usuário logado via `userId` (ULID) no RevenueCat

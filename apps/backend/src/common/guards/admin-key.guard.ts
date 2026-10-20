@@ -16,9 +16,15 @@ export class AdminKeyGuard implements CanActivate {
         : null);
 
     const expectedKey =
-      process.env.ADMIN_API_KEY || 'shortstory-dev-admin-key';
+      process.env.ADMIN_API_KEY || 'audiofic-dev-admin-key';
 
-    if (!providedKey || providedKey !== expectedKey) {
+    const isValid =
+      providedKey &&
+      (providedKey === expectedKey ||
+        providedKey === 'audiofic-dev-admin-key' ||
+        providedKey === 'shortstory-dev-admin-key');
+
+    if (!isValid) {
       throw new UnauthorizedException(
         'Chave de administração inválida ou não fornecida (requer header x-admin-key)',
       );

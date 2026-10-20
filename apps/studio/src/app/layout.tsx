@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'ShortStory Studio · IA Audio Drama Creator',
+  title: 'AudioFic Studio · IA Audio Drama Creator',
   description:
     'Estúdio minimalista local para criação e mixagem de ficção seriada em áudio com Ollama e TTS.',
 };

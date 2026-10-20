@@ -4,6 +4,7 @@ import { generateId } from './utils.js';
 import { session } from './session.table.js';
 import { account } from './account.table.js';
 import { userProgress } from './user-progress.table.js';
+import { userFavorites } from './user-favorites.table.js';
 
 export const user = pgTable('user', {
   id: text('id')
@@ -21,6 +22,7 @@ export const userRelations = relations(user, ({ many }) => ({
   sessions: many(session),
   accounts: many(account),
   progress: many(userProgress),
+  favorites: many(userFavorites),
 }));
 
 export type User = typeof user.$inferSelect;

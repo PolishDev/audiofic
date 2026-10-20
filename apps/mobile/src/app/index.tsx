@@ -5,6 +5,8 @@ import { useAuth } from '@/shared/auth/auth-context';
 import { Colors } from '@/shared/constants/theme';
 import { useColorScheme } from 'react-native';
 
+import { SpookyMascot } from '@/shared/components/mascot';
+
 export default function IndexRoute() {
   const { isAuthenticated, isGuest, isLoading } = useAuth();
   const colorScheme = useColorScheme() ?? 'light';
@@ -18,8 +20,10 @@ export default function IndexRoute() {
           backgroundColor: colors.background,
           alignItems: 'center',
           justifyContent: 'center',
+          gap: 24,
         }}>
-        <ActivityIndicator size="large" color={colors.primary} />
+        <SpookyMascot pose="listening" size={150} animated />
+        <ActivityIndicator size="small" color={colors.primary} />
       </View>
     );
   }

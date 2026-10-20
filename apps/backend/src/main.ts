@@ -36,9 +36,11 @@ async function bootstrap() {
   });
 
   // Serve audio files statically for streaming playback
-  const audioDir = fs.existsSync('/mnt/stuff/shortstory-audio')
-    ? '/mnt/stuff/shortstory-audio'
-    : path.resolve(process.cwd(), '../studio/public/audio');
+  const audioDir = fs.existsSync('/mnt/stuff/audiofic-audio')
+    ? '/mnt/stuff/audiofic-audio'
+    : fs.existsSync('/mnt/stuff/shortstory-audio')
+      ? '/mnt/stuff/shortstory-audio'
+      : path.resolve(process.cwd(), '../studio/public/audio');
 
   if (fs.existsSync(audioDir)) {
     app.use('/audio', express.static(audioDir));
@@ -46,7 +48,7 @@ async function bootstrap() {
 
   const port = process.env.PORT ?? 3000;
   await app.listen(port, '0.0.0.0');
-  console.log(`[ShortStory Backend] Server running on:`);
+  console.log(`[AudioFic Backend] Server running on:`);
   console.log(`  - Local:   http://localhost:${port}`);
   console.log(`  - Network: http://192.168.0.13:${port}`);
 }

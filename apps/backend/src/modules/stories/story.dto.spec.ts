@@ -11,7 +11,7 @@ describe('Story DTO Validation', () => {
       title: 'O Sussurro da Floresta',
       synopsis: 'Uma lenda esquecida nas matas do interior paulista...',
       coverUrl: 'https://cdn.example.com/cover.jpg',
-      author: 'ShortStory Studio',
+      author: 'AudioFic Studio',
       genreSlugs: ['terror-sobrenatural', 'lendas-folclore'],
     };
 
@@ -19,7 +19,7 @@ describe('Story DTO Validation', () => {
     expect(result.success).toBe(true);
     if (result.success) {
       expect(result.data.status).toBe('published');
-      expect(result.data.author).toBe('ShortStory Studio');
+      expect(result.data.author).toBe('AudioFic Studio');
     }
   });
 

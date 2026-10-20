@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" fill="none">
+  <title>AudioFic Mascot - Spooky (Monochrome)</title>
+
+  <!-- Ghost Outer Contour Silhouette -->
+  <!-- Rounded top head curving down to 3 wavy spectral tails -->
+  <path d="M 68 116 
+           C 68 64 94 48 128 48 
+           C 162 48 188 64 188 116 
+           C 188 152 194 186 192 198 
+           C 190 206 178 208 170 200 
+           C 162 192 152 190 144 200 
+           C 136 210 120 210 112 200 
+           C 104 190 94 192 86 200 
+           C 78 208 66 206 64 198 
+           C 62 186 68 152 68 116 Z" 
+        fill="#000000"/>
+
+  <!-- Inner Ghost Body (Light Negative Space) -->
+  <path d="M 78 116 
+           C 78 74 100 58 128 58 
+           C 156 58 178 74 178 116 
+           C 178 148 184 178 182 188 
+           C 178 194 170 196 164 190 
+           C 156 182 144 182 136 192 
+           C 132 198 124 198 120 192 
+           C 112 182 100 182 92 190 
+           C 86 196 78 194 74 188 
+           C 72 178 78 148 78 116 Z" 
+        fill="#FFFFFF"/>
+
+  <!-- Headphone Over-Ear Band Arching over Ghost Head -->
+  <path d="M 60 118 C 60 54 90 24 128 24 C 166 24 196 54 196 118" 
+        stroke="#000000" stroke-width="14" stroke-linecap="round"/>
+  <!-- Headband inner cushion bar -->
+  <path d="M 98 32 C 108 28 118 26 128 26 C 138 26 148 28 158 32" 
+        stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Left Headphone Ear-Cup (Chunky studio cup hugging ghost head) -->
+  <rect x="34" y="98" width="28" height="60" rx="14" fill="#000000"/>
+  <rect x="40" y="106" width="14" height="44" rx="7" fill="#FFFFFF"/>
+  <circle cx="47" cy="128" r="3.5" fill="#000000"/>
+
+  <!-- Right Headphone Ear-Cup -->
+  <rect x="194" y="98" width="28" height="60" rx="14" fill="#000000"/>
+  <rect x="202" y="106" width="14" height="44" rx="7" fill="#FFFFFF"/>
+  <circle cx="209" cy="128" r="3.5" fill="#000000"/>
+
+  <!-- Ghost Little Stubby Arms (Holding headphones playfully) -->
+  <path d="M 76 138 C 62 138 56 126 56 120" stroke="#000000" stroke-width="7" stroke-linecap="round"/>
+  <path d="M 180 138 C 194 138 200 126 200 120" stroke="#000000" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Ghost Face - Expressive, Joyful & Listening -->
+  <!-- Left Eye -->
+  <ellipse cx="106" cy="122" rx="11" ry="15" fill="#000000"/>
+  <circle cx="103" cy="117" r="4.5" fill="#FFFFFF"/>
+  <circle cx="110" cy="126" r="2" fill="#FFFFFF"/>
+
+  <!-- Right Eye -->
+  <ellipse cx="150" cy="122" rx="11" ry="15" fill="#000000"/>
+  <circle cx="147" cy="117" r="4.5" fill="#FFFFFF"/>
+  <circle cx="154" cy="126" r="2" fill="#FFFFFF"/>
+
+  <!-- Happy Open "Ooh!" Mouth Listening to Audio Story -->
+  <ellipse cx="128" cy="148" rx="12" ry="15" fill="#000000"/>
+  <ellipse cx="128" cy="154" rx="8" ry="6" fill="#FFFFFF"/>
+</svg>

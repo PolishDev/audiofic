@@ -3,10 +3,12 @@ import { useRouter } from 'expo-router';
 import { ProfilePage } from '@/features/profile';
 import { useAuth } from '@/shared/auth/auth-context';
 import { authService, type User } from '@/features/auth';
+import { useToast } from '@/shared/components/ui/toast';
 
 export default function PerfilRoute() {
   const router = useRouter();
-  const { user: authUser, isGuest, logout } = useAuth();
+  const toast = useToast();
+  const { user: authUser, isGuest, logout, deleteAccount } = useAuth();
   const [profileUser, setProfileUser] = useState<User | null>(authUser);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -41,6 +43,15 @@ export default function PerfilRoute() {
     router.replace('/(auth)/onboarding');
   };
 
+  const handleDeleteAccount = async () => {
+    await deleteAccount();
+    toast.success(
+      'Conta Excluída',
+      'Sua conta e todos os seus dados foram permanentemente apagados.',
+    );
+    router.replace('/(auth)/onboarding');
+  };
+
   const handleNavigateToLogin = () => {
     router.push('/(auth)/login');
   };
@@ -55,6 +66,7 @@ export default function PerfilRoute() {
       isGuest={isGuest}
       isLoading={isLoading}
       onLogout={handleLogout}
+      onDeleteAccount={handleDeleteAccount}
       onNavigateToLogin={handleNavigateToLogin}
       onNavigateToRegister={handleNavigateToRegister}
     />

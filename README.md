@@ -1,4 +1,4 @@
-# ShortStory
+# AudioFic
 
 Plataforma de ficção seriada narrada em áudio, organizada em séries e episódios curtos, focada inicialmente no gênero de terror, suspense e mistério no mercado brasileiro.
 
@@ -9,7 +9,7 @@ Plataforma de ficção seriada narrada em áudio, organizada em séries e episó
 O projeto é estruturado como um **Monorepo** gerenciado com [Turborepo](https://turbo.build/) e [Bun](https://bun.sh/), dividindo claramente as responsabilidades entre cliente mobile e serviços de backend hospedados em infraestrutura própria (VM).
 
 ```
-shortstory/
+audiofic/
 ├── apps/
 │   ├── mobile/       # Aplicativo React Native (Expo SDK 57, Expo Router)
 │   └── backend/      # API e serviços em NestJS 12 (Node.js/Bun, TypeScript, Vitest)
@@ -64,7 +64,7 @@ O Turborepo está configurado para exibir uma interface interativa no terminal, 
 ```bash
 bun run dev
 ```
-> **Dica:** Utilize as setas `↑` / `↓` ou os atalhos numéricos no terminal para alternar entre os logs do `@shortstory/mobile` e do `@shortstory/backend`.
+> **Dica:** Utilize as setas `↑` / `↓` ou os atalhos numéricos no terminal para alternar entre os logs do `@audiofic/mobile` e do `@audiofic/backend`.
 
 #### Comandos Mobile
 * **Executar no Android:**
