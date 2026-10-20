@@ -46,11 +46,12 @@ export function SearchResultItem({ story, onPress }: SearchResultItemProps) {
 
         {primaryGenre && (
           <View style={styles.tagsRow}>
-            <View style={styles.genreTag}>
-              <Text style={styles.genreText}>{primaryGenre.name}</Text>
-            </View>
+            <Text style={styles.genreText}>{primaryGenre.name}</Text>
             {story.author && story.author !== 'AudioFic' && story.author !== 'ShortStory' && (
-              <Text style={styles.authorText}>por {story.author}</Text>
+              <>
+                <Text style={styles.dotSeparator}>•</Text>
+                <Text style={styles.authorText}>por {story.author}</Text>
+              </>
             )}
           </View>
         )}
@@ -134,21 +135,17 @@ const styles = StyleSheet.create({
     gap: 6,
     marginTop: 3,
   },
-  genreTag: {
-    paddingHorizontal: 7,
-    paddingVertical: 2,
-    borderRadius: 6,
-    backgroundColor: 'rgba(225, 29, 72, 0.12)',
-    borderWidth: 1,
-    borderColor: 'rgba(225, 29, 72, 0.25)',
-  },
   genreText: {
-    fontSize: 10,
+    fontSize: 12,
     fontWeight: '600',
-    color: '#FDA4AF',
+    color: '#C084FC',
+  },
+  dotSeparator: {
+    fontSize: 12,
+    color: '#52525B',
   },
   authorText: {
-    fontSize: 11,
+    fontSize: 12,
     color: '#71717A',
   },
   synopsis: {

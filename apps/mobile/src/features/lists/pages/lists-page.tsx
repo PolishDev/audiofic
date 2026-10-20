@@ -75,20 +75,11 @@ export function ListsPage() {
           },
         ]}
       >
-        <View style={styles.headerContainer}>
-          <Text style={[styles.headerTitle, { color: colors.text }]}>
-            Minha Lista
-          </Text>
-          <Text style={[styles.headerSubtitle, { color: colors.textSecondary }]}>
-            Suas séries de terror e suspense favoritadas
-          </Text>
-        </View>
-
         <View style={styles.guestContainer}>
           <View
             style={[
               styles.guestIconCircle,
-              { backgroundColor: isDark ? 'rgba(166, 43, 50, 0.15)' : 'rgba(128, 0, 32, 0.08)' },
+              { backgroundColor: isDark ? 'rgba(124, 58, 237, 0.15)' : 'rgba(124, 58, 237, 0.08)' },
             ]}
           >
             <Ionicons
@@ -99,14 +90,12 @@ export function ListsPage() {
           </View>
 
           <Text style={[styles.guestTitle, { color: colors.text }]}>
-            Salve suas histórias favoritas
+            Sua Lista
           </Text>
           <Text
             style={[styles.guestDescription, { color: colors.textSecondary }]}
           >
-            Crie uma conta gratuita ou faça login para salvar séries, retomar
-            facilmente de onde parou e sincronizar seu catálogo em qualquer
-            dispositivo.
+            Faça login para salvar histórias e sincronizar seu progresso.
           </Text>
 
           <View style={styles.guestActionsRow}>
@@ -158,34 +147,6 @@ export function ListsPage() {
         },
       ]}
     >
-      {/* Top Header */}
-      <View style={styles.headerContainer}>
-        <View style={styles.headerTitleRow}>
-          <Text style={[styles.headerTitle, { color: colors.text }]}>
-            Minha Lista
-          </Text>
-          {favorites.length > 0 && (
-            <View
-              style={[
-                styles.countBadge,
-                {
-                  backgroundColor: isDark
-                    ? 'rgba(255, 255, 255, 0.08)'
-                    : 'rgba(0, 0, 0, 0.05)',
-                },
-              ]}
-            >
-              <Text style={[styles.countBadgeText, { color: colors.textSecondary }]}>
-                {favorites.length} {favorites.length === 1 ? 'série' : 'séries'}
-              </Text>
-            </View>
-          )}
-        </View>
-        <Text style={[styles.headerSubtitle, { color: colors.textSecondary }]}>
-          Acesse rapidamente suas histórias salvas
-        </Text>
-      </View>
-
       {/* Loading indicator */}
       {isLoading && !isRefreshing && favorites.length === 0 ? (
         <View style={styles.centerContainer}>
@@ -220,8 +181,7 @@ export function ListsPage() {
           <Text
             style={[styles.emptyDescription, { color: colors.textSecondary }]}
           >
-            Explore o catálogo e toque no ícone de salvar em qualquer história
-            para adicioná-la aqui.
+            Salve histórias para ouvi-las mais tarde.
           </Text>
           <TouchableOpacity
             activeOpacity={0.85}
@@ -304,27 +264,18 @@ export function ListsPage() {
                 {/* Details Column */}
                 <View style={styles.cardDetails}>
                   {/* Genre Tag */}
-                  <View style={styles.genreTagRow}>
-                    <View
-                      style={[
-                        styles.genreBadge,
-                        {
-                          backgroundColor: isDark
-                            ? 'rgba(166, 43, 50, 0.2)'
-                            : 'rgba(128, 0, 32, 0.1)',
-                        },
-                      ]}
-                    >
+                  {primaryGenre ? (
+                    <View style={styles.genreTagRow}>
                       <Text
                         style={[
-                          styles.genreBadgeText,
+                          styles.genreText,
                           { color: colors.primary },
                         ]}
                       >
                         {primaryGenre}
                       </Text>
                     </View>
-                  </View>
+                  ) : null}
 
                   {/* Title */}
                   <Text
@@ -461,12 +412,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  genreBadge: {
-    paddingHorizontal: 8,
-    paddingVertical: 2,
-    borderRadius: 6,
-  },
-  genreBadgeText: {
+  genreText: {
     fontSize: 11,
     fontWeight: '700',
     textTransform: 'uppercase',
@@ -510,6 +456,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 36,
+    marginTop: -48
   },
   loadingText: {
     marginTop: 12,
@@ -554,6 +501,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 28,
+    marginTop: -48
   },
   guestIconCircle: {
     width: 96,

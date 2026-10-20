@@ -17,7 +17,7 @@ export function TopListenedItem({ story, rank, onPress }: TopListenedItemProps) 
   const getRankColor = () => {
     switch (rank) {
       case 1:
-        return '#E11D48'; // Crimson / Gold
+        return '#7C3AED'; // Spooky Purple
       case 2:
         return '#CBD5E1'; // Silver
       case 3:
@@ -66,14 +66,11 @@ export function TopListenedItem({ story, rank, onPress }: TopListenedItemProps) 
 
         <View style={styles.tagsRow}>
           {primaryGenre && (
-            <View
-              style={[
-                styles.genreTag,
-                primaryGenre.color ? { borderColor: `${primaryGenre.color}66` } : null,
-              ]}
-            >
-              <Text style={styles.genreText}>{primaryGenre.name}</Text>
-            </View>
+            <Text style={styles.genreText}>{primaryGenre.name}</Text>
+          )}
+
+          {primaryGenre && story.episodesCount !== undefined && story.episodesCount > 0 && (
+            <Text style={styles.dotSeparator}>•</Text>
           )}
 
           {story.episodesCount !== undefined && story.episodesCount > 0 && (
@@ -93,7 +90,7 @@ export function TopListenedItem({ story, rank, onPress }: TopListenedItemProps) 
 
       {/* Action Play Icon */}
       <View style={styles.actionIcon}>
-        <Ionicons name="play-circle-outline" size={26} color="#E11D48" />
+        <Ionicons name="play-circle-outline" size={26} color="#7C3AED" />
       </View>
     </TouchableOpacity>
   );
@@ -161,21 +158,17 @@ const styles = StyleSheet.create({
     gap: 6,
     marginTop: 2,
   },
-  genreTag: {
-    paddingHorizontal: 7,
-    paddingVertical: 2,
-    borderRadius: 6,
-    backgroundColor: 'rgba(225, 29, 72, 0.12)',
-    borderWidth: 1,
-    borderColor: 'rgba(225, 29, 72, 0.25)',
-  },
   genreText: {
-    fontSize: 10,
+    fontSize: 12,
     fontWeight: '600',
-    color: '#FDA4AF',
+    color: '#C084FC',
+  },
+  dotSeparator: {
+    fontSize: 12,
+    color: '#52525B',
   },
   metaSubtext: {
-    fontSize: 11,
+    fontSize: 12,
     color: '#71717A',
   },
   statsRow: {

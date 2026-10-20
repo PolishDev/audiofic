@@ -319,7 +319,7 @@ export function FullScreenAudioPlayerModal() {
               activeOpacity={0.8}
               style={[
                 styles.favoriteButton,
-                isFav && { backgroundColor: 'rgba(225, 29, 72, 0.18)', borderColor: 'rgba(225, 29, 72, 0.4)' },
+                isFav && { backgroundColor: 'rgba(124, 58, 237, 0.18)', borderColor: 'rgba(124, 58, 237, 0.4)' },
               ]}
               hitSlop={8}
               onPress={() => {
@@ -334,7 +334,7 @@ export function FullScreenAudioPlayerModal() {
               <Ionicons
                 name={isFav ? 'heart' : 'heart-outline'}
                 size={22}
-                color={isFav ? '#E11D48' : '#FFFFFF'}
+                color={isFav ? '#7C3AED' : '#FFFFFF'}
               />
             </TouchableOpacity>
           </View>
@@ -460,7 +460,7 @@ export function FullScreenAudioPlayerModal() {
               <Ionicons
                 name={sleepTimerMinutes ? 'moon' : 'moon-outline'}
                 size={16}
-                color={sleepTimerMinutes ? '#E11D48' : '#A1A1AA'}
+                color={sleepTimerMinutes ? '#7C3AED' : '#A1A1AA'}
               />
               <Text
                 style={[
@@ -494,7 +494,7 @@ export function FullScreenAudioPlayerModal() {
               <Ionicons
                 name="list"
                 size={16}
-                color={showPlaylistModal ? '#E11D48' : '#A1A1AA'}
+                color={showPlaylistModal ? '#7C3AED' : '#A1A1AA'}
               />
               <Text
                 style={[
@@ -568,7 +568,7 @@ export function FullScreenAudioPlayerModal() {
                               : 'play-circle-outline'
                           }
                           size={22}
-                          color={isCurrent ? '#E11D48' : '#71717A'}
+                          color={isCurrent ? '#7C3AED' : '#71717A'}
                         />
                         <View style={styles.playlistRowInfo}>
                           <Text
@@ -643,7 +643,7 @@ const styles = StyleSheet.create({
   headerSubtext: {
     fontSize: 10,
     fontWeight: '800',
-    color: '#E11D48',
+    color: '#7C3AED',
     letterSpacing: 2,
     marginBottom: 2,
   },
@@ -753,7 +753,7 @@ const styles = StyleSheet.create({
   progressTrackFilled: {
     height: 5,
     borderRadius: 3,
-    backgroundColor: '#E11D48',
+    backgroundColor: '#7C3AED',
     position: 'absolute',
     left: 0,
   },
@@ -823,7 +823,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#E11D48',
+    shadowColor: '#7C3AED',
     shadowOffset: { width: 0, height: 6 },
     shadowOpacity: 0.35,
     shadowRadius: 14,
@@ -853,8 +853,8 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(255, 255, 255, 0.12)',
   },
   equalActionButtonActive: {
-    backgroundColor: 'rgba(225, 29, 72, 0.18)',
-    borderColor: 'rgba(225, 29, 72, 0.4)',
+    backgroundColor: 'rgba(124, 58, 237, 0.18)',
+    borderColor: 'rgba(124, 58, 237, 0.4)',
   },
   equalActionText: {
     fontSize: 13,
@@ -862,7 +862,7 @@ const styles = StyleSheet.create({
     color: '#E4E4E7',
   },
   equalActionTextActive: {
-    color: '#FB7185',
+    color: '#C084FC',
   },
 
   // MODAL EXPANSÍVEL DE EPISÓDIOS
@@ -927,9 +927,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255, 255, 255, 0.03)',
   },
   playlistRowCardCurrent: {
-    backgroundColor: 'rgba(225, 29, 72, 0.15)',
+    backgroundColor: 'rgba(124, 58, 237, 0.15)',
     borderWidth: 1,
-    borderColor: 'rgba(225, 29, 72, 0.35)',
+    borderColor: 'rgba(124, 58, 237, 0.35)',
   },
   playlistRowLeft: {
     flexDirection: 'row',
@@ -948,7 +948,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   playlistRowTitleCurrent: {
-    color: '#FB7185',
+    color: '#C084FC',
   },
   playlistRowSynopsis: {
     fontSize: 11,

@@ -87,6 +87,34 @@ export function ProfilePage({
     );
   };
 
+  const handleUpgradePress = () => {
+    Alert.alert(
+      'AudioFic PRO',
+      'Em breve você poderá assinar o plano PRO para desbloquear todas as histórias e episódios exclusivos.',
+      [{ text: 'Entendido' }],
+    );
+  };
+
+  const handleCancelSubscription = () => {
+    Alert.alert(
+      'Cancelar Assinatura',
+      'Deseja cancelar sua assinatura PRO? Seu acesso continuará ativo até o fim do período atual.',
+      [
+        { text: 'Voltar', style: 'cancel' },
+        {
+          text: 'Confirmar Cancelamento',
+          style: 'destructive',
+          onPress: () => {
+            Alert.alert(
+              'Assinatura Cancelada',
+              'Sua assinatura não será renovada ao término do ciclo.',
+            );
+          },
+        },
+      ],
+    );
+  };
+
   if (isLoading || isDeleting) {
     return (
       <SafeAreaView
@@ -103,8 +131,8 @@ export function ProfilePage({
     );
   }
 
-  const subscriptionStatus = user?.subscription?.status === 'premium' ? 'Premium' : 'Gratuito';
-  const planName = user?.subscription?.planName || 'Plano Gratuito';
+  const isPremium = user?.subscription?.isPremium || user?.subscription?.status === 'premium';
+  const planName = isPremium ? (user?.subscription?.planName || 'AudioFic PRO') : 'Plano Gratuito';
 
   return (
     <SafeAreaView
@@ -117,16 +145,6 @@ export function ProfilePage({
         ]}
         showsVerticalScrollIndicator={false}
       >
-        {/* Header */}
-        <View style={styles.header}>
-          <Text style={[styles.headerTitle, { color: colors.text }]}>
-            Perfil
-          </Text>
-          <Text style={[styles.headerSubtitle, { color: colors.textSecondary }]}>
-            Gerencie sua conta, assinatura e preferências de reprodução
-          </Text>
-        </View>
-
         {isGuest || !user ? (
           /* ======================================================== */
           /* GUEST USER VIEW                                          */
@@ -144,8 +162,8 @@ export function ProfilePage({
                     styles.avatar,
                     {
                       backgroundColor: isDark
-                        ? 'rgba(166, 43, 50, 0.2)'
-                        : 'rgba(128, 0, 32, 0.1)',
+                        ? 'rgba(124, 58, 237, 0.2)'
+                        : 'rgba(124, 58, 237, 0.1)',
                       borderColor: colors.border,
                     },
                   ]}
@@ -166,21 +184,10 @@ export function ProfilePage({
                       { color: colors.textSecondary },
                     ]}
                   >
-                    Acesso aos episódios abertos do catálogo
+                    Entre para salvar seu progresso
                   </Text>
                 </View>
               </View>
-
-              <Text
-                style={[
-                  styles.cardDescription,
-                  { color: colors.textSecondary },
-                ]}
-              >
-                Crie ou acesse sua conta gratuita para salvar seu progresso na
-                nuvem, manter sua lista de histórias sincronizada e acessar
-                conteúdos exclusivos.
-              </Text>
 
               <View style={styles.actionsRow}>
                 <TouchableOpacity
@@ -253,30 +260,6 @@ export function ProfilePage({
                   >
                     {user.email}
                   </Text>
-                  <View
-                    style={[
-                      styles.statusBadge,
-                      {
-                        backgroundColor: isDark
-                          ? 'rgba(166, 43, 50, 0.15)'
-                          : 'rgba(128, 0, 32, 0.08)',
-                        borderColor: isDark
-                          ? 'rgba(166, 43, 50, 0.3)'
-                          : 'rgba(128, 0, 32, 0.2)',
-                      },
-                    ]}
-                  >
-                    <Ionicons
-                      name="shield-checkmark"
-                      size={12}
-                      color={colors.primary}
-                    />
-                    <Text
-                      style={[styles.statusBadgeText, { color: colors.primary }]}
-                    >
-                      Conta Verificada
-                    </Text>
-                  </View>
                 </View>
               </View>
             </View>
@@ -289,216 +272,63 @@ export function ProfilePage({
                   { color: colors.textSecondary },
                 ]}
               >
-                Assinatura & Plano
+                Plano Atual
               </Text>
 
               <View
                 style={[
-                  styles.card,
+                  styles.subscriptionCard,
                   { backgroundColor: colors.card, borderColor: colors.border },
                 ]}
               >
-                <View style={styles.subscriptionHeaderRow}>
-                  <View style={styles.subscriptionIconTitleRow}>
-                    <View
-                      style={[
-                        styles.subscriptionIconCircle,
-                        {
-                          backgroundColor: isDark
-                            ? 'rgba(166, 43, 50, 0.2)'
-                            : 'rgba(128, 0, 32, 0.1)',
-                        },
-                      ]}
-                    >
-                      <Ionicons
-                        name="sparkles"
-                        size={18}
-                        color={colors.primary}
-                      />
-                    </View>
-                    <View>
-                      <Text
-                        style={[
-                          styles.subscriptionPlanName,
-                          { color: colors.text },
-                        ]}
-                      >
-                        {planName}
-                      </Text>
-                      <Text
-                        style={[
-                          styles.subscriptionStatusSub,
-                          { color: colors.textSecondary },
-                        ]}
-                      >
-                        Status: {subscriptionStatus}
-                      </Text>
-                    </View>
-                  </View>
-
-                  <View
-                    style={[
-                      styles.activePill,
-                      {
-                        backgroundColor: isDark
-                          ? 'rgba(52, 199, 89, 0.15)'
-                          : 'rgba(52, 199, 89, 0.1)',
-                        borderColor: 'rgba(52, 199, 89, 0.3)',
-                      },
-                    ]}
-                  >
-                    <Text style={styles.activePillText}>Ativo</Text>
-                  </View>
-                </View>
-
-                {/* Benefits List */}
-                <View style={styles.benefitsList}>
-                  <View style={styles.benefitItem}>
-                    <Ionicons
-                      name="checkmark-circle"
-                      size={16}
-                      color={colors.primary}
-                    />
-                    <Text
-                      style={[
-                        styles.benefitText,
-                        { color: colors.textSecondary },
-                      ]}
-                    >
-                      Episódios abertos com áudio de alta fidelidade
-                    </Text>
-                  </View>
-
-                  <View style={styles.benefitItem}>
-                    <Ionicons
-                      name="checkmark-circle"
-                      size={16}
-                      color={colors.primary}
-                    />
-                    <Text
-                      style={[
-                        styles.benefitText,
-                        { color: colors.textSecondary },
-                      ]}
-                    >
-                      Downloads para reprodução offline
-                    </Text>
-                  </View>
-
-                  <View style={styles.benefitItem}>
-                    <Ionicons
-                      name="checkmark-circle"
-                      size={16}
-                      color={colors.primary}
-                    />
-                    <Text
-                      style={[
-                        styles.benefitText,
-                        { color: colors.textSecondary },
-                      ]}
-                    >
-                      Sincronização de progresso e Minha Lista
-                    </Text>
-                  </View>
-                </View>
-
-                {/* Premium Teaser */}
-                <View
-                  style={[
-                    styles.premiumTeaser,
-                    {
-                      backgroundColor: isDark
-                        ? 'rgba(255, 255, 255, 0.03)'
-                        : 'rgba(0, 0, 0, 0.02)',
-                      borderColor: colors.border,
-                    },
-                  ]}
-                >
-                  <View style={styles.premiumTeaserHeader}>
-                    <Ionicons name="star" size={16} color="#FFB800" />
-                    <Text
-                      style={[
-                        styles.premiumTeaserTitle,
-                        { color: colors.text },
-                      ]}
-                    >
-                      AudioFic Premium (Fase 5)
-                    </Text>
-                  </View>
+                <View style={styles.subscriptionInfo}>
                   <Text
                     style={[
-                      styles.premiumTeaserDesc,
-                      { color: colors.textSecondary },
+                      styles.subscriptionPlanName,
+                      { color: colors.text },
                     ]}
                   >
-                    Em breve você poderá desbloquear acesso ilimitado a todas as
-                    temporadas exclusivas e novos lançamentos semanais.
+                    {planName}
                   </Text>
-                </View>
-              </View>
-            </View>
-
-            {/* Cloud & Data Synchronization */}
-            <View style={styles.sectionWrapper}>
-              <Text
-                style={[
-                  styles.sectionHeaderTitle,
-                  { color: colors.textSecondary },
-                ]}
-              >
-                Dados & Nuvem
-              </Text>
-
-              <View
-                style={[
-                  styles.settingsGroup,
-                  { backgroundColor: colors.card, borderColor: colors.border },
-                ]}
-              >
-                <View
-                  style={[
-                    styles.settingsRow,
-                    { borderBottomColor: colors.border },
-                  ]}
-                >
-                  <View style={styles.settingsLabelRow}>
-                    <Ionicons
-                      name="cloud-done-outline"
-                      size={20}
-                      color={colors.textSecondary}
-                    />
+                  {isPremium && (
                     <Text
-                      style={[styles.settingsLabel, { color: colors.text }]}
+                      style={[
+                        styles.subscriptionRenewalText,
+                        { color: colors.textSecondary },
+                      ]}
                     >
-                      Sincronização de Progresso
+                      {user?.subscription?.expiresAt
+                        ? `Renovação em ${new Date(user.subscription.expiresAt).toLocaleDateString('pt-BR')}`
+                        : 'Renovação automática ativa'}
                     </Text>
-                  </View>
-                  <Ionicons
-                    name="checkmark-circle"
-                    size={18}
-                    color="#34C759"
-                  />
+                  )}
                 </View>
 
-                <View style={styles.settingsRow}>
-                  <View style={styles.settingsLabelRow}>
-                    <Ionicons
-                      name="bookmark-outline"
-                      size={20}
-                      color={colors.textSecondary}
-                    />
-                    <Text
-                      style={[styles.settingsLabel, { color: colors.text }]}
-                    >
-                      Minha Lista na Nuvem
+                {isPremium ? (
+                  <TouchableOpacity
+                    activeOpacity={0.8}
+                    style={[
+                      styles.cancelSubButton,
+                      { borderColor: colors.border },
+                    ]}
+                    onPress={handleCancelSubscription}
+                  >
+                    <Text style={[styles.cancelSubText, { color: colors.textSecondary }]}>
+                      Cancelar
                     </Text>
-                  </View>
-                  <Ionicons
-                    name="checkmark-circle"
-                    size={18}
-                    color="#34C759"
-                  />
-                </View>
+                  </TouchableOpacity>
+                ) : (
+                  <TouchableOpacity
+                    activeOpacity={0.85}
+                    style={[
+                      styles.upgradeButton,
+                      { backgroundColor: colors.primary },
+                    ]}
+                    onPress={handleUpgradePress}
+                  >
+                    <Text style={styles.upgradeButtonText}>Virar PRO</Text>
+                  </TouchableOpacity>
+                )}
               </View>
             </View>
           </View>
@@ -523,15 +353,6 @@ export function ProfilePage({
               { backgroundColor: colors.card, borderColor: colors.border },
             ]}
           >
-            <Text
-              style={[
-                styles.themeSelectorHelp,
-                { color: colors.textSecondary },
-              ]}
-            >
-              Escolha a aparência visual do aplicativo:
-            </Text>
-
             <View
               style={[
                 styles.themeSelectorContainer,
@@ -689,7 +510,7 @@ export function ProfilePage({
                 </Text>
               </TouchableOpacity>
 
-              {/* Account Deletion Button (Strict App Store & Google Play requirement) */}
+              {/* Account Deletion Button */}
               <TouchableOpacity
                 activeOpacity={0.8}
                 style={[
@@ -705,20 +526,9 @@ export function ProfilePage({
               >
                 <Ionicons name="trash-outline" size={18} color="#FF3B30" />
                 <Text style={styles.deleteAccountButtonText}>
-                  Excluir Minha Conta Permanentemente
+                  Excluir Conta
                 </Text>
               </TouchableOpacity>
-
-              <Text
-                style={[
-                  styles.deletionLegalDisclaimer,
-                  { color: colors.textSecondary },
-                ]}
-              >
-                Conforme as regras da Apple App Store e Google Play Store, ao
-                excluir sua conta todos os seus dados, histórico e favoritos
-                serão removidos imediatamente dos nossos servidores.
-              </Text>
             </View>
           </View>
         )}
@@ -743,7 +553,7 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     paddingHorizontal: 20,
-    paddingTop: 10,
+    paddingTop: 32,
   },
   header: {
     marginBottom: 20,
@@ -806,33 +616,11 @@ const styles = StyleSheet.create({
     fontSize: 13,
     marginTop: 2,
   },
-  statusBadge: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 4,
-    alignSelf: 'flex-start',
-    paddingHorizontal: 8,
-    paddingVertical: 3,
-    borderRadius: 8,
-    borderWidth: 1,
-    marginTop: 6,
-  },
-  statusBadgeText: {
-    fontSize: 11,
-    fontWeight: '700',
-    textTransform: 'uppercase',
-    letterSpacing: 0.3,
-  },
-  cardDescription: {
-    fontSize: 13,
-    lineHeight: 19,
-    marginTop: 14,
-    marginBottom: 16,
-  },
   actionsRow: {
     flexDirection: 'row',
     gap: 10,
     width: '100%',
+    marginTop: 14,
   },
   primaryButton: {
     flex: 1,
@@ -858,74 +646,49 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
   },
-  subscriptionHeaderRow: {
+  subscriptionCard: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: 16,
+    padding: 16,
+    borderRadius: 16,
+    borderWidth: 1,
   },
-  subscriptionIconTitleRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 12,
+  subscriptionInfo: {
+    flex: 1,
+    marginRight: 12,
   },
-  subscriptionIconCircle: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+  subscriptionPlanName: {
+    fontSize: 16,
+    fontWeight: '700',
+  },
+  subscriptionRenewalText: {
+    fontSize: 13,
+    marginTop: 2,
+  },
+  upgradeButton: {
+    paddingHorizontal: 16,
+    paddingVertical: 9,
+    borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  subscriptionPlanName: {
-    fontSize: 17,
-    fontWeight: '700',
-  },
-  subscriptionStatusSub: {
-    fontSize: 12,
-    marginTop: 1,
-  },
-  activePill: {
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-    borderRadius: 12,
-    borderWidth: 1,
-  },
-  activePillText: {
-    color: '#34C759',
-    fontSize: 11,
-    fontWeight: '700',
-    textTransform: 'uppercase',
-  },
-  benefitsList: {
-    gap: 8,
-    marginBottom: 16,
-  },
-  benefitItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  benefitText: {
-    fontSize: 13,
-  },
-  premiumTeaser: {
-    padding: 12,
-    borderRadius: 14,
-    borderWidth: 1,
-  },
-  premiumTeaserHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 6,
-    marginBottom: 4,
-  },
-  premiumTeaserTitle: {
+  upgradeButtonText: {
+    color: '#FFFFFF',
     fontSize: 13,
     fontWeight: '700',
   },
-  premiumTeaserDesc: {
-    fontSize: 12,
-    lineHeight: 17,
+  cancelSubButton: {
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: 10,
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  cancelSubText: {
+    fontSize: 13,
+    fontWeight: '600',
   },
   settingsGroup: {
     borderRadius: 18,
@@ -952,10 +715,6 @@ const styles = StyleSheet.create({
   settingsValueText: {
     fontSize: 13,
     fontWeight: '500',
-  },
-  themeSelectorHelp: {
-    fontSize: 13,
-    marginBottom: 12,
   },
   themeSelectorContainer: {
     flexDirection: 'row',
@@ -1010,12 +769,5 @@ const styles = StyleSheet.create({
     color: '#FF3B30',
     fontSize: 14,
     fontWeight: '600',
-  },
-  deletionLegalDisclaimer: {
-    fontSize: 11,
-    lineHeight: 16,
-    textAlign: 'center',
-    marginTop: 4,
-    paddingHorizontal: 12,
   },
 });

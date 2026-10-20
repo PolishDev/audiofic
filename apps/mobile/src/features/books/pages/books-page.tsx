@@ -15,7 +15,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { Text, getContinueListeningItems, type LocalProgressItem } from '@/shared';
+import { Text, getContinueListeningItems, type LocalProgressItem, useFavorites } from '@/shared';
 import { apiClient } from '@/shared/api/axios-client';
 import { useAudioPlayerContext } from '@/shared/audio';
 
@@ -45,6 +45,7 @@ export interface Story {
 export function BooksPage() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
+  const { isFavorite, toggleFavorite } = useFavorites();
   const [stories, setStories] = useState<Story[]>([]);
   const [continueListeningList, setContinueListeningList] = useState<LocalProgressItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -145,7 +146,7 @@ export function BooksPage() {
       >
         <View style={styles.brandRow}>
           <View style={styles.brandLogo}>
-            <Ionicons name="headset" size={18} color="#E11D48" />
+            <Ionicons name="headset" size={18} color="#7C3AED" />
             <Text style={styles.brandText}>AUDIOFIC</Text>
           </View>
         </View>
@@ -159,8 +160,8 @@ export function BooksPage() {
           <RefreshControl
             refreshing={isRefreshing}
             onRefresh={onRefresh}
-            tintColor="#A62B32"
-            colors={['#A62B32']}
+            tintColor="#7C3AED"
+            colors={['#7C3AED']}
           />
         }
       >
@@ -178,70 +179,94 @@ export function BooksPage() {
               scrollEventThrottle={16}
               style={{ width: SCREEN_WIDTH, height: HERO_HEIGHT }}
             >
-              {featuredStories.map((story) => (
-                <View key={story.id} style={styles.heroSlide}>
-                  {/* Background Artwork */}
-                  {story.coverUrl ? (
-                    <Image
-                      source={{ uri: story.coverUrl }}
-                      style={styles.heroImage}
-                      contentFit="cover"
-                      priority="high"
-                    />
-                  ) : (
-                    <View style={[styles.heroImage, { backgroundColor: '#18181B' }]} />
-                  )}
+              {featuredStories.map((story) => {
+                const isSaved = isFavorite(story.id);
 
-                  {/* Bottom Cinematic Fade to Black */}
-                  <LinearGradient
-                    colors={[
-                      'transparent',
-                      'rgba(9, 9, 11, 0.2)',
-                      'rgba(9, 9, 11, 0.65)',
-                      'rgba(9, 9, 11, 0.95)',
-                      '#09090B',
-                    ]}
-                    locations={[0, 0.35, 0.65, 0.88, 1]}
-                    style={styles.bottomGradient}
-                  >
-                    {/* Story Info */}
-                    <View style={styles.heroMeta}>
-                      <TouchableOpacity
-                        activeOpacity={0.9}
-                        onPress={() => handleOpenStory(story)}
-                      >
-                        <Text style={styles.heroTitle} numberOfLines={2}>
-                          {story.title}
-                        </Text>
+                return (
+                  <View key={story.id} style={styles.heroSlide}>
+                    {/* Background Artwork */}
+                    {story.coverUrl ? (
+                      <Image
+                        source={{ uri: story.coverUrl }}
+                        style={styles.heroImage}
+                        contentFit="cover"
+                        priority="high"
+                      />
+                    ) : (
+                      <View style={[styles.heroImage, { backgroundColor: '#18181B' }]} />
+                    )}
 
-                        <Text style={styles.heroSynopsis} numberOfLines={2}>
-                          {story.synopsis}
-                        </Text>
-                      </TouchableOpacity>
-
-                      {/* Action Buttons */}
-                      <View style={styles.heroActionRow}>
+                    {/* Bottom Cinematic Fade to Black */}
+                    <LinearGradient
+                      colors={[
+                        'transparent',
+                        'rgba(9, 9, 11, 0.2)',
+                        'rgba(9, 9, 11, 0.65)',
+                        'rgba(9, 9, 11, 0.95)',
+                        '#09090B',
+                      ]}
+                      locations={[0, 0.35, 0.65, 0.88, 1]}
+                      style={styles.bottomGradient}
+                    >
+                      {/* Story Info */}
+                      <View style={styles.heroMeta}>
                         <TouchableOpacity
-                          activeOpacity={0.88}
-                          style={styles.playButton}
+                          activeOpacity={0.9}
                           onPress={() => handleOpenStory(story)}
                         >
-                          <Ionicons name="play" size={18} color="#09090B" />
-                          <Text style={styles.playButtonText}>Ouvir Agora</Text>
+                          <Text style={styles.heroTitle} numberOfLines={2}>
+                            {story.title}
+                          </Text>
+
+                          <Text style={styles.heroSynopsis} numberOfLines={2}>
+                            {story.synopsis}
+                          </Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity
-                          activeOpacity={0.88}
-                          style={styles.myListButton}
-                        >
-                          <Ionicons name="add" size={18} color="#FFFFFF" />
-                          <Text style={styles.myListButtonText}>Minha Lista</Text>
-                        </TouchableOpacity>
+                        {/* Action Buttons */}
+                        <View style={styles.heroActionRow}>
+                          <TouchableOpacity
+                            activeOpacity={0.88}
+                            style={styles.playButton}
+                            onPress={() => handleOpenStory(story)}
+                          >
+                            <Ionicons name="play" size={18} color="#09090B" />
+                            <Text style={styles.playButtonText}>Ouvir Agora</Text>
+                          </TouchableOpacity>
+
+                          <TouchableOpacity
+                            activeOpacity={0.88}
+                            style={[
+                              styles.myListButton,
+                              isSaved && styles.myListButtonActive,
+                            ]}
+                            onPress={() =>
+                              toggleFavorite({
+                                id: story.id,
+                                title: story.title,
+                              })
+                            }
+                          >
+                            <Ionicons
+                              name={isSaved ? 'checkmark' : 'add'}
+                              size={18}
+                              color={isSaved ? '#C084FC' : '#FFFFFF'}
+                            />
+                            <Text
+                              style={[
+                                styles.myListButtonText,
+                                isSaved && styles.myListButtonTextActive,
+                              ]}
+                            >
+                              {isSaved ? 'Na Lista' : 'Minha Lista'}
+                            </Text>
+                          </TouchableOpacity>
+                        </View>
                       </View>
-                    </View>
-                  </LinearGradient>
-                </View>
-              ))}
+                    </LinearGradient>
+                  </View>
+                );
+              })}
             </ScrollView>
 
             {/* Carousel Dots */}
@@ -261,7 +286,7 @@ export function BooksPage() {
           </View>
         ) : isLoading ? (
           <View style={[styles.heroPlaceholder, { paddingTop: insets.top + 60 }]}>
-            <ActivityIndicator size="large" color="#E11D48" />
+            <ActivityIndicator size="large" color="#7C3AED" />
             <Text style={styles.loadingText}>Carregando destaques...</Text>
           </View>
         ) : null}
@@ -273,7 +298,7 @@ export function BooksPage() {
           <View style={styles.continueSection}>
             <View style={styles.railHeader}>
               <View style={styles.railTitleRow}>
-                <Ionicons name="play-circle" size={17} color="#E11D48" style={{ marginRight: 6 }} />
+                <Ionicons name="play-circle" size={17} color="#7C3AED" style={{ marginRight: 6 }} />
                 <Text style={styles.railTitle}>Continuar Ouvindo</Text>
               </View>
               <Text style={styles.continueCountText}>
@@ -437,7 +462,7 @@ function HorizontalRail({ title, icon, stories, onStoryPress }: HorizontalRailPr
     <View style={styles.railSection}>
       <View style={styles.railHeader}>
         <View style={styles.railTitleRow}>
-          {icon && <Ionicons name={icon} size={16} color="#E11D48" style={{ marginRight: 6 }} />}
+          {icon && <Ionicons name={icon} size={16} color="#7C3AED" style={{ marginRight: 6 }} />}
           <Text style={styles.railTitle}>{title}</Text>
         </View>
         <Ionicons name="chevron-forward" size={16} color="#71717A" />
@@ -600,10 +625,17 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(255, 255, 255, 0.2)',
   },
+  myListButtonActive: {
+    backgroundColor: 'rgba(124, 58, 237, 0.25)',
+    borderColor: '#7C3AED',
+  },
   myListButtonText: {
     fontSize: 13,
     fontWeight: '600',
     color: '#FFFFFF',
+  },
+  myListButtonTextActive: {
+    color: '#E9D5FF',
   },
 
   // CAROUSEL DOTS
@@ -626,7 +658,7 @@ const styles = StyleSheet.create({
   },
   dotActive: {
     width: 16,
-    backgroundColor: '#E11D48',
+    backgroundColor: '#7C3AED',
   },
 
   heroPlaceholder: {
@@ -661,7 +693,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#141418',
     borderRadius: 14,
     borderWidth: 1,
-    borderColor: 'rgba(225, 29, 72, 0.22)',
+    borderColor: 'rgba(124, 58, 237, 0.25)',
     padding: 10,
     gap: 12,
     shadowColor: '#000',
@@ -721,7 +753,7 @@ const styles = StyleSheet.create({
   },
   progressBarFill: {
     height: '100%',
-    backgroundColor: '#E11D48',
+    backgroundColor: '#7C3AED',
     borderRadius: 2,
   },
   progressTimeRow: {
@@ -738,7 +770,7 @@ const styles = StyleSheet.create({
   continueActionText: {
     fontSize: 11,
     fontWeight: '700',
-    color: '#FDA4AF',
+    color: '#C084FC',
   },
 
   // RAILS SECTION

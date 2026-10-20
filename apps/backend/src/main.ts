@@ -46,7 +46,7 @@ async function bootstrap() {
     app.use('/audio', express.static(audioDir));
   }
 
-  const port = process.env.PORT ?? 3000;
+  const port = process.env.PORT ?? 3001;
   await app.listen(port, '0.0.0.0');
   console.log(`[AudioFic Backend] Server running on:`);
   console.log(`  - Local:   http://localhost:${port}`);

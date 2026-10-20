@@ -3,8 +3,8 @@ import { Platform } from 'react-native';
 
 export const Colors = {
   light: {
-    // Primary / Accent (Bordô)
-    primary: '#800020',
+    // Primary / Highlight: Spooky Purple (#7C3AED)
+    primary: '#7C3AED',
     primaryForeground: '#FFFFFF',
 
     // Backgrounds (iOS Pure White & Secondary Grouped)
@@ -19,13 +19,13 @@ export const Colors = {
 
     // Borders & Navigation
     border: '#E5E5EA',
-    tint: '#800020',
+    tint: '#7C3AED',
     tabIconDefault: '#8E8E93',
-    tabIconSelected: '#800020',
+    tabIconSelected: '#7C3AED',
   },
   dark: {
-    // Primary / Accent (Bordô com contraste ajustado)
-    primary: '#A62B32',
+    // Primary / Highlight: Spooky Purple (#7C3AED)
+    primary: '#7C3AED',
     primaryForeground: '#FFFFFF',
 
     // Backgrounds (iOS True Black OLED & Dark Card)
@@ -40,9 +40,9 @@ export const Colors = {
 
     // Borders & Navigation
     border: '#38383A',
-    tint: '#A62B32',
+    tint: '#7C3AED',
     tabIconDefault: '#8E8E93',
-    tabIconSelected: '#A62B32',
+    tabIconSelected: '#7C3AED',
   },
 } as const;
 

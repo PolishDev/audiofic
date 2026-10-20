@@ -64,7 +64,7 @@ export class GenresService implements OnModuleInit {
           description:
             'Assombrações, espíritos inquietos, possessões e entidades do além.',
           icon: 'ghost',
-          color: '#800020',
+          color: '#7C3AED',
           order: 1,
         },
         {

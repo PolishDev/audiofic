@@ -1,10 +1,10 @@
 import { vars } from 'nativewind';
 
-// Raw color values - iOS Minimalist aesthetic with deep burgundy (bordô) highlight
+// Raw color values - iOS Minimalist aesthetic with Spooky headphone purple (#7C3AED) highlight
 export const colors = {
   light: {
-    // Primary / Highlight: Deep Burgundy (Bordô #800020)
-    '--primary': '128 0 32',
+    // Primary / Highlight: Spooky Purple (#7C3AED)
+    '--primary': '124 58 237',
     '--primary-foreground': '255 255 255',
 
     // Backgrounds: Clean solid iOS white & grouped card
@@ -22,20 +22,20 @@ export const colors = {
     // Borders & Inputs (subtle separators)
     '--border': '229 229 234', // iOS separator line (#E5E5EA)
     '--input': '229 229 234',
-    '--ring': '128 0 32',
+    '--ring': '124 58 237',
 
     // Popover & Accent
     '--popover': '255 255 255',
     '--popover-foreground': '0 0 0',
     '--accent': '242 242 247',
-    '--accent-foreground': '128 0 32',
+    '--accent-foreground': '124 58 237',
 
     // System Destructive
     '--destructive': '197 34 31',
   },
   dark: {
-    // Primary / Highlight: Bordô with calibrated contrast for dark mode (#A62B32)
-    '--primary': '166 43 50',
+    // Primary / Highlight: Spooky Purple (#7C3AED)
+    '--primary': '124 58 237',
     '--primary-foreground': '255 255 255',
 
     // Backgrounds: Clean solid iOS OLED black & dark card
@@ -53,7 +53,7 @@ export const colors = {
     // Borders & Inputs (subtle dark separators)
     '--border': '56 56 58', // iOS dark separator (#38383A)
     '--input': '44 44 46',
-    '--ring': '166 43 50',
+    '--ring': '124 58 237',
 
     // Popover & Accent
     '--popover': '28 28 30',

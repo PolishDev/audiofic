@@ -147,7 +147,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
         return {
           name: 'alert-circle' as const,
           color: colors.primary,
-          bg: colorScheme === 'dark' ? 'rgba(166, 43, 50, 0.2)' : 'rgba(128, 0, 32, 0.1)',
+          bg: colorScheme === 'dark' ? 'rgba(124, 58, 237, 0.2)' : 'rgba(124, 58, 237, 0.1)',
         };
       case 'success':
         return {

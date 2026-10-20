@@ -4,11 +4,14 @@ import { Image } from 'expo-image';
 import { BlurView } from 'expo-blur';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import { useSegments, usePathname } from 'expo-router';
 import { Text } from '@/shared';
 import { useAudioPlayerContext } from './audio-player-context';
 
 export function MiniAudioPlayer() {
   const insets = useSafeAreaInsets();
+  const segments = useSegments();
+  const pathname = usePathname();
   const {
     currentStory,
     currentEpisode,
@@ -21,6 +24,24 @@ export function MiniAudioPlayer() {
     openPlayerModal,
   } = useAudioPlayerContext();
 
+  // Ocultar em telas de autenticação
+  const isAuthScreen =
+    segments.some(
+      (seg) =>
+        seg === '(auth)' ||
+        seg === 'login' ||
+        seg === 'register' ||
+        seg === 'onboarding',
+    ) ||
+    pathname.includes('login') ||
+    pathname.includes('register') ||
+    pathname.includes('onboarding') ||
+    pathname.includes('(auth)');
+
+  if (isAuthScreen) {
+    return null;
+  }
+
   // Se não houver áudio ou se o modal full-screen estiver aberto, oculta
   if (!hasAudio || !currentEpisode || !currentStory || isModalVisible) {
     return null;
@@ -28,8 +49,14 @@ export function MiniAudioPlayer() {
 
   const progress = duration > 0 ? Math.min(1, Math.max(0, currentTime / duration)) : 0;
 
-  // Elevação alinhada com o dock flutuante (BottomOffset do dock = insets.bottom + 24 + altura do dock 58 + margem 12)
-  const bottomOffset = (insets.bottom > 0 ? insets.bottom + 24 : 36) + 68;
+  // Verifica se a tela atual possui a barra inferior de navegação flutuante (grupo (app))
+  const hasBottomTab = segments.length > 0 && segments[0] === '(app)';
+
+  // Quando a bottom tab flutuante está ativa, eleva o mini-player para ficar 12px acima dela.
+  // Em telas sem a bottom tab (ex: tela de detalhes da história), ancora próximo à borda inferior segura.
+  const bottomOffset = hasBottomTab
+    ? (insets.bottom > 0 ? insets.bottom + 24 : 36) + 68
+    : (insets.bottom > 0 ? insets.bottom + 12 : 20);
 
   return (
     <View
@@ -168,7 +195,7 @@ const styles = StyleSheet.create({
   },
   progressFilled: {
     height: '100%',
-    backgroundColor: '#E11D48',
+    backgroundColor: '#7C3AED',
   },
   contentRow: {
     flexDirection: 'row',
@@ -213,10 +240,10 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     borderRadius: 16,
-    backgroundColor: '#E11D48',
+    backgroundColor: '#7C3AED',
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#E11D48',
+    shadowColor: '#7C3AED',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.35,
     shadowRadius: 4,

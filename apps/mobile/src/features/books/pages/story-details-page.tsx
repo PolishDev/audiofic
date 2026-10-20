@@ -215,7 +215,7 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
   if (isLoading && !story) {
     return (
       <View style={[styles.screen, styles.centerContainer]}>
-        <ActivityIndicator size="large" color="#E11D48" />
+        <ActivityIndicator size="large" color="#7C3AED" />
         <Text style={styles.loadingText}>Carregando história...</Text>
       </View>
     );
@@ -225,7 +225,7 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
   if (errorMessage && !story) {
     return (
       <View style={[styles.screen, styles.centerContainer, { paddingHorizontal: 32 }]}>
-        <Ionicons name="alert-circle-outline" size={48} color="#E11D48" />
+        <Ionicons name="alert-circle-outline" size={48} color="#7C3AED" />
         <Text style={styles.errorTitle}>Ops! Algo deu errado</Text>
         <Text style={styles.errorSubtitle}>{errorMessage}</Text>
         <TouchableOpacity
@@ -284,7 +284,7 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
             <Ionicons
               name={isSavedInList ? 'bookmark' : 'bookmark-outline'}
               size={20}
-              color={isSavedInList ? '#E11D48' : '#FFFFFF'}
+              color={isSavedInList ? '#7C3AED' : '#FFFFFF'}
             />
           </TouchableOpacity>
 
@@ -307,8 +307,8 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
           <RefreshControl
             refreshing={isRefreshing}
             onRefresh={onRefresh}
-            tintColor="#E11D48"
-            colors={['#E11D48']}
+            tintColor="#7C3AED"
+            colors={['#7C3AED']}
           />
         }
       >
@@ -341,20 +341,6 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
           >
             {/* Metadados da história */}
             <View style={styles.heroMeta}>
-              {/* Tags / Gêneros */}
-              <View style={styles.badgesRow}>
-                {story.genres?.map((g) => (
-                  <View key={g.id} style={styles.genreBadge}>
-                    <Text style={styles.genreBadgeText}>{g.name}</Text>
-                  </View>
-                ))}
-                <View style={styles.episodesCountBadge}>
-                  <Text style={styles.episodesCountBadgeText}>
-                    {story.episodes?.length || 0} Episódios
-                  </Text>
-                </View>
-              </View>
-
               <Text style={styles.heroTitle}>{story.title}</Text>
 
               {story.author && (
@@ -407,7 +393,7 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
         <View style={styles.episodesSection}>
           <View style={styles.episodesSectionHeader}>
             <View style={styles.episodesTitleRow}>
-              <Ionicons name="list" size={18} color="#E11D48" />
+              <Ionicons name="list" size={18} color="#7C3AED" />
               <Text style={styles.episodesSectionTitle}>Episódios</Text>
             </View>
 
@@ -418,7 +404,7 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
                   activeOpacity={0.75}
                   onPress={handleManageStorage}
                 >
-                  <Ionicons name="folder-outline" size={12} color="#FDA4AF" />
+                  <Ionicons name="folder-outline" size={12} color="#C084FC" />
                   <Text style={styles.storageBadgeText}>{totalStorageFormatted}</Text>
                 </TouchableOpacity>
               )}
@@ -521,7 +507,7 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
                     <View style={styles.episodeActionContainer}>
                       {isDownloading(ep.id) ? (
                         <View style={styles.downloadProgressWrapper}>
-                          <ActivityIndicator size="small" color="#E11D48" />
+                          <ActivityIndicator size="small" color="#7C3AED" />
                           <Text style={styles.downloadProgressText}>
                             {Math.round(getProgress(ep.id) * 100)}%
                           </Text>
@@ -553,7 +539,7 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
                             : 'play-circle-outline'
                         }
                         size={24}
-                        color={isCurrentlyPlaying ? '#E11D48' : '#71717A'}
+                        color={isCurrentlyPlaying ? '#7C3AED' : '#71717A'}
                       />
                     </View>
                   </TouchableOpacity>
@@ -609,7 +595,7 @@ const styles = StyleSheet.create({
   },
   retryButton: {
     marginTop: 16,
-    backgroundColor: '#E11D48',
+    backgroundColor: '#7C3AED',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 10,
@@ -682,38 +668,6 @@ const styles = StyleSheet.create({
   },
   heroMeta: {
     gap: 8,
-  },
-  badgesRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    gap: 8,
-    marginBottom: 2,
-  },
-  genreBadge: {
-    backgroundColor: 'rgba(225, 29, 72, 0.22)',
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-    borderRadius: 6,
-    borderWidth: 1,
-    borderColor: 'rgba(225, 29, 72, 0.35)',
-  },
-  genreBadgeText: {
-    color: '#FB7185',
-    fontSize: 11,
-    fontWeight: '700',
-    letterSpacing: 0.3,
-  },
-  episodesCountBadge: {
-    backgroundColor: 'rgba(255, 255, 255, 0.12)',
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 6,
-  },
-  episodesCountBadgeText: {
-    color: '#E4E4E7',
-    fontSize: 11,
-    fontWeight: '600',
   },
   heroTitle: {
     fontSize: 26,
@@ -829,8 +783,8 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(255, 255, 255, 0.06)',
   },
   episodeCardActive: {
-    borderColor: 'rgba(225, 29, 72, 0.5)',
-    backgroundColor: '#1C1518',
+    borderColor: 'rgba(124, 58, 237, 0.5)',
+    backgroundColor: 'rgba(124, 58, 237, 0.08)',
   },
 
   // CAPA DO EPISÓDIO
@@ -878,7 +832,7 @@ const styles = StyleSheet.create({
     lineHeight: 18,
   },
   episodeTitlePlaying: {
-    color: '#FB7185',
+    color: '#C084FC',
   },
   episodeSynopsis: {
     fontSize: 12,
@@ -958,17 +912,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 4,
-    backgroundColor: 'rgba(225, 29, 72, 0.12)',
+    backgroundColor: 'rgba(124, 58, 237, 0.12)',
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 6,
     borderWidth: 1,
-    borderColor: 'rgba(225, 29, 72, 0.25)',
+    borderColor: 'rgba(124, 58, 237, 0.25)',
   },
   storageBadgeText: {
     fontSize: 11,
     fontWeight: '600',
-    color: '#FDA4AF',
+    color: '#C084FC',
   },
   episodeActionContainer: {
     flexDirection: 'row',
@@ -987,7 +941,7 @@ const styles = StyleSheet.create({
   downloadProgressText: {
     fontSize: 9,
     fontWeight: '700',
-    color: '#FDA4AF',
+    color: '#C084FC',
   },
 
   // ESTADO VAZIO

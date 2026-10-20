@@ -131,15 +131,11 @@ export function SearchPage() {
       {/* 1. CAMPO DE BUSCA FIXO NO TOPO COM TRATAMENTO E DEBOUNCE */}
       {/* ======================================================== */}
       <View style={styles.header}>
-        <View style={styles.titleRow}>
-          <Text style={styles.screenTitle}>Buscar</Text>
-        </View>
-
         <View style={styles.searchBar}>
           <Ionicons
             name="search-outline"
             size={18}
-            color={isSearchActive ? '#E11D48' : '#71717A'}
+            color={isSearchActive ? '#7C3AED' : '#71717A'}
             style={styles.searchIcon}
           />
 
@@ -152,11 +148,11 @@ export function SearchPage() {
             autoCapitalize="none"
             autoCorrect={false}
             returnKeyType="search"
-            selectionColor="#E11D48"
+            selectionColor="#7C3AED"
           />
 
           {isSearching ? (
-            <ActivityIndicator size="small" color="#E11D48" style={styles.rightAction} />
+            <ActivityIndicator size="small" color="#7C3AED" style={styles.rightAction} />
           ) : isSearchActive ? (
             <TouchableOpacity
               onPress={handleClearQuery}
@@ -198,7 +194,7 @@ export function SearchPage() {
 
           {isSearching && searchResults.length === 0 ? (
             <View style={styles.loadingContainer}>
-              <ActivityIndicator size="large" color="#E11D48" />
+              <ActivityIndicator size="large" color="#7C3AED" />
               <Text style={styles.loadingText}>Procurando histórias...</Text>
             </View>
           ) : searchResults.length > 0 ? (
@@ -214,9 +210,9 @@ export function SearchPage() {
               <View style={styles.emptyIconCircle}>
                 <Ionicons name="search-outline" size={32} color="#71717A" />
               </View>
-              <Text style={styles.emptyTitle}>História não encontrada</Text>
+              <Text style={styles.emptyTitle}>Nenhum resultado</Text>
               <Text style={styles.emptyDescription}>
-                Não encontramos nada com "{query}". Tente buscar por outras palavras-chave ou confira os títulos mais ouvidos.
+                Não encontramos nada com "{query}".
               </Text>
               <TouchableOpacity
                 style={styles.clearSearchButton}
@@ -241,19 +237,16 @@ export function SearchPage() {
             <RefreshControl
               refreshing={isRefreshing}
               onRefresh={onRefresh}
-              tintColor="#E11D48"
-              colors={['#E11D48']}
+              tintColor="#7C3AED"
+              colors={['#7C3AED']}
             />
           }
           ListHeaderComponent={
             <View style={styles.topHeader}>
               <View style={styles.topBadgeRow}>
-                <Ionicons name="flame" size={18} color="#E11D48" />
+                <Ionicons name="flame" size={18} color="#7C3AED" />
                 <Text style={styles.topBadgeTitle}>Top 10 Mais Ouvidos</Text>
               </View>
-              <Text style={styles.topSubtitle}>
-                As histórias e séries mais reproduzidas no AudioFic
-              </Text>
             </View>
           }
           renderItem={({ item, index }) => (
@@ -266,7 +259,7 @@ export function SearchPage() {
           ListEmptyComponent={
             isLoadingTop ? (
               <View style={styles.loadingContainer}>
-                <ActivityIndicator size="large" color="#E11D48" />
+                <ActivityIndicator size="large" color="#7C3AED" />
                 <Text style={styles.loadingText}>Carregando os mais ouvidos...</Text>
               </View>
             ) : (
@@ -379,10 +372,6 @@ const styles = StyleSheet.create({
     color: '#FAFAFA',
     letterSpacing: 0.2,
   },
-  topSubtitle: {
-    fontSize: 12,
-    color: '#71717A',
-  },
 
   // LOADING & EMPTY STATES
   loadingContainer: {
@@ -426,9 +415,9 @@ const styles = StyleSheet.create({
   },
   clearSearchButton: {
     marginTop: 8,
-    backgroundColor: 'rgba(225, 29, 72, 0.15)',
+    backgroundColor: 'rgba(124, 58, 237, 0.15)',
     borderWidth: 1,
-    borderColor: '#E11D48',
+    borderColor: '#7C3AED',
     paddingHorizontal: 18,
     paddingVertical: 10,
     borderRadius: 10,
@@ -436,6 +425,6 @@ const styles = StyleSheet.create({
   clearSearchButtonText: {
     fontSize: 13,
     fontWeight: '700',
-    color: '#FDA4AF',
+    color: '#C084FC',
   },
 });
