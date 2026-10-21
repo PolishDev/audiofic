@@ -7,7 +7,8 @@ import React, {
   useCallback,
   ReactNode,
 } from 'react';
-import { Platform } from 'react-native';
+import { Platform, Alert } from 'react-native';
+import { useRouter } from 'expo-router';
 import {
   useAudioPlayer,
   useAudioPlayerStatus,
@@ -17,6 +18,8 @@ import {
 } from 'expo-audio';
 import { API_BASE_URL } from '@/shared/lib/auth-client';
 import { apiClient } from '@/shared/api/axios-client';
+import { useAuth } from '@/shared/auth/auth-context';
+import { useSubscription } from '@/shared/subscription/subscription-context';
 import { getLocalAudioUri } from '../offline/download-manager';
 import {
   savePlaybackProgress,
@@ -91,6 +94,10 @@ export function resolveAudioStreamUrl(rawUrl: string): string {
 }
 
 export function AudioPlayerProvider({ children }: { children: ReactNode }) {
+  const router = useRouter();
+  const { user, isGuest } = useAuth();
+  const { requestEpisodeAccess } = useSubscription();
+
   const [currentStory, setCurrentStory] = useState<PlayerStory | null>(null);
   const [currentEpisode, setCurrentEpisode] = useState<PlayerEpisode | null>(null);
   const [playlist, setPlaylist] = useState<PlayerEpisode[]>([]);
@@ -196,16 +203,48 @@ export function AudioPlayerProvider({ children }: { children: ReactNode }) {
       episodeList: PlayerEpisode[] = [],
       initialPositionSeconds?: number,
     ) => {
+      // 0. Autenticação obrigatória para reprodução e cota diária
+      if (isGuest || !user) {
+        Alert.alert(
+          'Faça login para ouvir',
+          'Crie ou acesse sua conta gratuita para ouvir os episódios do dia e salvar seu progresso.',
+          [
+            { text: 'Cancelar', style: 'cancel' },
+            {
+              text: 'Entrar / Cadastrar',
+              onPress: () => router.push('/(auth)/login'),
+            },
+          ],
+        );
+        return;
+      }
+
+      // 1. Validar autorização no servidor (cota diária de 3 episódios e status PRO)
+      let resolvedAudioUrl = episode.audioUrl;
+      try {
+        const access = await requestEpisodeAccess(episode.id);
+        if (!access.authorized) {
+          return;
+        }
+        if (access.audioUrl) {
+          resolvedAudioUrl = access.audioUrl;
+        }
+      } catch {
+        // Erros de cota (DAILY_LIMIT_EXCEEDED) e episódios PRO (PREMIUM_SUBSCRIPTION_REQUIRED)
+        // já disparam automaticamente o PaywallModal via SubscriptionContext
+        return;
+      }
+
       setCurrentStory(story);
       setCurrentEpisode(episode);
       setPlaylist(episodeList.length > 0 ? episodeList : [episode]);
 
-      // 1. Reprodução Inteligente: Toca local do disco se baixado, senão toca URL remota
+      // 2. Reprodução Inteligente: Toca local do disco se baixado, senão toca URL remota
       const localUri = await getLocalAudioUri(episode.id);
-      const streamUrl = localUri || resolveAudioStreamUrl(episode.audioUrl);
+      const streamUrl = localUri || resolveAudioStreamUrl(resolvedAudioUrl);
       setActiveAudioUri(streamUrl);
 
-      // 2. Determinar ponto de início (passado explicitamente ou salvo no storage local / backend)
+      // 3. Determinar ponto de início (passado explicitamente ou salvo no storage local / backend)
       let startPos = initialPositionSeconds;
       if (startPos === undefined) {
         startPos = await getEpisodeSavedProgress(episode.id);
@@ -248,7 +287,7 @@ export function AudioPlayerProvider({ children }: { children: ReactNode }) {
         }
       }
     },
-    [player],
+    [player, isGuest, user, requestEpisodeAccess, router],
   );
 
   // Play / Pause com salvamento de progresso imediato ao pausar

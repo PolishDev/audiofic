@@ -10,6 +10,7 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 import { PlaybackService } from './playback.service.js';
+import { DailyQuotaService } from './daily-quota.service.js';
 import { AuthGuard } from '../auth/auth.guard.js';
 import { CurrentUser } from '../auth/current-user.decorator.js';
 import type {
@@ -20,7 +21,10 @@ import type {
 @Controller('playback')
 @UseGuards(AuthGuard)
 export class PlaybackController {
-  constructor(private readonly playbackService: PlaybackService) {}
+  constructor(
+    private readonly playbackService: PlaybackService,
+    private readonly dailyQuotaService: DailyQuotaService,
+  ) {}
 
   /**
    * Save or update playback progress (invoked periodically e.g. every 15s and on pause).
@@ -83,4 +87,27 @@ export class PlaybackController {
       limit ? Number(limit) : 10,
     );
   }
+
+  /**
+   * Get current daily quota status for the authenticated user.
+   * GET /playback/daily-quota
+   */
+  @Get('daily-quota')
+  async getDailyQuota(@CurrentUser('id') userId: string) {
+    return this.dailyQuotaService.getDailyQuota(userId);
+  }
+
+  /**
+   * Request authorization to play an episode and consume daily quota if applicable.
+   * POST /playback/episodes/:id/access
+   */
+  @Post('episodes/:id/access')
+  @HttpCode(HttpStatus.OK)
+  async requestEpisodeAccess(
+    @CurrentUser('id') userId: string,
+    @Param('id') episodeId: string,
+  ) {
+    return this.dailyQuotaService.requestPlaybackAccess(userId, episodeId);
+  }
 }
+

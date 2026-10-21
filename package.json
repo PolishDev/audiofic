@@ -16,7 +16,9 @@
     "backend:dev": "turbo run dev --filter=@audiofic/backend",
     "backend:build": "turbo run build --filter=@audiofic/backend",
     "studio:dev": "turbo run dev --filter=@audiofic/studio",
-    "studio:build": "turbo run build --filter=@audiofic/studio"
+    "studio:build": "turbo run build --filter=@audiofic/studio",
+    "web:dev": "turbo run dev --filter=@audiofic/web",
+    "web:build": "turbo run build --filter=@audiofic/web"
   },
   "devDependencies": {
     "turbo": "^2.11.8"

@@ -11,6 +11,10 @@ import {
   FullScreenAudioPlayerModal,
   MiniAudioPlayer,
 } from '@/shared/audio';
+import {
+  SubscriptionProvider,
+  PaywallModal,
+} from '@/shared/subscription';
 import { ToastProvider } from '@/shared/components/ui/toast';
 import { ThemeProvider, useAppTheme } from '@/shared/theme';
 
@@ -40,25 +44,28 @@ function RootNavigationContent() {
       <NavigationThemeProvider value={navigationTheme}>
         <ToastProvider>
           <AuthProvider>
-            <FavoritesProvider>
-              <AudioPlayerProvider>
-                <StatusBar style={isDark ? 'light' : 'dark'} />
-                <Stack screenOptions={{ headerShown: false }}>
-                  <Stack.Screen name="index" options={{ headerShown: false }} />
-                  <Stack.Screen name="(app)" options={{ headerShown: false }} />
-                  <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-                  <Stack.Screen
-                    name="story/[id]"
-                    options={{
-                      headerShown: false,
-                      animation: 'slide_from_right',
-                    }}
-                  />
-                </Stack>
-                <MiniAudioPlayer />
-                <FullScreenAudioPlayerModal />
-              </AudioPlayerProvider>
-            </FavoritesProvider>
+            <SubscriptionProvider>
+              <FavoritesProvider>
+                <AudioPlayerProvider>
+                  <StatusBar style={isDark ? 'light' : 'dark'} />
+                  <Stack screenOptions={{ headerShown: false }}>
+                    <Stack.Screen name="index" options={{ headerShown: false }} />
+                    <Stack.Screen name="(app)" options={{ headerShown: false }} />
+                    <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+                    <Stack.Screen
+                      name="story/[id]"
+                      options={{
+                        headerShown: false,
+                        animation: 'slide_from_right',
+                      }}
+                    />
+                  </Stack>
+                  <MiniAudioPlayer />
+                  <FullScreenAudioPlayerModal />
+                  <PaywallModal />
+                </AudioPlayerProvider>
+              </FavoritesProvider>
+            </SubscriptionProvider>
           </AuthProvider>
         </ToastProvider>
       </NavigationThemeProvider>

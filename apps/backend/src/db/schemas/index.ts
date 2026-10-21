@@ -18,6 +18,11 @@ import {
   userFavorites,
   userFavoritesRelations,
 } from './user-favorites.table.js';
+import {
+  dailyListenQuota,
+  dailyListenQuotaRelations,
+} from './daily-listen-quota.table.js';
+import { processedWebhookEvent } from './processed-webhook-event.table.js';
 
 export * from './utils.js';
 export * from './user.table.js';
@@ -31,6 +36,8 @@ export * from './story-genre.table.js';
 export * from './story-metric-event.table.js';
 export * from './user-progress.table.js';
 export * from './user-favorites.table.js';
+export * from './daily-listen-quota.table.js';
+export * from './processed-webhook-event.table.js';
 
 export const schema = {
   user,
@@ -54,6 +61,9 @@ export const schema = {
   userProgressRelations,
   userFavorites,
   userFavoritesRelations,
+  dailyListenQuota,
+  dailyListenQuotaRelations,
+  processedWebhookEvent,
 };
 
 export type AppSchema = typeof schema;

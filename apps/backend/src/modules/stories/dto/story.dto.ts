@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import * as z from 'zod';
 
 export const createStorySchema = z.object({
   title: z.string().min(1, 'Título é obrigatório'),

@@ -10,6 +10,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { Text, useAppTheme, BottomTabInset, type ThemePreference } from '@/shared';
+import { useSubscription } from '@/shared/subscription/subscription-context';
 import type { User } from '@/features/auth';
 
 export interface ProfilePageProps {
@@ -32,6 +33,7 @@ export function ProfilePage({
   onNavigateToRegister,
 }: ProfilePageProps) {
   const { colors, isDark, themePreference, setThemePreference } = useAppTheme();
+  const { openPaywall } = useSubscription();
   const [isDeleting, setIsDeleting] = useState(false);
 
   const themeOptions: Array<{
@@ -88,11 +90,7 @@ export function ProfilePage({
   };
 
   const handleUpgradePress = () => {
-    Alert.alert(
-      'AudioFic PRO',
-      'Em breve você poderá assinar o plano PRO para desbloquear todas as histórias e episódios exclusivos.',
-      [{ text: 'Entendido' }],
-    );
+    openPaywall({ reason: 'manual' });
   };
 
   const handleCancelSubscription = () => {

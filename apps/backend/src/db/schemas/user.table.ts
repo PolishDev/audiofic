@@ -14,6 +14,11 @@ export const user = pgTable('user', {
   email: text('email').notNull().unique(),
   emailVerified: boolean('email_verified').notNull().default(false),
   image: text('image'),
+  subscriptionStatus: text('subscription_status', { enum: ['free', 'premium'] })
+    .notNull()
+    .default('free'),
+  subscriptionPlan: text('subscription_plan'),
+  subscriptionExpiresAt: timestamp('subscription_expires_at'),
   createdAt: timestamp('created_at').notNull().defaultNow(),
   updatedAt: timestamp('updated_at').notNull().defaultNow(),
 });

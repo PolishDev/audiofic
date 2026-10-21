@@ -11,10 +11,10 @@ Documento oficial de acompanhamento do ciclo de vida, arquitetura, etapas e func
 | Fase | Escopo Principal | Prazo / Alvo | Status |
 | :--- | :--- | :---: | :---: |
 | **Fase 1** | Arquitetura Monorepo, Backend Base & Autenticação | Semana 1 | 🟢 **Concluída** |
-| **Fase 2** | Modelagem Drizzle, Módulo de Catálogo & Telas de Descoberta | Semana 2 | 🟢 **Concluída** (Busca pendente) |
+| **Fase 2** | Modelagem Drizzle, Módulo de Catálogo & Telas de Descoberta | Semana 2 | 🟢 **Concluída** |
 | **Fase 3** | Player de Áudio Nativo (`expo-audio`), Background & Bottom Sheet | Semana 3 | 🟢 **Concluída** |
-| **Fase 4** | Download Offline, Progresso de Escuta & Listas/Favoritos | Semana 4 | 🟡 **Próxima** |
-| **Fase 5** | Monetização com RevenueCat (Assinaturas, Paywall & Webhooks) | Semana 5 | ⚪ No MVP |
+| **Fase 4** | Download Offline, Progresso de Escuta & Listas/Favoritos | Semana 4 | 🟢 **Concluída** |
+| **Fase 5** | Monetização com RevenueCat (Assinaturas, Paywall & Cota Diária) | Semana 5 | 🟡 **Em Andamento (Código pronto, aguardando consoles)** |
 | **Fase 6** | Polimento, Testes Finais & Publicação nas Lojas (EAS Build) | Semana 6 | ⚪ No MVP |
 | **Fase 7** | Pós-Lançamento (Notificações Push, Painel Web Admin & Métricas) | Pós-MVP | ⚪ Futura |
 
@@ -74,7 +74,7 @@ Documento oficial de acompanhamento do ciclo de vida, arquitetura, etapas e func
     - [x] `POST /admin/stories`, `PUT /admin/stories/:id`, `DELETE /admin/stories/:id`
     - [x] `POST /admin/stories/:id/episodes`, `PUT /admin/episodes/:id`, `DELETE /admin/episodes/:id`
     - [x] `POST /admin/stories/bulk-import` (importação completa de história + episódios em lote, otimizada para o app gerador de IA local)
-- [ ] **Telas de Catálogo no App Mobile (`apps/mobile`):**
+- [x] **Telas de Catálogo no App Mobile (`apps/mobile`):**
   - [x] **Home / Início (`(app)/books.tsx`):**
     - [x] Header com saudação e atalhos rápidos
     - [x] Banner / Carrossel em destaque com as principais séries de terror
@@ -86,10 +86,10 @@ Documento oficial de acompanhamento do ciclo de vida, arquitetura, etapas e func
     - [x] Botão de ação rápida: "Começar a Ouvir" / "Continuar de Onde Parou"
     - [x] Lista de episódios completa com capa miniatura, número do EP, título, sinopse detalhada e duração formatada
     - [x] Indicador de reprodução ativa no episódio atual
-  - [ ] **Explorar & Buscar (`(app)/buscar.tsx`):**
-    - [ ] Barra de busca instantânea com debounce
-    - [ ] Chips filtráveis por gênero
-    - [ ] Lista de resultados e tratamento de estado vazio ("Nenhuma história encontrada")
+  - [x] **Explorar & Buscar (`(app)/buscar.tsx`):**
+    - [x] Barra de busca instantânea com debounce
+    - [x] Chips filtráveis por gênero
+    - [x] Lista de resultados e tratamento de estado vazio ("Nenhuma história encontrada")
 
 ---
 
@@ -127,18 +127,18 @@ Documento oficial de acompanhamento do ciclo de vida, arquitetura, etapas e func
 > - *Offline no MVP:* Usuário pode baixar episódios no aparelho para ouvir em locais sem conexão de internet.
 > - Sincronização contínua de progresso para que o usuário nunca perca o minuto onde parou.
 
-- [ ] **Download de Episódios para Escuta Offline (Mobile):**
-  - [ ] Gerenciador de downloads locais usando `expo-file-system`
-  - [ ] Armazenamento dos arquivos de áudio e metadados no armazenamento seguro do dispositivo
-  - [ ] Indicador visual de download concluído nos episódios da lista
-  - [ ] Gerenciamento de espaço: opção para excluir episódios baixados individualmente ou todos de uma vez
-  - [ ] Reprodução inteligente: se o arquivo estiver baixado localmente, toca direto do disco sem gastar dados móveis
-- [ ] **Sincronização de Progresso de Reprodução (`user_progress`):**
-  - [ ] Tabela no Drizzle `user_progress.table.ts` (`user_id`, `episode_id`, `position_seconds`, `is_completed`, `updated_at`)
-  - [ ] Armazenamento local no `AsyncStorage` para usuários no modo visitante
-  - [ ] Endpoint `POST /playback/progress` chamado a cada intervalo (ex: a cada 15 segundos) e ao pausar
-  - [ ] Endpoint `GET /playback/resume` para recuperar o último episódio ouvido
-  - [ ] Trilho "Continuar Ouvindo" destacado no topo da tela inicial
+- [x] **Download de Episódios para Escuta Offline (Mobile):**
+  - [x] Gerenciador de downloads locais usando `expo-file-system`
+  - [x] Armazenamento dos arquivos de áudio e metadados no armazenamento seguro do dispositivo
+  - [x] Indicador visual de download concluído nos episódios da lista
+  - [x] Gerenciamento de espaço: opção para excluir episódios baixados individualmente ou todos de uma vez
+  - [x] Reprodução inteligente: se o arquivo estiver baixado localmente, toca direto do disco sem gastar dados móveis
+- [x] **Sincronização de Progresso de Reprodução (`user_progress`):**
+  - [x] Tabela no Drizzle `user_progress.table.ts` (`user_id`, `episode_id`, `position_seconds`, `is_completed`, `updated_at`)
+  - [x] Armazenamento local no `AsyncStorage` para usuários no modo visitante
+  - [x] Endpoint `POST /playback/progress` chamado a cada intervalo (ex: a cada 15 segundos) e ao pausar
+  - [x] Endpoint `GET /playback/resume` para recuperar o último episódio ouvido
+  - [x] Trilho "Continuar Ouvindo" destacado no topo da tela inicial
 - [x] **Listas e Favoritos (`(app)/listas.tsx`):**
   - [x] Tabela `user_favorites.table.ts` no backend
   - [x] Ação de favoritar série apenas usuarios logados
@@ -151,23 +151,30 @@ Documento oficial de acompanhamento do ciclo de vida, arquitetura, etapas e func
 
 ---
 
-## 💎 Fase 5: Monetização com RevenueCat (Assinaturas & Paywall)
-> **Objetivo:** Orquestrar o modelo de assinatura com validação estrita no servidor, sem confiar apenas em respostas locais do aplicativo.
+## 💎 Fase 5: Monetização com RevenueCat (Assinaturas, Paywall & Cota Diária)
+> **Objetivo:** Orquestrar o modelo de assinatura com validação estrita no servidor, sem confiar apenas em respostas locais do aplicativo, e impor cota diária de 3 episódios para ouvintes no plano gratuito.
 
-- [ ] **Configuração do RevenueCat:**
-  - [ ] Criação de projeto no painel do RevenueCat e associação com Google Play Console e Apple App Store Connect
-  - [ ] Configuração de produtos de assinatura (ex: Plano Mensal e Anual)
-  - [ ] Definição do Entitlement: `audiofic_premium`
-- [ ] **Integração no Aplicativo Mobile:**
-  - [ ] Configuração do SDK `react-native-purchases`
-  - [ ] Identificação do usuário logado via `userId` (ULID) no RevenueCat
-  - [ ] **Tela de Paywall:** Apresentação persuasiva dos benefícios premium (acesso irrestrito a todos os episódios bloqueados, novos lançamentos e escuta ilimitada)
-  - [ ] Fluxo de compra in-app e botão "Restaurar Compras" (*Restore Purchases*)
-- [ ] **Backend Webhooks & Direitos de Acesso (`apps/backend`):**
-  - [ ] Tabela `subscriptions.table.ts` (`user_id`, `revenuecat_id`, `status: active | canceled | past_due`, `expires_at`, `plan_id`)
-  - [ ] Endpoint `POST /webhooks/revenuecat` com validação de token de autorização
-  - [ ] Processamento idempotente de eventos de assinatura (`INITIAL_PURCHASE`, `RENEWAL`, `CANCELLATION`, `EXPIRATION`)
-  - [ ] Guard no NestJS que bloqueia acesso a episódios com `is_premium = true` caso o usuário não possua assinatura ativa
+- [x] **Regra de Cota Diária Freemium (TDD - Backend NestJS):**
+  - [x] Tabela `daily_listen_quota.table.ts` (`userId`, `episodeId`, `listenDate`) com índice único composto
+  - [x] Fuso oficial de Brasília (`America/Sao_Paulo`) para virada de cota às 00:00 BRT
+  - [x] Endpoint `GET /playback/daily-quota` e `POST /playback/episodes/:id/access`
+  - [x] Suite de testes com 100% de cobertura (`daily-quota.service.spec.ts`)
+- [x] **Backend Webhooks & Direitos de Acesso (`apps/backend`):**
+  - [x] Colunas de assinatura na tabela `user.table.ts` (`subscription_status`, `subscription_plan`, `subscription_expires_at`)
+  - [x] Tabela `processed_webhook_event.table.ts` para garantia de idempotência e desduplicação
+  - [x] Endpoint `POST /webhooks/revenuecat` com Bearer Auth e tratamento de eventos (`INITIAL_PURCHASE`, `RENEWAL`, `PRODUCT_CHANGE`, `UNCANCELLATION`, `EXPIRATION`)
+  - [x] Suite de testes unitários para o webhook (`revenuecat-webhook.service.spec.ts`)
+- [x] **Integração no Aplicativo Mobile (`apps/mobile`):**
+  - [x] Configuração do SDK `react-native-purchases` e wrapper isolado `purchases-client.ts`
+  - [x] Contexto `SubscriptionProvider` com hook `useSubscription()`
+  - [x] **Paywall Modal Nativo:** Apresentação elegante com o tema do Spooky roxo, opções Anual/Mensal, tratamento de compra, restauração e mensagens dinâmicas de gatilho (cota diária vs episódio premium)
+  - [x] Player de áudio integrado com autorização do servidor e bloqueio com paywall quando atinge o limite
+  - [x] Exigência de login/cadastro para início de reprodução e contagem de cota
+- [ ] **Configuração Externa nos Consoles (Google Play & RevenueCat):**
+  - [ ] Criação de Service Account no Google Cloud e vínculo no Google Play Console API Access
+  - [ ] Criação das assinaturas na Google Play Console (`audiofic_pro_monthly` e `audiofic_pro_annual`)
+  - [ ] Configuração do app no RevenueCat (`com.sahlo.alves.audiofic`), Entitlement (`pro_access`), Ofertas e Webhook para o backend
+
 
 ---
 
