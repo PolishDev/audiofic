@@ -16,6 +16,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { Text, useDownloadManager, useFavorites } from '@/shared';
+import { useAuth } from '@/shared/auth/auth-context';
+import { useSubscription } from '@/shared/subscription';
 import { apiClient } from '@/shared/api/axios-client';
 import { useAudioPlayerContext } from '@/shared/audio';
 
@@ -74,6 +76,9 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
   const { isFavorite, toggleFavorite } = useFavorites();
   const isSavedInList = story ? isFavorite(story.id) : false;
 
+  const { user, isGuest } = useAuth();
+  const { isPro, openPaywall } = useSubscription();
+
   const {
     playEpisode,
     currentEpisode: activePlayingEpisode,
@@ -92,6 +97,24 @@ export function StoryDetailsPage({ storyId }: StoryDetailsPageProps) {
 
   const handleStartDownload = async (episode: EpisodeItem) => {
     if (!story) return;
+
+    if (isGuest || !user) {
+      Alert.alert(
+        'Login Necessário',
+        'Crie uma conta gratuita ou faça login para gerenciar sua biblioteca e baixar episódios.',
+        [
+          { text: 'Cancelar', style: 'cancel' },
+          { text: 'Entrar / Cadastrar', onPress: () => router.push('/(auth)/login') },
+        ],
+      );
+      return;
+    }
+
+    if (!isPro) {
+      openPaywall({ reason: 'offline_download' });
+      return;
+    }
+
     try {
       await startDownload(
         { id: story.id, title: story.title, coverUrl: story.coverUrl },

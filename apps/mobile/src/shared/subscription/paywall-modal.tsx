@@ -36,6 +36,7 @@ export function PaywallModal() {
 
   const isDailyLimit = paywallContext?.reason === 'daily_limit';
   const isPremiumEpisode = paywallContext?.reason === 'premium_episode';
+  const isOfflineDownload = paywallContext?.reason === 'offline_download';
 
   const annualPriceString = annualPackage?.product?.priceString || 'R$ 178,80';
   const monthlyPriceString = monthlyPackage?.product?.priceString || 'R$ 19,90';
@@ -143,6 +144,8 @@ export function PaywallModal() {
                   ? 'Limite diário de 3 episódios atingido'
                   : isPremiumEpisode
                   ? 'Desbloqueie este episódio'
+                  : isOfflineDownload
+                  ? 'Baixe episódios para ouvir offline'
                   : 'Ouça sem interrupções'}
               </Text>
 
@@ -151,6 +154,8 @@ export function PaywallModal() {
                   ? 'Você já aproveitou seus 3 episódios gratuitos de hoje! Assine o PRO para continuar maratonando agora sem esperar até amanhã.'
                   : isPremiumEpisode
                   ? 'Este episódio faz parte das temporadas completas exclusivas para assinantes AudioFic PRO.'
+                  : isOfflineDownload
+                  ? 'Baixar episódios para ouvir sem internet e sem gastar seus dados móveis é um recurso exclusivo para assinantes AudioFic PRO.'
                   : 'Tenha acesso ilimitado a todas as séries de terror, suspense e mistério do catálogo.'}
               </Text>
             </View>

@@ -19,7 +19,7 @@ import {
   hasProEntitlement,
 } from './purchases-client';
 
-export type PaywallReason = 'daily_limit' | 'premium_episode' | 'manual';
+export type PaywallReason = 'daily_limit' | 'premium_episode' | 'offline_download' | 'manual';
 
 export interface PaywallContextData {
   reason: PaywallReason;
