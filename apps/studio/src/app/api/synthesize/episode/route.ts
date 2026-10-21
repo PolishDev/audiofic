@@ -73,6 +73,8 @@ export async function POST(req: Request) {
         '--with',
         'edge-tts',
       );
+    } else if (engine === 'voicestudio' || engine === 'omnivoice') {
+      uvArgs.push('--with', 'requests', '--with', 'edge-tts');
     } else {
       uvArgs.push('--with', 'edge-tts');
     }

@@ -84,6 +84,20 @@ DEFAULT_CAST = {
         'DONATO': '/mnt/stuff/shortstory-audio/voice_samples/donato.wav',
         'VALQUÍRIA': '/mnt/stuff/shortstory-audio/voice_samples/helena.wav',
         'NARRADOR': '/mnt/stuff/shortstory-audio/voice_samples/narrador.wav',
+    },
+    'voicestudio': {
+        'NARRADOR': 'pt_narrador_sul',
+        'HELENA': 'pt_fem_paulista',
+        'CLARICE': 'pt_fem_carioca',
+        'LAURA': 'pt_fem_gaucha',
+        'LUCAS': 'pt_masc_jovem_sul',
+        'MATEUS': 'pt_masc_nordeste',
+        'DONATO': 'pt_masc_senior',
+        'DR_ALBERTO': 'pt_masc_senior',
+        'RODRIGO': 'pt_masc_interior_sp',
+        'THIAGO': 'pt_masc_mineiro',
+        'ATENDENTE': 'pt_masc_jovem_sul',
+        'VALQUÍRIA': 'pt_fem_carioca',
     }
 }
 
@@ -94,9 +108,7 @@ def clean_pure_spoken_text(raw_script: str) -> list:
     and returns ONLY pure speech tuples: (speaker, text).
     Zero stage directions, zero sound cues, zero rain/tape descriptions!
     """
-    # Remove all bracketed blocks completely across any number of newlines
-    cleaned = re.sub(r'\[.*?\]', '', raw_script, flags=re.DOTALL)
-    lines = cleaned.splitlines()
+    lines = raw_script.splitlines()
 
     segments = []
     current_speaker = 'NARRADOR'
@@ -107,20 +119,41 @@ def clean_pure_spoken_text(raw_script: str) -> list:
         if not line_str:
             continue
 
-        # Check if line is a speaker name (e.g. LUCAS, HELENA, ATENDENTE)
-        clean_name = line_str.replace('—', '').replace('-', '').strip()
-        if len(clean_name) <= 25 and clean_name.isupper() and not line_str.startswith('—') and not line_str.startswith('-'):
+        # Check for [voice:SPEAKER] or [SPEAKER] or SPEAKER:
+        tag_match = re.match(r'^\[(?:voice:)?([A-Za-zÀ-ÖØ-öø-ÿ0-9_\-\s]+)\](.*)$', line_str, flags=re.IGNORECASE)
+        colon_match = re.match(r'^([A-Za-zÀ-ÖØ-öø-ÿ0-9_\-\s]{2,25}):(.*)$', line_str)
+
+        if tag_match:
+            cand_speaker = tag_match.group(1).strip().upper()
+            rest_line = tag_match.group(2).strip()
+            # If the tag is not a stage direction (like pause, sfx, sigh, etc.)
+            if not any(k in cand_speaker.lower() for k in ['pause', 'sfx', 'som', 'trilha', 'efeito', 'music', 'slow', 'fast', 'emphasis', 'sigh', 'laughter']):
+                if current_text:
+                    segments.append((current_speaker, ' '.join(current_text)))
+                    current_text = []
+                current_speaker = cand_speaker
+                line_str = rest_line
+
+        elif colon_match and colon_match.group(1).isupper():
             if current_text:
                 segments.append((current_speaker, ' '.join(current_text)))
                 current_text = []
-            current_speaker = clean_name
-            if 'VALQU' in current_speaker:
-                current_speaker = 'VALQUÍRIA'
+            current_speaker = colon_match.group(1).strip().upper()
+            line_str = colon_match.group(2).strip()
+
+        elif len(line_str) <= 25 and line_str.isupper() and not line_str.startswith('—') and not line_str.startswith('-'):
+            if current_text:
+                segments.append((current_speaker, ' '.join(current_text)))
+                current_text = []
+            current_speaker = line_str.replace('—', '').replace('-', '').strip()
             continue
 
-        # Dialogue or narrative prose
+        if not line_str:
+            continue
+
+        # Clean prose (keep text, strip bracketed stage directions)
         clean_line = re.sub(r'^[—\-\*]+\s*', '', line_str).strip()
-        clean_line = re.sub(r'\[.*?\]', '', clean_line, flags=re.DOTALL).strip()
+        clean_line = re.sub(r'\[(?!sigh|laughter|surprise|question|dissatisfaction|pause|slow|fast|emphasis).*?\]', '', clean_line, flags=re.IGNORECASE).strip()
         if clean_line:
             current_text.append(clean_line)
 
@@ -503,6 +536,70 @@ def synthesize_xtts_pure(segments: list, output_mp3: str, session_tmp_dir: str, 
     return get_audio_duration(output_mp3)
 
 
+def synthesize_voicestudio_pure(
+    segments: list,
+    output_mp3: str,
+    session_tmp_dir: str,
+    voice_cast: dict = None,
+    api_url: str = "http://127.0.0.1:3900"
+) -> float:
+    """Generates 100% local multi-voice speech with VoiceStudio/OmniVoice via local API."""
+    import requests
+
+    cast = voice_cast or {}
+    concat_files = []
+
+    for idx, (speaker, text) in enumerate(segments):
+        profile_id = cast.get(speaker) or DEFAULT_CAST['voicestudio'].get(speaker, 'pt_narrador_sul')
+        chunk_wav = os.path.join(session_tmp_dir, f"vs_{idx:03d}.wav")
+
+        payload = {
+            'profile_id': profile_id,
+            'text': text,
+            'language': 'pt',
+            'guidance_scale': 2.0,
+            'class_temperature': 0.25,
+            'position_temperature': 5.0,
+            'num_step': 32,
+        }
+
+        resp = requests.post(f"{api_url}/generate", data=payload, timeout=120)
+        if resp.status_code != 200:
+            raise RuntimeError(f"VoiceStudio API error ({resp.status_code}) on chunk {idx} ({speaker}): {resp.text[:200]}")
+
+        with open(chunk_wav, "wb") as f:
+            f.write(resp.content)
+
+        # Standardize audio segment
+        std_mp3 = os.path.join(session_tmp_dir, f"vs_{idx:03d}_std.mp3")
+        subprocess.run([
+            'ffmpeg', '-y', '-i', chunk_wav,
+            '-af', 'aresample=44100,aformat=channel_layouts=mono',
+            '-c:a', 'libmp3lame', '-b:a', '128k', std_mp3
+        ], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        concat_files.append(std_mp3)
+
+        # 0.45s breathing pause between dialogue turns
+        pause_mp3 = os.path.join(session_tmp_dir, f"vs_pause_{idx:03d}.mp3")
+        subprocess.run([
+            'ffmpeg', '-y', '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=mono',
+            '-t', '0.45', '-c:a', 'libmp3lame', '-b:a', '128k', pause_mp3
+        ], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        concat_files.append(pause_mp3)
+
+    concat_txt = os.path.join(session_tmp_dir, "concat_vs.txt")
+    with open(concat_txt, "w") as f:
+        for p in concat_files:
+            f.write(f"file '{p}'\n")
+
+    subprocess.run([
+        'ffmpeg', '-y', '-f', 'concat', '-safe', '0', '-i', concat_txt,
+        '-c', 'copy', output_mp3
+    ], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+    return get_audio_duration(output_mp3)
+
+
 def mix_multitrack_to_master(
     voice_path: str,
     tracks: list,
@@ -636,6 +733,21 @@ async def main():
                 sys.exit(1)
 
             done = False
+
+            # VoiceStudio / OmniVoice Local API
+            if not done and engine in ['voicestudio', 'voice-studio', 'omnivoice']:
+                try:
+                    vs_url = config.get('voiceStudioUrl', 'http://127.0.0.1:3900')
+                    dur = synthesize_voicestudio_pure(
+                        segments,
+                        voice_path,
+                        session_tmp_dir,
+                        voice_cast=config.get('voiceCast', {}),
+                        api_url=vs_url
+                    )
+                    done = True
+                except Exception as e:
+                    print(f"[VoiceStudio Fallback] {e}", file=sys.stderr)
 
             # 0. Try F5-TTS PT-BR (Local Brazilian Diffusion)
             if not done and engine in ['f5tts', 'f5-tts', 'f5']:
