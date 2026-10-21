@@ -12,10 +12,18 @@
       "distribution": "internal",
       "android": {
         "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://api.audiofic.com.br",
+        "EXPO_PUBLIC_REVENUECAT_GOOGLE_API_KEY": "goog_seu_revenuecat_key_aqui"
       }
     },
     "production": {
-      "autoIncrement": true
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://api.audiofic.com.br",
+        "EXPO_PUBLIC_REVENUECAT_GOOGLE_API_KEY": "goog_seu_revenuecat_key_aqui"
+      }
     }
   },
   "submit": {
