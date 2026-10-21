@@ -1,6 +1,6 @@
 import { createAuthClient } from 'better-auth/react';
 import { expoClient } from '@better-auth/expo/client';
-import * as SecureStore from 'expo-secure-store';
+import { safeStorage } from './safe-storage';
 import Constants from 'expo-constants';
 import { Platform } from 'react-native';
 
@@ -50,7 +50,7 @@ export const authClient = createAuthClient({
     expoClient({
       scheme: 'audiofic',
       storagePrefix: 'audiofic',
-      storage: SecureStore,
+      storage: safeStorage as any,
     }),
   ],
 });

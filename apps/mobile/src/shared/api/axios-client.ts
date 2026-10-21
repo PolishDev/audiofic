@@ -1,5 +1,5 @@
 import axios, { type InternalAxiosRequestConfig } from 'axios';
-import * as SecureStore from 'expo-secure-store';
+import { safeStorage as SecureStore } from '../lib/safe-storage';
 import { API_BASE_URL, authClient } from '../lib/auth-client';
 
 export const apiClient = axios.create({

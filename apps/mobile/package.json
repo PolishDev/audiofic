@@ -60,7 +60,9 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "release:play": "TMPDIR=/mnt/stuff/tmp eas build --platform android --profile production --local",
+    "release:apk": "TMPDIR=/mnt/stuff/tmp eas build --platform android --profile preview --local"
   },
   "private": true
 }

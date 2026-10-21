@@ -6,7 +6,7 @@ import React, {
   useCallback,
   type ReactNode,
 } from 'react';
-import * as SecureStore from 'expo-secure-store';
+import { safeStorage as SecureStore } from '../lib/safe-storage';
 import { authClient } from '../lib/auth-client';
 import { authService } from '../../features/auth/services/auth.service';
 import type { LoginFormData, RegisterFormData, User } from '../../features/auth/types';
