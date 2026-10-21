@@ -14,15 +14,17 @@
         "buildType": "apk"
       },
       "env": {
-        "EXPO_PUBLIC_API_URL": "https://api.audiofic.com.br",
-        "EXPO_PUBLIC_REVENUECAT_GOOGLE_API_KEY": "goog_seu_revenuecat_key_aqui"
+        "EXPO_PUBLIC_API_URL": "http://gt1xxjn1xdsye9intqir0ac8.129.213.81.221.sslip.io",
+        "EXPO_PUBLIC_REVENUECAT_GOOGLE_API_KEY": "goog_LucyFmwwZOeSazfuHVUAjlNIkpx",
+        "GRADLE_OPTS": "-Dorg.gradle.jvmargs=\"-Xmx6144m -XX:MaxMetaspaceSize=1024m -XX:+HeapDumpOnOutOfMemoryError\""
       }
     },
     "production": {
       "autoIncrement": true,
       "env": {
-        "EXPO_PUBLIC_API_URL": "https://api.audiofic.com.br",
-        "EXPO_PUBLIC_REVENUECAT_GOOGLE_API_KEY": "goog_seu_revenuecat_key_aqui"
+        "EXPO_PUBLIC_API_URL": "http://gt1xxjn1xdsye9intqir0ac8.129.213.81.221.sslip.io",
+        "EXPO_PUBLIC_REVENUECAT_GOOGLE_API_KEY": "goog_LucyFmwwZOeSazfuHVUAjlNIkpx",
+        "GRADLE_OPTS": "-Dorg.gradle.jvmargs=\"-Xmx6144m -XX:MaxMetaspaceSize=1024m -XX:+HeapDumpOnOutOfMemoryError\""
       }
     }
   },

@@ -53,6 +53,16 @@
         {
           "enableBackgroundPlayback": true
         }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "extraGradleProperties": {
+              "org.gradle.jvmargs": "-Xmx6144m -XX:MaxMetaspaceSize=1024m -XX:+HeapDumpOnOutOfMemoryError"
+            }
+          }
+        }
       ]
     ],
     "experiments": {
